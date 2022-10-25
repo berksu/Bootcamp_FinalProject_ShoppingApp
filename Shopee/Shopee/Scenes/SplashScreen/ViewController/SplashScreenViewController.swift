@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SplashScreenViewController.swift
 //  Shopee
 //
 //  Created by Berksu Kısmet on 25.10.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
