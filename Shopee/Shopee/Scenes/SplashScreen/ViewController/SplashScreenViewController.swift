@@ -22,7 +22,7 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.6 , execute: {self.splashView.animate()})
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2 , execute: {self.splashView.animate()})
     }
 }
 

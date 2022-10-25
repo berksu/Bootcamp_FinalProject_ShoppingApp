@@ -60,7 +60,7 @@ final class SplashScreenView: UIView{
              self.logoImageView.transform = scaledAndTranslatedTransform
         })
         
-        UIView.animate(withDuration: 1.5) {
+        UIView.animate(withDuration: 1.2) {
             self.logoImageView.alpha = 0
         }
     }
