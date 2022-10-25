@@ -10,7 +10,6 @@
 		C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59229086DC200AD20E6 /* AppDelegate.swift */; };
 		C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59429086DC200AD20E6 /* SceneDelegate.swift */; };
 		C960C59729086DC200AD20E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59629086DC200AD20E6 /* ViewController.swift */; };
-		C960C59A29086DC200AD20E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C960C59829086DC200AD20E6 /* Main.storyboard */; };
 		C960C59C29086DC300AD20E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C960C59B29086DC300AD20E6 /* Assets.xcassets */; };
 		C960C59F29086DC300AD20E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C960C59D29086DC300AD20E6 /* LaunchScreen.storyboard */; };
 		C960C5AA29086DC300AD20E6 /* ShopeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5A929086DC300AD20E6 /* ShopeeTests.swift */; };
@@ -40,7 +39,6 @@
 		C960C59229086DC200AD20E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960C59429086DC200AD20E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C960C59629086DC200AD20E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C960C59929086DC200AD20E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C960C59B29086DC300AD20E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C960C59E29086DC300AD20E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C960C5A029086DC300AD20E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,8 @@
 		C960C59129086DC200AD20E6 /* Shopee */ = {
 			isa = PBXGroup;
 			children = (
-				C960C59229086DC200AD20E6 /* AppDelegate.swift */,
-				C960C59429086DC200AD20E6 /* SceneDelegate.swift */,
-				C960C59629086DC200AD20E6 /* ViewController.swift */,
-				C960C59829086DC200AD20E6 /* Main.storyboard */,
-				C960C59B29086DC300AD20E6 /* Assets.xcassets */,
-				C960C59D29086DC300AD20E6 /* LaunchScreen.storyboard */,
-				C960C5A029086DC300AD20E6 /* Info.plist */,
+				C960C5C22908700100AD20E6 /* App */,
+				C960C5C32908700B00AD20E6 /* Scenes */,
 			);
 			path = Shopee;
 			sourceTree = "<group>";
@@ -125,6 +118,58 @@
 				C960C5B529086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift */,
 			);
 			path = ShopeeUITests;
+			sourceTree = "<group>";
+		};
+		C960C5C22908700100AD20E6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C960C5C72908708700AD20E6 /* Plists */,
+				C960C5C62908704600AD20E6 /* Delegates */,
+				C960C5C52908703C00AD20E6 /* Assets */,
+				C960C5C42908702300AD20E6 /* LaunchScreen */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C960C5C32908700B00AD20E6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C960C59629086DC200AD20E6 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C960C5C42908702300AD20E6 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C960C59D29086DC300AD20E6 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		C960C5C52908703C00AD20E6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C960C59B29086DC300AD20E6 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C960C5C62908704600AD20E6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C960C59429086DC200AD20E6 /* SceneDelegate.swift */,
+				C960C59229086DC200AD20E6 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C960C5C72908708700AD20E6 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				C960C5A029086DC300AD20E6 /* Info.plist */,
+			);
+			path = Plists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +278,6 @@
 			files = (
 				C960C59F29086DC300AD20E6 /* LaunchScreen.storyboard in Resources */,
 				C960C59C29086DC300AD20E6 /* Assets.xcassets in Resources */,
-				C960C59A29086DC200AD20E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +341,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C960C59829086DC200AD20E6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C960C59929086DC200AD20E6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C960C59D29086DC300AD20E6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,12 +475,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VUH3GM8HPJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shopee/Info.plist;
+				INFOPLIST_FILE = Shopee/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,12 +503,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VUH3GM8HPJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shopee/Info.plist;
+				INFOPLIST_FILE = Shopee/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
