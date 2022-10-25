@@ -15,6 +15,7 @@
 		C960C5AA29086DC300AD20E6 /* ShopeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5A929086DC300AD20E6 /* ShopeeTests.swift */; };
 		C960C5B429086DC300AD20E6 /* ShopeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5B329086DC300AD20E6 /* ShopeeUITests.swift */; };
 		C960C5B629086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5B529086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift */; };
+		C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5CB2908834400AD20E6 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C960C5AF29086DC300AD20E6 /* ShopeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C5B329086DC300AD20E6 /* ShopeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeUITests.swift; sourceTree = "<group>"; };
 		C960C5B529086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C960C5CB2908834400AD20E6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		C960C5CA2908753D00AD20E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C960C5CB2908834400AD20E6 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */,
+				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
