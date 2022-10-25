@@ -16,6 +16,10 @@
 		C960C5B429086DC300AD20E6 /* ShopeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5B329086DC300AD20E6 /* ShopeeUITests.swift */; };
 		C960C5B629086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5B529086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift */; };
 		C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C5CB2908834400AD20E6 /* SplashScreenView.swift */; };
+		C960C5D929088BF800AD20E6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5D829088BF800AD20E6 /* Moya */; };
+		C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5DE29088C3300AD20E6 /* SnapKit */; };
+		C960C5E229088C6100AD20E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E129088C6100AD20E6 /* Kingfisher */; };
+		C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C960C5E229088C6100AD20E6 /* Kingfisher in Frameworks */,
+				C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */,
+				C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */,
+				C960C5D929088BF800AD20E6 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +223,12 @@
 			dependencies = (
 			);
 			name = Shopee;
+			packageProductDependencies = (
+				C960C5D829088BF800AD20E6 /* Moya */,
+				C960C5DE29088C3300AD20E6 /* SnapKit */,
+				C960C5E129088C6100AD20E6 /* Kingfisher */,
+				C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */,
+			);
 			productName = Shopee;
 			productReference = C960C58F29086DC200AD20E6 /* Shopee.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +301,12 @@
 				Base,
 			);
 			mainGroup = C960C58629086DC200AD20E6;
+			packageReferences = (
+				C960C5D729088BF800AD20E6 /* XCRemoteSwiftPackageReference "Moya" */,
+				C960C5DD29088C3300AD20E6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C960C5E029088C6100AD20E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C960C5E329088C7F00AD20E6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = C960C59029086DC200AD20E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -666,6 +686,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C960C5D729088BF800AD20E6 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C960C5DD29088C3300AD20E6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C960C5E029088C6100AD20E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		C960C5E329088C7F00AD20E6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C960C5D829088BF800AD20E6 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C960C5D729088BF800AD20E6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		C960C5DE29088C3300AD20E6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C960C5DD29088C3300AD20E6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		C960C5E129088C6100AD20E6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C960C5E029088C6100AD20E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C960C5E329088C7F00AD20E6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C960C58729086DC200AD20E6 /* Project object */;
 }
