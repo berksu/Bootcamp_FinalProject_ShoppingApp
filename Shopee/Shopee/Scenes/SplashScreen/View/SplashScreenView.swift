@@ -50,17 +50,20 @@ final class SplashScreenView: UIView{
 
     }
     
-     func animate(){
-        indicator.alpha = 0
 
-         let originalTransform = logoImageView.transform
-         let scaledTransform = originalTransform.scaledBy(x: 10.0, y: 10.0)
-         let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 0.0, y: 0.0)
-         UIView.animate(withDuration: 0.7, animations: {
-             self.logoImageView.transform = scaledAndTranslatedTransform
-        })
-        
-        UIView.animate(withDuration: 1.2) {
+    
+    func logoAnimation(){
+        indicator.alpha = 0
+        let originalTransform = logoImageView.transform
+        let scaledTransform = originalTransform.scaledBy(x: 10.0, y: 10.0)
+        let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 0.0, y: 0.0)
+        UIView.animate(withDuration: 0.7, animations: {
+            self.logoImageView.transform = scaledAndTranslatedTransform
+       })
+    }
+    
+    var isLogoVisible: Bool = true {
+        didSet{
             self.logoImageView.alpha = 0
         }
     }

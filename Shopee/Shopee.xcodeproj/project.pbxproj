@@ -20,6 +20,8 @@
 		C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5DE29088C3300AD20E6 /* SnapKit */; };
 		C960C5E229088C6100AD20E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E129088C6100AD20E6 /* Kingfisher */; };
 		C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */; };
+		C98AB1B92909BF4900BD917A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C98AB1B82909BF4900BD917A /* FirebaseAuth */; };
+		C98AB1BB2909BF4900BD917A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C98AB1BA2909BF4900BD917A /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +63,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C960C5E229088C6100AD20E6 /* Kingfisher in Frameworks */,
+				C98AB1B92909BF4900BD917A /* FirebaseAuth in Frameworks */,
 				C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */,
 				C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */,
 				C960C5D929088BF800AD20E6 /* Moya in Frameworks */,
+				C98AB1BB2909BF4900BD917A /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +137,7 @@
 		C960C5C22908700100AD20E6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C98AB1B32909BDDC00BD917A /* Network */,
 				C960C5C72908708700AD20E6 /* Plists */,
 				C960C5C62908704600AD20E6 /* Delegates */,
 				C960C5C52908703C00AD20E6 /* Assets */,
@@ -207,6 +212,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C98AB1B32909BDDC00BD917A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +240,8 @@
 				C960C5DE29088C3300AD20E6 /* SnapKit */,
 				C960C5E129088C6100AD20E6 /* Kingfisher */,
 				C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */,
+				C98AB1B82909BF4900BD917A /* FirebaseAuth */,
+				C98AB1BA2909BF4900BD917A /* FirebaseFirestoreSwift */,
 			);
 			productName = Shopee;
 			productReference = C960C58F29086DC200AD20E6 /* Shopee.app */;
@@ -306,6 +320,7 @@
 				C960C5DD29088C3300AD20E6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C960C5E029088C6100AD20E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C960C5E329088C7F00AD20E6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = C960C59029086DC200AD20E6 /* Products */;
 			projectDirPath = "";
@@ -720,6 +735,14 @@
 				kind = branch;
 			};
 		};
+		C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -742,6 +765,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C960C5E329088C7F00AD20E6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		C98AB1B82909BF4900BD917A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C98AB1BA2909BF4900BD917A /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

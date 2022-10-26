@@ -22,7 +22,18 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2 , execute: {self.splashView.animate()})
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2 , execute: {self.animate()})
     }
+    
+    func animate(){
+        splashView.logoAnimation()
+       
+        UIView.animate(withDuration: 1.2, animations: {self.splashView.isLogoVisible = false }) { done in
+            if done{
+                //let authenticationViewController = AuthenticationViewController()
+                //self.navigationController?.pushViewController(authenticationViewController, animated: false)
+            }
+        }
+   }
 }
 
