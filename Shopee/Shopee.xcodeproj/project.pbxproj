@@ -24,6 +24,7 @@
 		C98AB1BB2909BF4900BD917A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C98AB1BA2909BF4900BD917A /* FirebaseFirestoreSwift */; };
 		C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1C52909C3BB00BD917A /* AuthenticationViewController.swift */; };
 		C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */; };
+		C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C960C5CB2908834400AD20E6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		C98AB1C52909C3BB00BD917A /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PasswordMailControlExtension.swift"; sourceTree = "<group>"; };
+		C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		C98AB1B32909BDDC00BD917A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C98AB1CB2909C5C500BD917A /* Firebase */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -271,6 +274,14 @@
 				C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C98AB1CB2909C5C500BD917A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +434,7 @@
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,
 				C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */,
 				C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */,
+				C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
