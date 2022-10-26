@@ -30,8 +30,8 @@ class SplashScreenViewController: UIViewController {
        
         UIView.animate(withDuration: 1.2, animations: {self.splashView.isLogoVisible = false }) { done in
             if done{
-                //let authenticationViewController = AuthenticationViewController()
-                //self.navigationController?.pushViewController(authenticationViewController, animated: false)
+                let authenticationViewController = AuthenticationViewController()
+                self.navigationController?.pushViewController(authenticationViewController, animated: false)
             }
         }
    }
