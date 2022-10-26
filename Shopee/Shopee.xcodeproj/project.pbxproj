@@ -25,6 +25,7 @@
 		C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1C52909C3BB00BD917A /* AuthenticationViewController.swift */; };
 		C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */; };
 		C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */; };
+		C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C98AB1C52909C3BB00BD917A /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PasswordMailControlExtension.swift"; sourceTree = "<group>"; };
 		C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
+		C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticaitionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		C98AB1C12909C38B00BD917A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
 				C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,

@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let viewController = SplashScreenViewController()
+        //let viewController = AuthenticationViewController()
         // navigation view also added
         let  navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
