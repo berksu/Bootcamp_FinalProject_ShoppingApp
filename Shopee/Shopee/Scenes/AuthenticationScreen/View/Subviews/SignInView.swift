@@ -1,5 +1,5 @@
 //
-//  SignIn.swift
+//  SignInView.swift
 //  Shopee
 //
 //  Created by Berksu Kısmet on 27.10.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignIn: UIView{
+final class SignInView: UIView{
     
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
         let textfield =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
@@ -18,7 +18,7 @@ final class SignIn: UIView{
         textfield.font = UIFont.systemFont(ofSize: 15)
         textfield.borderStyle = UITextField.BorderStyle.roundedRect
         textfield.layer.cornerRadius = 8
-        textfield.layer.borderWidth = 0.5
+        textfield.layer.borderColor = UIColor(named: "authenticationTextField")?.cgColor
         textfield.autocapitalizationType = .none
         textfield.autocorrectionType = .no
         textfield.isSecureTextEntry = isSecureTextField
@@ -29,17 +29,21 @@ final class SignIn: UIView{
         return textfield
     }
     
-    
-    var forgetPasswordButtonView: UIView{
-        var view = UIView()
+    var forgetPasswordButton: UIButton = {
         var button = UIButton()
         button.setTitle("Forgot Password", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 12)
         button.setTitleColor(.red, for: .normal)
         button.underline()
-        let labelSize = button.titleLabel?.sizeThatFits(CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
-        view.addSubview(button)
-        button.snp.makeConstraints { make in
+        return button
+    }()
+    
+    private var forgetPasswordButtonView: UIView{
+        let view = UIView()
+        //button.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
+        let labelSize = forgetPasswordButton.titleLabel?.sizeThatFits(CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
+        view.addSubview(forgetPasswordButton)
+        forgetPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top)
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
@@ -47,6 +51,8 @@ final class SignIn: UIView{
         }
         return view
     }
+    
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,24 +75,6 @@ final class SignIn: UIView{
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
             make.bottom.equalTo(self.snp.bottom)
         }
-        
-//        let emailTextView = createTextField(placeholder: "Enter email", isSecureTextField: false)
-//        addSubview(emailTextView)
-//        emailTextView.snp.makeConstraints { make in
-//            make.top.equalTo(self.snp.top)
-//            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
-//            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
-//        }
-//
-//        let passwordTextField = createTextField(placeholder: "Enter password", isSecureTextField: true)
-//        addSubview(passwordTextField)
-//        passwordTextField.snp.makeConstraints { make in
-//            make.top.equalTo(emailTextView.snp.bottom).offset(16)
-//            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
-//            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
-//            make.bottom.equalTo(self.snp.bottom)
-//        }
-        
         
     }
     

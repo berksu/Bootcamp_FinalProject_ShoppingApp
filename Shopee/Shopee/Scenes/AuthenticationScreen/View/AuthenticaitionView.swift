@@ -20,7 +20,10 @@ final class AuthenticationView: UIView{
     
     private var stackView = UIStackView()
     
-    private var signInorUpView: UIView = SignIn(){
+    var signInView = SignInView()
+    var signUpView = SignUpView()
+
+    private var signInorUpView: UIView{
         willSet{
             stackView.removeArrangedSubview(signInorUpView)
             signInorUpView.removeFromSuperview()
@@ -57,10 +60,10 @@ final class AuthenticationView: UIView{
             switch (segmentedControl.selectedSegmentIndex) {
             case 0:
                 titleLabel.text = "Sign In"
-                signInorUpView = SignIn()
+                signInorUpView = signInView
             case 1:
                 titleLabel.text = "Sign Up"
-                signInorUpView = SignUp()
+                signInorUpView = signUpView
             default:
                 break
             }
@@ -68,7 +71,10 @@ final class AuthenticationView: UIView{
     
     
     override init(frame: CGRect) {
+        signInorUpView = signInView
+        
         super.init(frame: frame)
+        
         if #available(iOS 13.0, *) {
             backgroundColor = .systemBackground
         } else {

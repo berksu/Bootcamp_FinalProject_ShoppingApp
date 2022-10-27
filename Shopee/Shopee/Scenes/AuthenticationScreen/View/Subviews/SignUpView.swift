@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignUp: UIView{
+final class SignUpView: UIView{
     
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
         let textfield =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
