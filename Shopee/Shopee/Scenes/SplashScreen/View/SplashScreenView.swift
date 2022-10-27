@@ -29,6 +29,7 @@ final class SplashScreenView: UIView{
             backgroundColor = .systemBackground
         } else {
             // Fallback on earlier versions
+            backgroundColor = .white
         }
         
         addSubview(logoImageView)

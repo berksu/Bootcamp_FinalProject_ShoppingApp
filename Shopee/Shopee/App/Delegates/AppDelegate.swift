@@ -12,7 +12,7 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: -IQKeyboard configuration
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let viewController = SplashScreenViewController()
+        //let viewController = AuthenticationViewController()
+        // navigation view also added
+        let  navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.isHidden = true
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        
+        self.window = window
         
         return true
     }

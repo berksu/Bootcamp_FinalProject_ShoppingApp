@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C959EF8F290B1A9C00D717C3 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignIn.swift */; };
+		C959EF91290B1BC100D717C3 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUp.swift */; };
 		C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59229086DC200AD20E6 /* AppDelegate.swift */; };
 		C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59429086DC200AD20E6 /* SceneDelegate.swift */; };
 		C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59629086DC200AD20E6 /* SplashScreenViewController.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C959EF8E290B1A9C00D717C3 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		C959EF90290B1BC100D717C3 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		C960C58F29086DC200AD20E6 /* Shopee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C59229086DC200AD20E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960C59429086DC200AD20E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C959EF8D290B1A8B00D717C3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C959EF8E290B1A9C00D717C3 /* SignIn.swift */,
+				C959EF90290B1BC100D717C3 /* SignUp.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		C960C58629086DC200AD20E6 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */,
+				C959EF8D290B1A8B00D717C3 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
+				C959EF8F290B1A9C00D717C3 /* SignIn.swift in Sources */,
 				C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,
@@ -440,6 +455,7 @@
 				C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */,
 				C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
+				C959EF91290B1BC100D717C3 /* SignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
