@@ -8,6 +8,12 @@
 import Foundation
 import FirebaseAuth
 
+enum AuthenticationMessages{
+    case didErrorOccurred(_ error: Error)
+    case didSignInSuccessful
+    case didSignUpSuccessful
+    case didSignOutSccessful
+}
 
 // MARK: - Firebase authentication
 struct FirebaseAuthentication {
@@ -19,6 +25,7 @@ struct FirebaseAuthentication {
         auth =  Auth.auth()
     }
     
+    // get current user
     var user: User? {
         auth.currentUser
     }
@@ -33,11 +40,50 @@ struct FirebaseAuthentication {
         }
     }
     
-    func signOut(){
+    // Firebase Sign In
+    func signIn(email: String, password: String, complition: @escaping (AuthenticationMessages) -> Void){
+        auth.signIn(withEmail: email,
+                    password: password){result, error in
+            
+            if let error = error as? NSError{
+                print("Error: \(error.localizedDescription)")
+                complition(.didErrorOccurred(error))
+                return
+            }else{
+                print("Sign In")
+                complition(.didSignInSuccessful)
+            }
+            
+            guard result != nil, error == nil else{ return }
+        }
+    }
+    
+    // Firebase Sign Up
+    func signUp(email: String, password: String, complition: @escaping (AuthenticationMessages) -> Void){
+        auth.createUser(withEmail: email,
+                        password: password){result, error in
+            
+            if let error = error as? NSError{
+                print("Error: \(error.localizedDescription)")
+                complition(.didErrorOccurred(error))
+                return
+            }else{
+                print("Sign Up")
+                complition(.didSignUpSuccessful)
+            }
+            
+            guard result != nil, error == nil else{ return }
+        }
+    }
+    
+    // Firebase sign out
+    func signOut(complition: @escaping (AuthenticationMessages) -> Void){
         do {
             try Auth.auth().signOut()
+            complition(.didSignOutSccessful)
         } catch {
             print("error signOut: \(error.localizedDescription)")
+            complition(.didErrorOccurred(error))
         }
     }
     

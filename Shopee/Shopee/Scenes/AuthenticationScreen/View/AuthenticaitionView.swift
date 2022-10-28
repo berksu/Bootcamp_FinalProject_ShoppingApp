@@ -84,7 +84,7 @@ final class AuthenticationView: UIView{
     }
     
     var signInSingUpButton: UIButton = {
-        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 90))
+        var button = UIButton()
         button.setTitle("Sign In", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 12)
         button.setTitleColor(.white, for: .normal)
@@ -108,10 +108,7 @@ final class AuthenticationView: UIView{
         
         stackView = UIStackView(arrangedSubviews: [titleLabel,
                                                    segmentControlView,
-                                                   signInorUpView,
-                                                   signInSingUpButton])
-        
-
+                                                   signInorUpView])
         
         stackView.axis = .vertical
         stackView.spacing = 32.0
@@ -121,6 +118,15 @@ final class AuthenticationView: UIView{
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
         }
+        
+        addSubview(signInSingUpButton)
+        signInSingUpButton.snp.makeConstraints { make in
+            make.top.equalTo(stackView.snp.bottom).offset(32)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
+            make.height.equalTo(35)
+        }
+        
     }
     
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
