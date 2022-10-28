@@ -38,5 +38,4 @@ final class ResetPasswordViewController: UIViewController, AlertPresentable{
         
         resetPasswordView.sendMailButton.addTarget(self, action: #selector(sendMailToUser), for: .touchUpInside)
     }
-    
 }

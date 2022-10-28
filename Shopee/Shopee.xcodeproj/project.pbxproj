@@ -18,6 +18,8 @@
 		C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF9F290C135C00D717C3 /* AlertPresentable.swift */; };
 		C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFB1290C51E300D717C3 /* UserProfile.swift */; };
 		C959EFB4290C722700D717C3 /* FirebaseFirestoreManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */; };
+		C959EFBA290C7AFE00D717C3 /* FakeStoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFB9290C7AFE00D717C3 /* FakeStoreApi.swift */; };
+		C959EFBE290C7B5900D717C3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFBD290C7B5900D717C3 /* Product.swift */; };
 		C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59229086DC200AD20E6 /* AppDelegate.swift */; };
 		C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59429086DC200AD20E6 /* SceneDelegate.swift */; };
 		C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59629086DC200AD20E6 /* SplashScreenViewController.swift */; };
@@ -68,6 +70,8 @@
 		C959EF9F290C135C00D717C3 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		C959EFB1290C51E300D717C3 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManagement.swift; sourceTree = "<group>"; };
+		C959EFB9290C7AFE00D717C3 /* FakeStoreApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApi.swift; sourceTree = "<group>"; };
+		C959EFBD290C7B5900D717C3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C960C58F29086DC200AD20E6 /* Shopee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C59229086DC200AD20E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960C59429086DC200AD20E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C959EFB8290C7AEE00D717C3 /* FakeStoreApi */ = {
+			isa = PBXGroup;
+			children = (
+				C959EFB9290C7AFE00D717C3 /* FakeStoreApi.swift */,
+			);
+			path = FakeStoreApi;
+			sourceTree = "<group>";
+		};
 		C960C58629086DC200AD20E6 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +213,7 @@
 			children = (
 				C98AB1C02909C38200BD917A /* AuthenticationScreen */,
 				C960C5C82908752600AD20E6 /* SplashScreen */,
+				C959EFBD290C7B5900D717C3 /* Product.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -267,6 +280,7 @@
 		C98AB1B32909BDDC00BD917A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C959EFB8290C7AEE00D717C3 /* FakeStoreApi */,
 				C98AB1CB2909C5C500BD917A /* Firebase */,
 			);
 			path = Network;
@@ -486,6 +500,7 @@
 				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
 				C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */,
 				C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */,
+				C959EFBA290C7AFE00D717C3 /* FakeStoreApi.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
@@ -500,6 +515,7 @@
 				C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */,
 				C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */,
 				C959EFB4290C722700D717C3 /* FirebaseFirestoreManagement.swift in Sources */,
+				C959EFBE290C7B5900D717C3 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
