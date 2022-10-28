@@ -21,6 +21,8 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     }
     
     @objc func sigInSignUpButton(sender: UIButton){
+        authenticationView.indicatorHidden = false
+        
         if sender.tag == 0{
             authenticationViewModel.signIn(email: authenticationView.signInView.email, password: authenticationView.signInView.password)
         }else{
@@ -38,12 +40,16 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
         authenticationViewModel.changeHandler = {[weak self] change in
             switch change {
             case .didErrorOccurred(let error):
+                self?.authenticationView.indicatorHidden = true
                 self?.showAlert(title: error.localizedDescription)
             case .didSignInSuccessful:
+                self?.authenticationView.indicatorHidden = true
                 self?.showAlert(title: "Signed In")
             case .didSignUpSuccessful:
+                self?.authenticationView.indicatorHidden = true
                 self?.showAlert(title: "Signed Up")
             case .didErrorOccurredAboutUserInputs(let errorTitle, let errorMessage):
+                self?.authenticationView.indicatorHidden = true
                 self?.showAlert(title: errorTitle, message: errorMessage)
             }
         }

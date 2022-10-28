@@ -9,6 +9,17 @@ import UIKit
 
 final class ResetPasswordView: UIView{
     
+    var email: String?{
+        emailTextView.text
+    }
+    
+    var indicatorHidden: Bool = true{
+        didSet{
+            indicatorView.isHidden = indicatorHidden
+            stackView.alpha = indicatorHidden ? 1.0:0.5
+        }
+    }
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Forgot Password"
@@ -36,8 +47,10 @@ final class ResetPasswordView: UIView{
         return textfield
     }
     
+    private var emailTextView = UITextField()
+    private var stackView = UIStackView()
     
-    private let sendMailButton: UIButton = {
+    private(set) var sendMailButton: UIButton = {
         var button = UIButton()
         button.setTitle("Send Mail", for: .normal)
         button.layer.masksToBounds = true
@@ -46,6 +59,14 @@ final class ResetPasswordView: UIView{
         button.layer.borderWidth = 1.0
         button.backgroundColor = .blue
         return button
+    }()
+    
+    private var indicatorView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        indicator.isHidden = true
+        return indicator
     }()
     
     override init(frame: CGRect) {
@@ -58,8 +79,8 @@ final class ResetPasswordView: UIView{
             backgroundColor = .white
         }
         
-        let emailTextView = createTextFiald(placeholder: "Enter email", isSecureTextField: false)
-        let stackView = UIStackView(arrangedSubviews: [titleLabel,
+        emailTextView = createTextFiald(placeholder: "Enter email", isSecureTextField: false)
+        stackView = UIStackView(arrangedSubviews: [titleLabel,
                                                        emailTextView,
                                                        sendMailButton])
         
@@ -72,6 +93,14 @@ final class ResetPasswordView: UIView{
             make.top.equalTo(self.snp.top).offset(128)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
             make.leading.equalTo(self.snp.leading).offset(16)
+        }
+        
+        addSubview(indicatorView)
+        indicatorView.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
         
         

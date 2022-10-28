@@ -9,6 +9,14 @@ import UIKit
 
 final class AuthenticationView: UIView{
     
+    var indicatorHidden: Bool = true{
+        didSet{
+            indicatorView.isHidden = indicatorHidden
+            stackView.alpha = indicatorHidden ? 1.0:0.5
+            signInSingUpButton.alpha = indicatorHidden ? 1.0:0.5
+        }
+    }
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign In"
@@ -19,7 +27,8 @@ final class AuthenticationView: UIView{
     }()
     
     private var stackView = UIStackView()
-    
+    private var outerStackView = UIStackView()
+
     var signInView = SignInView()
     var signUpView = SignUpView()
 
@@ -96,6 +105,14 @@ final class AuthenticationView: UIView{
         return button
     }()
     
+    private var indicatorView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        indicator.isHidden = true
+        return indicator
+    }()
+    
     override init(frame: CGRect) {
         signInorUpView = signInView
         
@@ -107,16 +124,21 @@ final class AuthenticationView: UIView{
             // Fallback on earlier versions
             backgroundColor = .white
         }
-        
-        
+
         stackView = UIStackView(arrangedSubviews: [titleLabel,
                                                    segmentControlView,
                                                    signInorUpView])
         
         stackView.axis = .vertical
         stackView.spacing = 32.0
-        addSubview(stackView)
-        stackView.snp.makeConstraints { make in
+        
+        outerStackView = UIStackView(arrangedSubviews: [topMenuIconStack, stackView])
+        outerStackView.axis = .vertical
+        outerStackView.spacing = 100
+        
+        
+        addSubview(outerStackView)
+        outerStackView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(64)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
@@ -124,10 +146,18 @@ final class AuthenticationView: UIView{
         
         addSubview(signInSingUpButton)
         signInSingUpButton.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(32)
+            make.top.equalTo(outerStackView.snp.bottom).offset(32)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
             make.height.equalTo(35)
+        }
+        
+        addSubview(indicatorView)
+        indicatorView.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
         
     }
@@ -153,5 +183,50 @@ final class AuthenticationView: UIView{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AuthenticationView{
+    
+    private var topMenuIconStack: UIView{
+        
+        let testFrame = CGRect(x: 0, y: 100, width: 100, height: 400)
+        let view = UIView(frame: testFrame)
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        imageView.image = UIImage(named: "splashScreenLogo")
+        imageView.contentMode = .scaleAspectFit
+
+        let lineViewLeading = UIView()
+        lineViewLeading.layer.borderWidth = 1.0
+        lineViewLeading.layer.borderColor = UIColor.black.cgColor
+
+        let lineViewTrailing = UIView()
+        lineViewTrailing.layer.borderWidth = 1.0
+        lineViewTrailing.layer.borderColor = UIColor.black.cgColor
+
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.snp.top)
+            make.width.equalTo(75)
+            make.height.equalTo(75)
+        }
+
+        view.addSubview(lineViewLeading)
+        lineViewLeading.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.leading)
+            make.width.equalTo(UIScreen.main.bounds.width * 0.3)
+            make.height.equalTo(1)
+            make.centerY.equalTo(imageView.snp.centerY)
+        }
+
+        view.addSubview(lineViewTrailing)
+        lineViewTrailing.snp.makeConstraints { make in
+            make.trailing.equalTo(view.snp.trailing)
+            make.width.equalTo(UIScreen.main.bounds.width * 0.3)
+            make.height.equalTo(1)
+            make.centerY.equalTo(imageView.snp.centerY)
+        }
+        return view
     }
 }

@@ -16,6 +16,7 @@ struct FirebaseAuthentication {
         case didSignInSuccessful
         case didSignUpSuccessful
         case didSignOutSccessful
+        case didForgetMessageSentSuccessful
     }
     
     static var shared = FirebaseAuthentication()
@@ -86,6 +87,19 @@ struct FirebaseAuthentication {
             print("error signOut: \(error.localizedDescription)")
             complition(.didErrorOccurred(error))
         }
+    }
+    
+    func forgotPassword(email: String, complition: @escaping (AuthenticationMessages) -> Void){
+        auth.sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                complition(.didErrorOccurred(error))
+                return
+            }
+            complition(.didForgetMessageSentSuccessful)
+        }
+//        user.updatePassword(to: password) { error in
+//          // ...
+//        }
     }
     
     // TODO: - Sign In, Sign out and remove password will be added

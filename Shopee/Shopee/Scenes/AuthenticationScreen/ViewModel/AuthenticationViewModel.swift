@@ -28,11 +28,6 @@ final class AuthenticationViewModel{
             return
         }
         
-        if(!password.isValidPassword){
-            let errorMessage = password.getMissingValidation().first ?? ""
-            changeHandler?(.didErrorOccurredAboutUserInputs("Password Error", errorMessage))
-        }
-        
         FirebaseAuthentication.shared.signIn(email: email, password: password) {[weak self] message in
             switch message{
             case .didSignInSuccessful:
