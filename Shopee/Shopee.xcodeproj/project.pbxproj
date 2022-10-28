@@ -16,6 +16,7 @@
 		C959EF9B290BFBC800D717C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C959EF9A290BFBC800D717C3 /* GoogleService-Info.plist */; };
 		C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF9C290BFEE900D717C3 /* AuthenticationViewModel.swift */; };
 		C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF9F290C135C00D717C3 /* AlertPresentable.swift */; };
+		C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFB1290C51E300D717C3 /* UserProfile.swift */; };
 		C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59229086DC200AD20E6 /* AppDelegate.swift */; };
 		C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59429086DC200AD20E6 /* SceneDelegate.swift */; };
 		C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59629086DC200AD20E6 /* SplashScreenViewController.swift */; };
@@ -64,6 +65,7 @@
 		C959EF9A290BFBC800D717C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C959EF9C290BFEE900D717C3 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C959EF9F290C135C00D717C3 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		C959EFB1290C51E300D717C3 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C960C58F29086DC200AD20E6 /* Shopee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C59229086DC200AD20E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960C59429086DC200AD20E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		C98AB1C42909C3A400BD917A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C959EFB1290C51E300D717C3 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
+				C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,
 				C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */,
 				C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */,

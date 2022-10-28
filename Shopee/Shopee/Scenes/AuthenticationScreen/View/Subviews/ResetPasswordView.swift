@@ -86,7 +86,7 @@ final class ResetPasswordView: UIView{
         
 
         stackView.axis = .vertical
-        stackView.spacing = 16.0
+        stackView.spacing = 32.0
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.centerX.equalTo(self.snp.centerX)
