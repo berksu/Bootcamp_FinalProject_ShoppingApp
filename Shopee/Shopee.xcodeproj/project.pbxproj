@@ -13,6 +13,7 @@
 		C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF94290B451300D717C3 /* ResetPasswordViewController.swift */; };
 		C959EF97290B4DFF00D717C3 /* UIView+ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF96290B4DFF00D717C3 /* UIView+ButtonAnimation.swift */; };
 		C959EF99290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF98290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift */; };
+		C959EF9B290BFBC800D717C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C959EF9A290BFBC800D717C3 /* GoogleService-Info.plist */; };
 		C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59229086DC200AD20E6 /* AppDelegate.swift */; };
 		C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59429086DC200AD20E6 /* SceneDelegate.swift */; };
 		C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59629086DC200AD20E6 /* SplashScreenViewController.swift */; };
@@ -58,6 +59,7 @@
 		C959EF94290B451300D717C3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C959EF96290B4DFF00D717C3 /* UIView+ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ButtonAnimation.swift"; sourceTree = "<group>"; };
 		C959EF98290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+UnderlinedTitle.swift"; sourceTree = "<group>"; };
+		C959EF9A290BFBC800D717C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C960C58F29086DC200AD20E6 /* Shopee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C59229086DC200AD20E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960C59429086DC200AD20E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		C960C5C72908708700AD20E6 /* Plists */ = {
 			isa = PBXGroup;
 			children = (
+				C959EF9A290BFBC800D717C3 /* GoogleService-Info.plist */,
 				C960C5A029086DC300AD20E6 /* Info.plist */,
 			);
 			path = Plists;
@@ -434,6 +437,7 @@
 			files = (
 				C960C59F29086DC300AD20E6 /* LaunchScreen.storyboard in Resources */,
 				C960C59C29086DC300AD20E6 /* Assets.xcassets in Resources */,
+				C959EF9B290BFBC800D717C3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

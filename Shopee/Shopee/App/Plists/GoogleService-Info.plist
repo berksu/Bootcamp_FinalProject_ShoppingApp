@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>559573252166-o24a6mco45034sbo5ftvrh7egr3cud48.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.559573252166-o24a6mco45034sbo5ftvrh7egr3cud48</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD7fMJgyK3Ly6jnh8xCZaoJp5iV62ZZFP0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>559573252166</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.berksu.portfolio.Shopee</string>
+	<key>PROJECT_ID</key>
+	<string>shopee-86dba</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shopee-86dba.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:559573252166:ios:d7043d101b1ce5c0f4f247</string>
+</dict>
+</plist>
