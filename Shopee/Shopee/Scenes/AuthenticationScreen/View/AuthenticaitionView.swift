@@ -56,19 +56,42 @@ final class AuthenticationView: UIView{
     }()
     
     
+    private var segmentControlView:UIView{
+        let view = UIView()
+        view.addSubview(segmentedControl)
+        segmentedControl.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top)
+            make.leading.equalTo(view.snp.leading).offset(64)
+            make.trailing.equalTo(view.snp.trailing).offset(-64)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        return view
+    }
+    
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
             switch (segmentedControl.selectedSegmentIndex) {
             case 0:
                 titleLabel.text = "Sign In"
+                signInSingUpButton.setTitle("Sign In", for: .normal)
                 signInorUpView = signInView
             case 1:
                 titleLabel.text = "Sign Up"
+                signInSingUpButton.setTitle("Sign Up", for: .normal)
                 signInorUpView = signUpView
             default:
                 break
             }
     }
     
+    var signInSingUpButton: UIButton = {
+        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 90))
+        button.setTitle("Sign In", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .red
+        button.layer.cornerRadius = 8
+        return button
+    }()
     
     override init(frame: CGRect) {
         signInorUpView = signInView
@@ -82,18 +105,11 @@ final class AuthenticationView: UIView{
             backgroundColor = .white
         }
         
-        let segmentControlView = UIView()
-        segmentControlView.addSubview(segmentedControl)
-        segmentedControl.snp.makeConstraints { make in
-            make.top.equalTo(segmentControlView.snp.top)
-            make.leading.equalTo(segmentControlView.snp.leading).offset(64)
-            make.trailing.equalTo(segmentControlView.snp.trailing).offset(-64)
-            make.bottom.equalTo(segmentControlView.snp.bottom)
-        }
         
         stackView = UIStackView(arrangedSubviews: [titleLabel,
                                                    segmentControlView,
-                                                   signInorUpView])
+                                                   signInorUpView,
+                                                   signInSingUpButton])
         
 
         
@@ -108,7 +124,7 @@ final class AuthenticationView: UIView{
     }
     
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
-        let textfield =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+        let textfield =  UITextField(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
         textfield.leftViewMode = .always
         textfield.leftView = spacerView
