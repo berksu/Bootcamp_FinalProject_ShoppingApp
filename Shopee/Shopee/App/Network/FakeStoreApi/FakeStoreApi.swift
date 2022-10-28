@@ -9,6 +9,7 @@ import Foundation
 import Moya
 
 let plugin: PluginType = NetworkLoggerPlugin(configuration: .init(logOptions: .default))
+//let provider = MoyaProvider<FakeStoreApi>(plugins: [plugin])
 let provider = MoyaProvider<FakeStoreApi>(plugins: [plugin])
 
 // TODO: - Search content should be filtered.
@@ -42,8 +43,8 @@ extension FakeStoreApi: TargetType{
     
     var task: Moya.Task {
         let parameters:[String : Any] = [:]
-        //return .requestPlain
-        return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        return .requestPlain
+        //return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
 //        switch self{
 //        case .getRecentImages(let page):
 //            let parameters:[String : Any] = ["method": "flickr.photos.getRecent",
