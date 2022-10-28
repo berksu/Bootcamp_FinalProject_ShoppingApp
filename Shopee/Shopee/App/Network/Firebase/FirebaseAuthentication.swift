@@ -8,15 +8,16 @@
 import Foundation
 import FirebaseAuth
 
-enum AuthenticationMessages{
-    case didErrorOccurred(_ error: Error)
-    case didSignInSuccessful
-    case didSignUpSuccessful
-    case didSignOutSccessful
-}
 
 // MARK: - Firebase authentication
 struct FirebaseAuthentication {
+    enum AuthenticationMessages{
+        case didErrorOccurred(_ error: Error)
+        case didSignInSuccessful
+        case didSignUpSuccessful
+        case didSignOutSccessful
+    }
+    
     static var shared = FirebaseAuthentication()
     
     let auth: Auth

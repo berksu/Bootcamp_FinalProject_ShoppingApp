@@ -73,19 +73,22 @@ final class AuthenticationView: UIView{
             case 0:
                 titleLabel.text = "Sign In"
                 signInSingUpButton.setTitle("Sign In", for: .normal)
+                signInSingUpButton.tag = 0
                 signInorUpView = signInView
             case 1:
                 titleLabel.text = "Sign Up"
                 signInSingUpButton.setTitle("Sign Up", for: .normal)
+                signInSingUpButton.tag = 1
                 signInorUpView = signUpView
             default:
                 break
             }
     }
     
-    var signInSingUpButton: UIButton = {
+    private(set) var signInSingUpButton: UIButton = {
         var button = UIButton()
         button.setTitle("Sign In", for: .normal)
+        button.tag = 0
         button.titleLabel?.font = .systemFont(ofSize: 12)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .red

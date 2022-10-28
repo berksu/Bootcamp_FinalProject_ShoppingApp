@@ -24,23 +24,23 @@ extension String {
     func getMissingValidation() -> [String] {
         var errors: [String] = []
         if(!NSPredicate(format:"SELF MATCHES %@", ".*[A-Z]+.*").evaluate(with: self)){
-            errors.append("least one uppercase")
+            errors.append("Password has at least one uppercase")
         }
         
         if(!NSPredicate(format:"SELF MATCHES %@", ".*[0-9]+.*").evaluate(with: self)){
-            errors.append("least one digit")
+            errors.append("Password has at least one digit")
         }
 
         if(!NSPredicate(format:"SELF MATCHES %@", ".*[!.&^%$#@()/]+.*").evaluate(with: self)){
-            errors.append("least one symbol")
+            errors.append("Password has at least one symbol")
         }
         
         if(!NSPredicate(format:"SELF MATCHES %@", ".*[a-z]+.*").evaluate(with: self)){
-            errors.append("least one lowercase")
+            errors.append("Password has at least one lowercase")
         }
         
         if(self.count < 8){
-            errors.append("min 8 characters total")
+            errors.append("Minimum password length should be 8 characters")
         }
         return errors
     }

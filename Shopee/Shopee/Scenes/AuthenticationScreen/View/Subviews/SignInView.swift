@@ -9,6 +9,17 @@ import UIKit
 
 final class SignInView: UIView{
     
+    var email: String?{
+        emailTextView.text
+    }
+    
+    var password: String?{
+        passwordTextField.text
+    }
+    
+    private var emailTextView: UITextField = UITextField()
+    private var passwordTextField: UITextField = UITextField()
+
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
         let textfield =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
@@ -57,9 +68,8 @@ final class SignInView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let emailTextView = createTextField(placeholder: "Enter email", isSecureTextField: false)
-        let passwordTextField = createTextField(placeholder: "Enter password", isSecureTextField: true)
-
+        emailTextView = createTextField(placeholder: "Enter email", isSecureTextField: false)
+        passwordTextField = createTextField(placeholder: "Enter password", isSecureTextField: true)
         let stackView = UIStackView(arrangedSubviews: [emailTextView,
                                                        passwordTextField,
                                                        forgetPasswordButtonView])

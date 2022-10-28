@@ -9,6 +9,28 @@ import UIKit
 
 final class SignUpView: UIView{
     
+    var username: String?{
+        usernameTextField.text
+    }
+    
+    var email: String?{
+        emailTextView.text
+    }
+    
+    var password: String?{
+        passwordTextField.text
+    }
+    
+    var passwordReTyped: String?{
+        passwordRepeatTextField.text
+    }
+    
+    private var usernameTextField = UITextField()
+    private var emailTextView = UITextField()
+    private var passwordTextField = UITextField()
+    private var passwordRepeatTextField = UITextField()
+
+    
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
         let textfield =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
@@ -30,7 +52,7 @@ final class SignUpView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
             
-        let usernameTextField = createTextField(placeholder: "Enter username", isSecureTextField: false)
+        usernameTextField = createTextField(placeholder: "Enter username", isSecureTextField: false)
         addSubview(usernameTextField)
         usernameTextField.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top)
@@ -38,7 +60,7 @@ final class SignUpView: UIView{
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
         }
         
-        let emailTextView = createTextField(placeholder: "Enter email", isSecureTextField: false)
+        emailTextView = createTextField(placeholder: "Enter email", isSecureTextField: false)
         addSubview(emailTextView)
         emailTextView.snp.makeConstraints { make in
             make.top.equalTo(usernameTextField.snp.bottom).offset(16)
@@ -46,7 +68,7 @@ final class SignUpView: UIView{
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
         }
         
-        let passwordTextField = createTextField(placeholder: "Enter password", isSecureTextField: true)
+        passwordTextField = createTextField(placeholder: "Enter password", isSecureTextField: true)
         addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextView.snp.bottom).offset(16)
@@ -54,7 +76,7 @@ final class SignUpView: UIView{
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
         }
         
-        let passwordRepeatTextField = createTextField(placeholder: "Re-type password", isSecureTextField: true)
+        passwordRepeatTextField = createTextField(placeholder: "Re-type password", isSecureTextField: true)
         addSubview(passwordRepeatTextField)
         passwordRepeatTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(16)
