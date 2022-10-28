@@ -17,6 +17,7 @@
 		C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF9C290BFEE900D717C3 /* AuthenticationViewModel.swift */; };
 		C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF9F290C135C00D717C3 /* AlertPresentable.swift */; };
 		C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFB1290C51E300D717C3 /* UserProfile.swift */; };
+		C959EFB4290C722700D717C3 /* FirebaseFirestoreManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */; };
 		C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59229086DC200AD20E6 /* AppDelegate.swift */; };
 		C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59429086DC200AD20E6 /* SceneDelegate.swift */; };
 		C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C59629086DC200AD20E6 /* SplashScreenViewController.swift */; };
@@ -66,6 +67,7 @@
 		C959EF9C290BFEE900D717C3 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C959EF9F290C135C00D717C3 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		C959EFB1290C51E300D717C3 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManagement.swift; sourceTree = "<group>"; };
 		C960C58F29086DC200AD20E6 /* Shopee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C59229086DC200AD20E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960C59429086DC200AD20E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */,
+				C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
 				C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */,
 				C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */,
+				C959EFB4290C722700D717C3 /* FirebaseFirestoreManagement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

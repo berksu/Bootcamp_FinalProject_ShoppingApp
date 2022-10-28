@@ -61,7 +61,7 @@ struct FirebaseAuthentication {
     }
     
     // Firebase Sign Up
-    func signUp(email: String, password: String, complition: @escaping (AuthenticationMessages) -> Void){
+    func signUp(email: String, password: String, username: String, complition: @escaping (AuthenticationMessages) -> Void){
         auth.createUser(withEmail: email,
                         password: password){result, error in
             
@@ -69,12 +69,21 @@ struct FirebaseAuthentication {
                 print("Error: \(error.localizedDescription)")
                 complition(.didErrorOccurred(error))
                 return
-            }else{
-                print("Sign Up")
-                complition(.didSignUpSuccessful)
+            }
+                        
+            guard let authResult = result, error == nil else{ return }
+            let user = UserProfile(id: authResult.user.uid, username: username, email: email)
+          
+            // Save user with one's username and profilePicture
+            FirebaseFirestoreManagement.shared.saveUser(user: user) { result in
+                switch result{
+                case .didUserSavedInSuccessful:
+                    complition(.didSignUpSuccessful)
+                case .didErrorOccurred(let error):
+                    complition(.didErrorOccurred(error))
+                }
             }
             
-            guard result != nil, error == nil else{ return }
         }
     }
     

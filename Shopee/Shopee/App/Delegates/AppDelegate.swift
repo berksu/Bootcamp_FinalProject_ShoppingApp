@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: -Firebase configuration
         FirebaseApp.configure()
+        _ = Firestore.firestore()
         
         // MARK: -IQKeyboard configuration
         IQKeyboardManager.shared.enable = true

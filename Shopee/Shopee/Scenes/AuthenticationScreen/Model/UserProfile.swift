@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UserProfile{
+struct UserProfile: Encodable{
     let id: String
-    let username: String
-    let email: String
-    let profilePicture: String = ""
+    var username: String?
+    var email: String?
+    var profilePicture: String? = ""
 }
