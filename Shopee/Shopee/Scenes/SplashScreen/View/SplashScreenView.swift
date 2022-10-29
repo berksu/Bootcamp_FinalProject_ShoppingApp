@@ -51,8 +51,6 @@ final class SplashScreenView: UIView{
 
     }
     
-
-    
     func logoAnimation(){
         indicator.alpha = 0
         let originalTransform = logoImageView.transform

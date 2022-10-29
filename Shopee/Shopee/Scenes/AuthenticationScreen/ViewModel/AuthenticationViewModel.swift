@@ -16,6 +16,10 @@ final class AuthenticationViewModel{
         case didErrorOccurredAboutUserInputs(_ errorTitle: String, _ errorMessage: String)
     }
     
+    var isSignedIn: Bool{
+        FirebaseAuthentication.shared.user != nil
+    }
+    
     var changeHandler: ((AuthenticationViewModelMessages) -> Void)?
     
     func signIn(email: String?, password: String?){
