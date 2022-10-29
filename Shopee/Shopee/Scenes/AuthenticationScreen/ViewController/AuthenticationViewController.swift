@@ -81,6 +81,10 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
             let tabBarViewController = TabBarViewController()
             self.navigationController?.pushViewController(tabBarViewController, animated: false)
 >>>>>>> Stashed changes
+=======
+            let tabBarViewController = TabBarViewController()
+            self.navigationController?.pushViewController(tabBarViewController, animated: false)
+>>>>>>> Feature/MainView
         }
     }
 }
