@@ -86,6 +86,9 @@ final class SignInView: UIView{
             make.bottom.equalTo(self.snp.bottom)
         }
         
+        
+        emailTextView.text = "berksukismet@gmail.com"
+        passwordTextField.text = "ultrAslan93."
     }
     
     required init?(coder: NSCoder) {

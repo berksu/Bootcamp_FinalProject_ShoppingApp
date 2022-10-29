@@ -9,6 +9,11 @@ import UIKit
 
 final class AuthenticationViewController: UIViewController, AlertPresentable{
     
+    enum SegmentMenuItem: Int{
+        case signIn = 0
+        case signUp = 1
+    }
+    
     let authenticationView = AuthenticationView()
     let authenticationViewModel = AuthenticationViewModel()
     
@@ -23,10 +28,13 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     @objc func sigInSignUpButton(sender: UIButton){
         authenticationView.indicatorHidden = false
         
-        if sender.tag == 0{
+        switch SegmentMenuItem(rawValue: sender.tag){
+        case .signIn:
             authenticationViewModel.signIn(email: authenticationView.signInView.email, password: authenticationView.signInView.password)
-        }else{
+        case .signUp:
             authenticationViewModel.signUp(email: authenticationView.signUpView.email, password: authenticationView.signUpView.password, reTypedPassword: authenticationView.signUpView.passwordReTyped, username: authenticationView.signUpView.username)
+        default:
+            return
         }
     }
     
@@ -38,19 +46,21 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
         authenticationView.signInSingUpButton.addTarget(self, action: #selector(sigInSignUpButton), for: .touchUpInside)
         
         authenticationViewModel.changeHandler = {[weak self] change in
+            guard let self = self else{return}
+            self.authenticationView.indicatorHidden = true
             switch change {
             case .didErrorOccurred(let error):
-                self?.authenticationView.indicatorHidden = true
-                self?.showAlert(title: error.localizedDescription)
+                self.showAlert(title: error.localizedDescription)
             case .didSignInSuccessful:
-                self?.authenticationView.indicatorHidden = true
-                self?.showAlert(title: "Signed In")
+                self.showAlert(title: "Signed In") { _ in
+                    self.navigateToTabBar()
+                }
             case .didSignUpSuccessful:
-                self?.authenticationView.indicatorHidden = true
-                self?.showAlert(title: "Signed Up")
+                self.showAlert(title: "Signed Up"){ _ in
+                    self.navigateToTabBar()
+                }
             case .didErrorOccurredAboutUserInputs(let errorTitle, let errorMessage):
-                self?.authenticationView.indicatorHidden = true
-                self?.showAlert(title: errorTitle, message: errorMessage)
+                self.showAlert(title: errorTitle, message: errorMessage)
             }
         }
     }
@@ -58,8 +68,19 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
         if authenticationViewModel.isSignedIn{
+<<<<<<< Updated upstream
            // let mainViewController = MainViewController()
             //self.navigationController?.pushViewController(mainViewController, animated: false)
+=======
+            navigateToTabBar()
+        }
+    }
+    
+    func navigateToTabBar(){
+        DispatchQueue.main.async {
+            let tabBarViewController = TabBarViewController()
+            self.navigationController?.pushViewController(tabBarViewController, animated: false)
+>>>>>>> Stashed changes
         }
     }
 }

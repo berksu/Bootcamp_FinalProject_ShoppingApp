@@ -83,7 +83,6 @@ struct FirebaseAuthentication {
                     complition(.didErrorOccurred(error))
                 }
             }
-            
         }
     }
     
