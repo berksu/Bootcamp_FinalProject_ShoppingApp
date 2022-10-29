@@ -58,8 +58,8 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
         if authenticationViewModel.isSignedIn{
-           // let mainViewController = MainViewController()
-            //self.navigationController?.pushViewController(mainViewController, animated: false)
+            let tabBarViewController = TabBarViewController()
+            self.navigationController?.pushViewController(tabBarViewController, animated: false)
         }
     }
 }

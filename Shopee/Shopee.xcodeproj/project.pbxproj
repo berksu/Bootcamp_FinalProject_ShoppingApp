@@ -39,6 +39,8 @@
 		C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */; };
 		C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */; };
 		C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */; };
+		C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E599D290D81F50031E550 /* TabBarViewController.swift */; };
+		C98E59A2290D851A0031E550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PasswordMailControlExtension.swift"; sourceTree = "<group>"; };
 		C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticaitionView.swift; sourceTree = "<group>"; };
+		C98E599D290D81F50031E550 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		C98E59A1290D851A0031E550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,9 +215,11 @@
 		C960C5C32908700B00AD20E6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C98E5998290D81BF0031E550 /* TabBarView */,
 				C98AB1C02909C38200BD917A /* AuthenticationScreen */,
 				C960C5C82908752600AD20E6 /* SplashScreen */,
 				C959EFBD290C7B5900D717C3 /* Product.swift */,
+				C98E59A1290D851A0031E550 /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -348,6 +354,22 @@
 				C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		C98E5998290D81BF0031E550 /* TabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				C98E599B290D81D10031E550 /* ViewController */,
+			);
+			path = TabBarView;
+			sourceTree = "<group>";
+		};
+		C98E599B290D81D10031E550 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C98E599D290D81F50031E550 /* TabBarViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,9 +518,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */,
 				C959EF99290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift in Sources */,
 				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
 				C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */,
+				C98E59A2290D851A0031E550 /* ViewController.swift in Sources */,
 				C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */,
 				C959EFBA290C7AFE00D717C3 /* FakeStoreApi.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
