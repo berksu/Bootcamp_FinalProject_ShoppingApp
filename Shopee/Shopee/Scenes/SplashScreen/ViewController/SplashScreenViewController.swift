@@ -14,11 +14,14 @@ class SplashScreenViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = splashView
+        FirebaseAuthentication.shared.signOut { _ in
+            
+        }
     }
     
-        override func viewDidLoad() {
-            super.viewDidLoad()
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)

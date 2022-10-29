@@ -47,8 +47,6 @@ final class SplashScreenView: UIView{
             indicator.topAnchor.constraint(equalTo: self.logoImageView.bottomAnchor, constant: 88),
             indicator.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-        
-
     }
     
     func logoAnimation(){

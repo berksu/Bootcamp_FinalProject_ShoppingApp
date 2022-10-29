@@ -8,7 +8,7 @@
 import UIKit
 
 final class AuthenticationView: UIView{
-    
+
     var indicatorHidden: Bool = true{
         didSet{
             indicatorView.isHidden = indicatorHidden
@@ -27,8 +27,8 @@ final class AuthenticationView: UIView{
     }()
     
     private var stackView = UIStackView()
-    private var outerStackView = UIStackView()
 
+    // TODO: - Refactor needed, chance it to is hidden
     var signInView = SignInView()
     var signUpView = SignUpView()
 
@@ -36,7 +36,7 @@ final class AuthenticationView: UIView{
         willSet{
             stackView.removeArrangedSubview(signInorUpView)
             signInorUpView.removeFromSuperview()
-            stackView.insertArrangedSubview(newValue, at: 2)
+            stackView.insertArrangedSubview(newValue, at: 3)
         }
     }
     
@@ -125,20 +125,16 @@ final class AuthenticationView: UIView{
             backgroundColor = .white
         }
 
-        stackView = UIStackView(arrangedSubviews: [titleLabel,
+        stackView = UIStackView(arrangedSubviews: [topMenuIconStack,
+                                                   titleLabel,
                                                    segmentControlView,
                                                    signInorUpView])
         
         stackView.axis = .vertical
         stackView.spacing = 32.0
         
-        outerStackView = UIStackView(arrangedSubviews: [topMenuIconStack, stackView])
-        outerStackView.axis = .vertical
-        outerStackView.spacing = 100
-        
-        
-        addSubview(outerStackView)
-        outerStackView.snp.makeConstraints { make in
+        addSubview(stackView)
+        stackView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(64)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
@@ -146,7 +142,7 @@ final class AuthenticationView: UIView{
         
         addSubview(signInSingUpButton)
         signInSingUpButton.snp.makeConstraints { make in
-            make.top.equalTo(outerStackView.snp.bottom).offset(32)
+            make.top.equalTo(stackView.snp.bottom).offset(32)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
             make.height.equalTo(35)
@@ -190,9 +186,13 @@ extension AuthenticationView{
     
     private var topMenuIconStack: UIView{
         
-        let testFrame = CGRect(x: 0, y: 100, width: 100, height: 400)
-        let view = UIView(frame: testFrame)
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        let view = UIView()
+        view.snp.makeConstraints { make in
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(75)
+        }
+        
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "splashScreenLogo")
         imageView.contentMode = .scaleAspectFit
 
