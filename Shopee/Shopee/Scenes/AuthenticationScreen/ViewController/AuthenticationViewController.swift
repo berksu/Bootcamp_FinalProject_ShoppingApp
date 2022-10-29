@@ -68,10 +68,6 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
         if authenticationViewModel.isSignedIn{
-<<<<<<< Updated upstream
-           // let mainViewController = MainViewController()
-            //self.navigationController?.pushViewController(mainViewController, animated: false)
-=======
             navigateToTabBar()
         }
     }
@@ -80,11 +76,6 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
         DispatchQueue.main.async {
             let tabBarViewController = TabBarViewController()
             self.navigationController?.pushViewController(tabBarViewController, animated: false)
->>>>>>> Stashed changes
-=======
-            let tabBarViewController = TabBarViewController()
-            self.navigationController?.pushViewController(tabBarViewController, animated: false)
->>>>>>> Feature/MainView
         }
     }
 }
