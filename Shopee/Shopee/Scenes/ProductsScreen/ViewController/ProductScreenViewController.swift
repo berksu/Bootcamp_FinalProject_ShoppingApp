@@ -19,12 +19,11 @@ final class ProductScreenViewController: UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        // Add sign out button on navigation item
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "basketIcon"), style: .plain, target: self, action: #selector(basketButton))
-        navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = .systemGray
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchIcon"), style: .plain, target: self, action: #selector(searchButton))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = .systemGray
         
         navigationItem.largeTitleDisplayMode = .never
         
@@ -43,11 +42,13 @@ final class ProductScreenViewController: UIViewController{
     func createNavigationTitleLabel() -> UIStackView{
         let topLabel = UILabel()
         topLabel.text = "Design"
-        topLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        topLabel.font = UIFont(name: "Inter-Bold", size: 18)
+        topLabel.textColor = .systemGray
         
         let bottomLabel = UILabel()
         bottomLabel.text = "Your Life"
-        bottomLabel.font = .systemFont(ofSize: 18, weight: .regular)
+        bottomLabel.font = UIFont(name: "Inter-Regular", size: 14)
+        bottomLabel.textColor = .systemGray
         
         let stackView = UIStackView(arrangedSubviews: [topLabel, bottomLabel])
         
