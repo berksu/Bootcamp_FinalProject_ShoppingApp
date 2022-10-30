@@ -24,25 +24,36 @@ final class TabBarViewController: UITabBarController{
         viewControllers = [
             createNavigationController(for: ViewController(),
                                        title: NSLocalizedString("Products", comment: ""),
-                                       image: UIImage(named:"homeIcon")!),
+                                       unselectedImage: UIImage(named:"homeIcon")!,
+                                       selectedImage: UIImage(named:"homeIconFilled")!),
             createNavigationController(for: ViewController(),
                                        title: NSLocalizedString("Search", comment: ""),
-                                       image: UIImage(named:"searchIcon")!),
+                                       unselectedImage: UIImage(named:"searchIcon")!,
+                                       selectedImage: UIImage(named:"searchIcon")!),
             createNavigationController(for: ViewController(),
                                        title: NSLocalizedString("Profile", comment: ""),
-                                       image: UIImage(named:"profileIcon")!)
+                                       unselectedImage: UIImage(named:"profileIcon")!,
+                                       selectedImage: UIImage(named:"profileIconFilled")!)
         ]
     }
     
     private func createNavigationController(for rootViewController: UIViewController,
-                                                title: String,
-                                                image: UIImage) -> UIViewController{
+                                            title: String,
+                                            unselectedImage: UIImage,
+                                            selectedImage: UIImage) -> UIViewController{
         // add navigation controller to each tab
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.tabBarItem.title = title
+<<<<<<< Updated upstream
         navigationController.tabBarItem.image = image
         navigationController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationItem.title = title
+=======
+        navigationController.tabBarItem.image = unselectedImage
+        navigationController.tabBarItem.selectedImage = selectedImage
+        //navigationController.navigationBar.prefersLargeTitles = true
+        //rootViewController.navigationItem.title = title
+>>>>>>> Stashed changes
         return navigationController
     }
 }
