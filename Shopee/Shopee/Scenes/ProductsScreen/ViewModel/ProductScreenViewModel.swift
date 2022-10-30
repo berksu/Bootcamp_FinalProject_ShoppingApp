@@ -22,6 +22,15 @@ final class ProductScreenViewModel{
         products.count
     }
     
+    var categories: [String]{
+        [
+            "electronics",
+            "jewelery",
+            "men's clothing",
+            "women's clothing"
+        ]
+    }
+    
     func fetchData(){
         let url = Bundle.main.url(forResource: "products", withExtension: "json")!
         do {

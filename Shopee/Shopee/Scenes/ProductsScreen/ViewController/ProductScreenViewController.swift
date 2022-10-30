@@ -22,6 +22,8 @@ final class ProductScreenViewController: UIViewController{
         super.viewDidLoad()
         view = productView
         
+        productView.categories = productViewModel.categories
+        
         LayoutConstraints.itemsInRow = (traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular) ? 3:2
         
         setCollectionViewDelegate()
@@ -55,13 +57,13 @@ final class ProductScreenViewController: UIViewController{
     
     func createNavigationTitleLabel() -> UIStackView{
         let topLabel = UILabel()
-        topLabel.text = "Design"
-        topLabel.font = UIFont(name: "Inter-Bold", size: 18)
+        topLabel.text = "Be"
+        topLabel.font = UIFont(name: "Inter-Regular", size: 18)
         topLabel.textColor = .systemGray
         
         let bottomLabel = UILabel()
-        bottomLabel.text = "Your Life"
-        bottomLabel.font = UIFont(name: "Inter-Regular", size: 14)
+        bottomLabel.text = "Creative"
+        bottomLabel.font = UIFont(name: "Inter-Bold", size: 24)
         bottomLabel.textColor = .systemGray
         
         let stackView = UIStackView(arrangedSubviews: [topLabel, bottomLabel])

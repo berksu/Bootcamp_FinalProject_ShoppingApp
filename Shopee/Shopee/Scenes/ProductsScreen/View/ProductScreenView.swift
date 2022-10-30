@@ -9,34 +9,67 @@ import UIKit
 
 final class ProductScreenView: UIView{
     
-//    // MARK: - Properties
-//    private let cellInset: CGFloat = 5.0
-//    private var cellMultiplier: CGFloat = 0.5
-////    var cellDimension: CGFloat {
-////        .screenWidth * cellMultiplier - cellInset
-////    }
-//    var cellDimension: CGFloat = 0.0
-//
-//
-//    private lazy var flowLayout: UICollectionViewFlowLayout = {
-//        let flowLayout = UICollectionViewFlowLayout()
-//        flowLayout.itemSize = CGSize(width: cellDimension, height: cellDimension * 1.3)
-//        return flowLayout
-//    }()
-    
     lazy var productCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let scrollableCategoryStackView = ProductCategoryFilterView()
 
+    
+    lazy var stackCategoryView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 15
+        return stackView
+    }()
+    
+    // 2.
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.addSubview(stackCategoryView)
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
+    
+    var categories:[String]!{
+        didSet{
+            stackCategoryView.removeAllArrangedSubviews()
+            
+            for category in categories {
+                let categoryButton = createCategoryButton(title: "  \(category)  ")
+                stackCategoryView.addArrangedSubview(categoryButton)
+            }
+        }
+    }
+    
     init(){
         super.init(frame: .zero)
         backgroundColor = .white
         productCollectionView.register(ProductViewCell.self , forCellWithReuseIdentifier: "cell")
+    
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            //make.edges.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+            make.height.equalTo(30)
+        }
+        
+        scrollView.addSubview(stackCategoryView)
+        stackCategoryView.snp.makeConstraints { (make) in
+            //make.edges.equalToSuperview()
+            make.top.equalTo(scrollView.snp.top)
+            make.leading.equalTo(scrollView.snp.leading).offset(16)
+            make.trailing.equalTo(scrollView.snp.trailing)
+            make.height.equalTo(30)
+        }
+        
         addSubview(productCollectionView)
         productCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top)
+            make.top.equalTo(stackCategoryView.snp.bottom).offset(5)
             make.leading.equalTo(self.snp.leading)
             make.trailing.equalTo(self.snp.trailing)
-            make.bottom.equalTo(self.snp.bottom)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
+        
     }
     
     
@@ -45,3 +78,35 @@ final class ProductScreenView: UIView{
     }
 }
 
+extension UIStackView {
+    @discardableResult
+    func removeAllArrangedSubviews() -> [UIView] {
+        return arrangedSubviews.reduce([UIView]()) { $0 + [removeArrangedSubViewProperly($1)] }
+    }
+
+    func removeArrangedSubViewProperly(_ view: UIView) -> UIView {
+        removeArrangedSubview(view)
+        NSLayoutConstraint.deactivate(view.constraints)
+        view.removeFromSuperview()
+        return view
+    }
+}
+
+
+extension ProductScreenView{
+
+    
+    func createCategoryButton(title: String) -> UIButton{
+        let button = UIButton()
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemGray
+        button.layer.cornerRadius = 6
+        button.sizeToFit()
+        button.snp.makeConstraints { make in
+            make.height.equalTo(30)
+        }
+        return button
+    }
+}

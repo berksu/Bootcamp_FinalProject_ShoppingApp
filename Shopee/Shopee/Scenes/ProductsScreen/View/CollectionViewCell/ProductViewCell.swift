@@ -91,7 +91,7 @@ final class ProductViewCell: UICollectionViewCell{
         
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(10)
+            make.top.equalTo(self.snp.top).offset(30)
             make.centerX.equalTo(self.snp.centerX)
         }        
     }
