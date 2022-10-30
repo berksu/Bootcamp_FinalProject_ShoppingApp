@@ -49,8 +49,8 @@ final class ProductScreenViewController: UIViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "basketIcon"), style: .plain, target: self, action: #selector(basketButton))
         navigationItem.rightBarButtonItem?.tintColor = .systemGray
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchIcon"), style: .plain, target: self, action: #selector(searchButton))
-        navigationItem.leftBarButtonItem?.tintColor = .systemGray
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchIcon"), style: .plain, target: self, action: #selector(searchButton))
+//        navigationItem.leftBarButtonItem?.tintColor = .systemGray
     }
     
     func createNavigationTitleLabel() -> UIStackView{

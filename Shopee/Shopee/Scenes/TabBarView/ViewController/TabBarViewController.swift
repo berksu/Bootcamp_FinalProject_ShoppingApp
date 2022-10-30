@@ -22,7 +22,7 @@ final class TabBarViewController: UITabBarController{
     // Create all of the tabs and icons of the tabs
     func setupViewControllers(){
         viewControllers = [
-            createNavigationController(for: ViewController(),
+            createNavigationController(for: ProductScreenViewController(),
                                        title: NSLocalizedString("Products", comment: ""),
                                        unselectedImage: UIImage(named:"homeIcon")!,
                                        selectedImage: UIImage(named:"homeIconFilled")!),
