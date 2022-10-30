@@ -1,0 +1,50 @@
+//
+//  ProductScreenViewModel.swift
+//  Shopee
+//
+//  Created by Berksu Kısmet on 30.10.2022.
+//
+
+import Foundation
+
+final class ProductScreenViewModel{
+    
+    enum ProductFetchResults {
+        case didErrorOccurred(_ error: String)
+        case didFetchProducts
+    }
+    
+    var changeHandler: ((ProductFetchResults) -> Void)?
+    
+    private var products:[Product] = []
+    
+    var productCount: Int{
+        products.count
+    }
+    
+    func fetchData(){
+        let url = Bundle.main.url(forResource: "products", withExtension: "json")!
+        do {
+            let jsonData = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            // the name data is misleading
+            let data = try decoder.decode([Product].self, from: jsonData)
+            changeHandler?(.didFetchProducts)
+            products = data
+        } catch {
+            changeHandler?(.didErrorOccurred("File cannot parsed"))
+        }
+    }
+    
+    func getImageURLAtIndex(_ index: Int) -> String{
+        if let image = products[index].image{
+            return image
+        }else{
+            return ""
+        }
+    }
+    
+    func getProductAtIndex(_ index: Int) -> Product{
+        return products[index]
+    }
+}
