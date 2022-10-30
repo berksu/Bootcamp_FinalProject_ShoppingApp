@@ -36,6 +36,28 @@ final class ProductScreenViewController: UIViewController{
         navigationBarSearchControllerIsHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.titleView = createNavigationTitleLabel()
+    }
+    
+    func createNavigationTitleLabel() -> UIStackView{
+        let topLabel = UILabel()
+        topLabel.text = "Design"
+        topLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        
+        let bottomLabel = UILabel()
+        bottomLabel.text = "Your Life"
+        bottomLabel.font = .systemFont(ofSize: 18, weight: .regular)
+        
+        let stackView = UIStackView(arrangedSubviews: [topLabel, bottomLabel])
+        
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 4.0
+
+        return stackView
+    }
+    
     @objc func basketButton(_ sender: UIButton){
         print("Basket opened")
     }
