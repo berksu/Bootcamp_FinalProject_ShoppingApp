@@ -33,6 +33,7 @@
 		C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5DE29088C3300AD20E6 /* SnapKit */; };
 		C960C5E229088C6100AD20E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E129088C6100AD20E6 /* Kingfisher */; };
 		C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */; };
+		C98A5D74290E5CA100CB8175 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A5D73290E5CA100CB8175 /* ViewController.swift */; };
 		C98AB1B92909BF4900BD917A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C98AB1B82909BF4900BD917A /* FirebaseAuth */; };
 		C98AB1BB2909BF4900BD917A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C98AB1BA2909BF4900BD917A /* FirebaseFirestoreSwift */; };
 		C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1C52909C3BB00BD917A /* AuthenticationViewController.swift */; };
@@ -40,7 +41,7 @@
 		C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */; };
 		C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */; };
 		C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E599D290D81F50031E550 /* TabBarViewController.swift */; };
-		C98E59A2290D851A0031E550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ViewController.swift */; };
+		C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,12 +88,13 @@
 		C960C5B329086DC300AD20E6 /* ShopeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeUITests.swift; sourceTree = "<group>"; };
 		C960C5B529086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C960C5CB2908834400AD20E6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		C98A5D73290E5CA100CB8175 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C98AB1C52909C3BB00BD917A /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C98AB1C92909C41A00BD917A /* String+PasswordMailControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PasswordMailControlExtension.swift"; sourceTree = "<group>"; };
 		C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticaitionView.swift; sourceTree = "<group>"; };
 		C98E599D290D81F50031E550 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		C98E59A1290D851A0031E550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,11 +217,11 @@
 		C960C5C32908700B00AD20E6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C98A5D6E290E5C1B00CB8175 /* ProductsScreen */,
 				C98E5998290D81BF0031E550 /* TabBarView */,
 				C98AB1C02909C38200BD917A /* AuthenticationScreen */,
 				C960C5C82908752600AD20E6 /* SplashScreen */,
-				C959EFBD290C7B5900D717C3 /* Product.swift */,
-				C98E59A1290D851A0031E550 /* ViewController.swift */,
+				C98A5D73290E5CA100CB8175 /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -281,6 +283,47 @@
 				C960C5CB2908834400AD20E6 /* SplashScreenView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C98A5D6E290E5C1B00CB8175 /* ProductsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C98A5D72290E5C3900CB8175 /* ViewModel */,
+				C98A5D71290E5C3100CB8175 /* ViewController */,
+				C98A5D70290E5C2B00CB8175 /* Model */,
+				C98A5D6F290E5C2300CB8175 /* View */,
+			);
+			path = ProductsScreen;
+			sourceTree = "<group>";
+		};
+		C98A5D6F290E5C2300CB8175 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C98A5D70290E5C2B00CB8175 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C959EFBD290C7B5900D717C3 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C98A5D71290E5C3100CB8175 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C98A5D72290E5C3900CB8175 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C98AB1B32909BDDC00BD917A /* Network */ = {
@@ -522,9 +565,10 @@
 				C959EF99290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift in Sources */,
 				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
 				C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */,
-				C98E59A2290D851A0031E550 /* ViewController.swift in Sources */,
+				C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */,
 				C960C59729086DC200AD20E6 /* SplashScreenViewController.swift in Sources */,
 				C959EFBA290C7AFE00D717C3 /* FakeStoreApi.swift in Sources */,
+				C98A5D74290E5CA100CB8175 /* ViewController.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
