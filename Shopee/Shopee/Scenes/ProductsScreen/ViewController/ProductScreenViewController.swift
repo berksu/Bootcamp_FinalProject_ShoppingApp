@@ -10,7 +10,8 @@ import UIKit
 final class ProductScreenViewController: UIViewController{
     
     let productView = ProductScreenView()
-    
+    let productViewModel = ProductScreenViewModel()
+
     private var navigationBarSearchControllerIsHidden: Bool = true {
         willSet{
             navigationItem.searchController?.searchBar.isHidden = newValue
@@ -21,20 +22,29 @@ final class ProductScreenViewController: UIViewController{
         super.viewDidLoad()
         view = productView
         
-        // Add search controller on navigation item
-        let searchController = UISearchController()
-        searchController.searchBar.placeholder = "Search For Fun ..."
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
-        navigationBarSearchControllerIsHidden = true
+        LayoutConstraints.itemsInRow = (traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular) ? 3:2
+        
+        setCollectionViewDelegate()
+        
+        productViewModel.changeHandler = {[weak self] change in
+            switch change{
+            case .didFetchProducts:
+                print("Success")
+            case .didErrorOccurred(let error):
+                print(error)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        productViewModel.fetchData()
+        
         navigationItem.titleView = createNavigationTitleLabel()
         createNavigationBarButtons()
         navigationItem.largeTitleDisplayMode = .never
     }
     
+
     func createNavigationBarButtons(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "basketIcon"), style: .plain, target: self, action: #selector(basketButton))
         navigationItem.rightBarButtonItem?.tintColor = .systemGray
@@ -72,14 +82,68 @@ final class ProductScreenViewController: UIViewController{
     }
 }
 
-// MARK: - Search delegate
-extension ProductScreenViewController: UISearchResultsUpdating{
-    // MARK: - UISearchResultsUpdating
-    func updateSearchResults(for searchController: UISearchController) {
-        if let text = searchController.searchBar.text, text.count > 1 {
-            //searchViewModel.fetchSearchedPhotos(text: text)
-        }else{
-            //searchViewModel.fetchRecentPhotos()
+extension ProductScreenViewController{
+    //MARK: -set delegates
+    func setCollectionViewDelegate() {
+        productView.productCollectionView.delegate = self
+        productView.productCollectionView.dataSource = self
+    }
+}
+
+//MARK: -UICollectionViewController Delegate
+extension ProductScreenViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("index: \(indexPath.row)")
+    }
+}
+
+//MARK: -UICollectionViewController DataSource
+extension ProductScreenViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        productViewModel.productCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductViewCell else{
+            return UICollectionViewCell()
         }
+
+        let product = productViewModel.getProductAtIndex(indexPath.row)
+        cell.productName = product.title ?? ""
+        cell.productPrice = product.price ?? 0.0
+
+        let url = productViewModel.getImageURLAtIndex(indexPath.row)
+        KingfisherOperations.shared.downloadImage(url: url, imageView: cell.productImage){result in
+            switch result{
+            case .imageDownloadedSuccessfully:
+                collectionView.reloadItems(at: [indexPath])
+            case .didErrorOccurred(let error):
+                print(error)
+            }
+        }
+        
+        return cell
+    }
+}
+
+extension ProductScreenViewController: UICollectionViewDelegateFlowLayout {
+    
+    struct LayoutConstraints{
+        static var itemsInRow: CGFloat = 3
+        static var widthHeightRatio = 1.2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = itemWidth(for: view.frame.width, spacing: 0)
+
+        return CGSize(width: width, height: width * LayoutConstraints.widthHeightRatio)
+    }
+
+    func itemWidth(for width: CGFloat, spacing: CGFloat) -> CGFloat {
+        let totalSpacing: CGFloat = 2 * spacing + (LayoutConstraints.itemsInRow - 1) * spacing
+        let finalWidth = (width - totalSpacing) / LayoutConstraints.itemsInRow
+
+        return finalWidth - (5.0 * (LayoutConstraints.itemsInRow - 1))
     }
 }
