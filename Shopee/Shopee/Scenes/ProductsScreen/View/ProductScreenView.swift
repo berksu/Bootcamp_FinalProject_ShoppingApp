@@ -10,7 +10,6 @@ import UIKit
 final class ProductScreenView: UIView{
     
     lazy var productCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    private let scrollableCategoryStackView = ProductCategoryFilterView()
 
     
     lazy var stackCategoryView: UIStackView = {

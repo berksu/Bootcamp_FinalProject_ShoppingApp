@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = TabBarViewController()
-        //let viewController = AuthenticationViewController()
+        //let viewController = TabBarViewController()
+        let viewController = SplashScreenViewController()
         // navigation view also added
         let  navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isHidden = true
