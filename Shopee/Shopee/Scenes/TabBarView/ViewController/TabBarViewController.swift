@@ -44,21 +44,13 @@ final class TabBarViewController: UITabBarController{
         // add navigation controller to each tab
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.tabBarItem.title = title
-<<<<<<< Updated upstream
-        navigationController.tabBarItem.image = image
-<<<<<<< HEAD
-        //navigationController.navigationBar.prefersLargeTitles = true
-        //rootViewController.navigationItem.title = title
-=======
-        navigationController.navigationBar.prefersLargeTitles = true
-        rootViewController.navigationItem.title = title
-=======
         navigationController.tabBarItem.image = unselectedImage
         navigationController.tabBarItem.selectedImage = selectedImage
+        navigationController.navigationBar.prefersLargeTitles = true
+        rootViewController.navigationItem.title = title
         //navigationController.navigationBar.prefersLargeTitles = true
         //rootViewController.navigationItem.title = title
->>>>>>> Stashed changes
->>>>>>> Feature/TabBarView
+        
         return navigationController
     }
 }
