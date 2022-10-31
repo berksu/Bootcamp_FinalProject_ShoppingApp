@@ -55,6 +55,7 @@
 		C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E599D290D81F50031E550 /* TabBarViewController.swift */; };
 		C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */; };
 		C9B54ADC29104090004CDA3D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */; };
+		C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		C98E599D290D81F50031E550 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScreenViewController.swift; sourceTree = "<group>"; };
 		C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +509,7 @@
 		C9B54AD82910406D004CDA3D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
+				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
 				C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,

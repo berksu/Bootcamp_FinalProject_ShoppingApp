@@ -8,9 +8,13 @@
 import UIKit
 
 final class ProfilePageViewController: UIViewController{
+    
+    let profilePageView = ProfilePageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         navigationItem.largeTitleDisplayMode = .never
+
+        view = profilePageView
     }
 }
