@@ -30,7 +30,7 @@ final class TabBarViewController: UITabBarController{
                                        title: NSLocalizedString("Search", comment: ""),
                                        unselectedImage: UIImage(named:"searchIcon")!,
                                        selectedImage: UIImage(named:"searchIcon")!),
-            createNavigationController(for: ViewController(),
+            createNavigationController(for: ProfilePageViewController(),
                                        title: NSLocalizedString("Profile", comment: ""),
                                        unselectedImage: UIImage(named:"profileIcon")!,
                                        selectedImage: UIImage(named:"profileIconFilled")!)
