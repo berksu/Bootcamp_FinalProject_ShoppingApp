@@ -12,11 +12,6 @@ final class ProductScreenViewController: UIViewController{
     let productView = ProductScreenView()
     let productViewModel = ProductScreenViewModel()
 
-    private var navigationBarSearchControllerIsHidden: Bool = true {
-        willSet{
-            navigationItem.searchController?.searchBar.isHidden = newValue
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +22,7 @@ final class ProductScreenViewController: UIViewController{
         LayoutConstraints.itemsInRow = (traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular) ? 3:2
         
         setCollectionViewDelegate()
+        navigationItem.titleView = createNavigationTitleLabel()
         
         productViewModel.changeHandler = {[weak self] change in
             switch change{
@@ -40,8 +36,6 @@ final class ProductScreenViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         productViewModel.fetchData()
-        
-        navigationItem.titleView = createNavigationTitleLabel()
         createNavigationBarButtons()
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -77,10 +71,6 @@ final class ProductScreenViewController: UIViewController{
     
     @objc func basketButton(_ sender: UIButton){
         print("Basket opened")
-    }
-    
-    @objc func searchButton(_ sender: UIButton){
-        navigationBarSearchControllerIsHidden.toggle()
     }
 }
 
