@@ -74,8 +74,12 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     
     func navigateToTabBar(){
         DispatchQueue.main.async {
+            self.authenticationViewModel.fetchCurrentUser()
             let tabBarViewController = TabBarViewController()
-            self.navigationController?.pushViewController(tabBarViewController, animated: false)
+            tabBarViewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(tabBarViewController, animated: true)
+            //self.navigationController?.pushViewController(tabBarViewController, animated: false)
         }
     }
+    
 }

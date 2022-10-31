@@ -77,7 +77,7 @@ final class ProfilePageView: UIView{
         return view
     }()
     
-    private let signOutView: UIView = {
+    var signOutView: UIView = {
         let view = ProfileViewCustomButtonView(title: "Sign Out", description: "Please don't go")
         view.snp.makeConstraints { make in
             make.width.equalTo(ProfilePageView.LayoutConstraints.widthOfCustomButon)

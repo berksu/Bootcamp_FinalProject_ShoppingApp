@@ -89,4 +89,15 @@ final class AuthenticationViewModel{
         }
     }
     
+    func fetchCurrentUser(){
+        FirebaseFirestoreManagement.shared.fetchCurrentUserInfo { message in
+            switch message{
+            case .didUserFetchedSuccessfully(let user):
+                FirebaseAuthentication.shared.userInfo = user
+            default:
+                break
+            }
+        }
+    }
+    
 }
