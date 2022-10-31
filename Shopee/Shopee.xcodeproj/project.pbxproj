@@ -56,6 +56,7 @@
 		C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */; };
 		C9B54ADC29104090004CDA3D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */; };
 		C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */; };
+		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScreenViewController.swift; sourceTree = "<group>"; };
 		C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
+		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +469,7 @@
 				C959EF98290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift */,
 				C98A5D8A290E834400CB8175 /* CGFloat+Extensions.swift */,
 				C98A5D95290E956B00CB8175 /* UIImage+Extensions.swift */,
+				C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				C959EFBA290C7AFE00D717C3 /* FakeStoreApi.swift in Sources */,
 				C98A5D74290E5CA100CB8175 /* ViewController.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
+				C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
