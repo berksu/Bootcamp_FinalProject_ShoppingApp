@@ -21,6 +21,14 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseFirestoreManagement.shared.fetchCurrentUserInfo { message in
+            switch message{
+            case .didUserFetchedSuccessfully(let user):
+                FirebaseAuthentication.shared.userInfo = user
+            default:
+                break
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

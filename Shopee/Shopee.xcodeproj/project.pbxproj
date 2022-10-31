@@ -57,6 +57,8 @@
 		C9B54ADC29104090004CDA3D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */; };
 		C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */; };
 		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
+		C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */; };
+		C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
+		C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageCustomButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */,
+				C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 		C9B54ADA2910407B004CDA3D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -708,8 +714,10 @@
 				C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */,
 				C959EF97290B4DFF00D717C3 /* UIView+ButtonAnimation.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
+				C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */,
 				C98A5D8F290E8A0300CB8175 /* ProductScreenViewModel.swift in Sources */,
 				C98A5D8D290E83E800CB8175 /* ProductViewCell.swift in Sources */,
+				C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */,
 				C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */,
 				C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */,
 				C959EFB4290C722700D717C3 /* FirebaseFirestoreManagement.swift in Sources */,

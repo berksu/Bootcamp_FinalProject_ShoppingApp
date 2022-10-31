@@ -32,15 +32,13 @@ struct FirebaseAuthentication {
         auth.currentUser
     }
     
-    var userMail: String {
-        if let user = user {
-            let mail = user.email!
-            let mailParts = mail.components(separatedBy: "@")
-            return mailParts[0]
-        }else{
-            return ""
-        }
+    // get current user
+    var userID: String? {
+        auth.currentUser?.uid
     }
+    
+    var userInfo: UserProfile?
+    
     
     // Firebase Sign In
     func signIn(email: String, password: String, complition: @escaping (AuthenticationMessages) -> Void){
@@ -77,10 +75,12 @@ struct FirebaseAuthentication {
             // Save user with one's username and profilePicture
             FirebaseFirestoreManagement.shared.saveUser(user: user) { result in
                 switch result{
-                case .didUserSavedInSuccessful:
+                case .didUserSavedInSuccessfully:
                     complition(.didSignUpSuccessful)
                 case .didErrorOccurred(let error):
                     complition(.didErrorOccurred(error))
+                default:
+                    break
                 }
             }
         }

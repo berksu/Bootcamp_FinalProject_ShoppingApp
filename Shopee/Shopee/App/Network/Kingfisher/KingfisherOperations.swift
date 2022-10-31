@@ -40,6 +40,31 @@ struct KingfisherOperations{
             }
         }
     }
+    
+    func downloadProfileImage(url: String, imageView: UIImageView){
+        let url = URL(string: url)
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 256, height: 256))
+                     |> RoundCornerImageProcessor(cornerRadius: 128)
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "profileImagePlaceholder"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 

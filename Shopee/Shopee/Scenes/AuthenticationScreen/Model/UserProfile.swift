@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserProfile: Encodable{
+struct UserProfile: Codable{
     let id: String
     var username: String?
     var email: String?

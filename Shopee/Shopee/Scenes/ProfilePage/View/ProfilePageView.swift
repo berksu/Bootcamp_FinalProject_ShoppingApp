@@ -9,6 +9,18 @@ import UIKit
 
 final class ProfilePageView: UIView{
     
+    var username: String?{
+        didSet{
+            userNameLabel.text = username
+        }
+    }
+    
+    var email: String?{
+        didSet{
+            userEmailLabel.text = email
+        }
+    }
+    
     private let userNameLabel = {
        let label = UILabel()
         label.text = "Username"
@@ -31,6 +43,49 @@ final class ProfilePageView: UIView{
         return stack
     }()
     
+    let profileImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "profileImagePlaceholder")
+        imageView.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.width.equalTo(80)
+        }
+        return imageView
+    }()
+    
+    private let profileInformationStack:UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 32
+        stack.axis = .horizontal
+        stack.alignment = .center
+        return stack
+    }()
+    
+    private let allProfilePageStack:UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 20
+        stack.axis = .vertical
+        return stack
+    }()
+    
+    private let settingsView: UIView = {
+        let view = ProfileViewCustomButtonView(title: "Settings", description: "Password, Contact")
+        view.snp.makeConstraints { make in
+            make.width.equalTo(ProfilePageView.LayoutConstraints.widthOfCustomButon)
+            make.height.equalTo(ProfilePageView.LayoutConstraints.heightOfCustomButon)
+        }
+        return view
+    }()
+    
+    private let signOutView: UIView = {
+        let view = ProfileViewCustomButtonView(title: "Sign Out", description: "Please don't go")
+        view.snp.makeConstraints { make in
+            make.width.equalTo(ProfilePageView.LayoutConstraints.widthOfCustomButon)
+            make.height.equalTo(ProfilePageView.LayoutConstraints.heightOfCustomButon)
+        }
+        return view
+    }()
+    
     init(){
         super.init(frame: .zero)
         backgroundColor = .white
@@ -38,12 +93,21 @@ final class ProfilePageView: UIView{
         userNameAndEmailStack.addArrangedSubview(userNameLabel)
         userNameAndEmailStack.addArrangedSubview(userEmailLabel)
         
-        addSubview(userNameAndEmailStack)
-        userNameAndEmailStack.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
-            make.height.equalTo(60)
+        profileInformationStack.addArrangedSubview(profileImageView)
+        profileInformationStack.addArrangedSubview(userNameAndEmailStack)
+
+        allProfilePageStack.addArrangedSubview(profileInformationStack)
+        allProfilePageStack.addArrangedSubview(settingsView)
+        allProfilePageStack.addArrangedSubview(signOutView)
+
+        allProfilePageStack.setCustomSpacing(40, after: profileInformationStack)
+        
+        addSubview(allProfilePageStack)
+        allProfilePageStack.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-20)
+            
         }
     }
     
@@ -52,4 +116,9 @@ final class ProfilePageView: UIView{
     }
 }
 
-
+extension ProfilePageView{
+    struct LayoutConstraints{
+        static let widthOfCustomButon = CGFloat.screenWidth * 0.8
+        static let heightOfCustomButon = CGFloat.screenWidth * 0.2
+    }
+}
