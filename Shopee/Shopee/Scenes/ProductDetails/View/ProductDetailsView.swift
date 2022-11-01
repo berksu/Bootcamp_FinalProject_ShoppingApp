@@ -122,8 +122,8 @@ final class ProductDetailView: UIView{
         let imageView = UIImageView()
         imageView.image = UIImage(named: "star")
         imageView.snp.makeConstraints { make in
-            make.height.equalTo(30)
-            make.width.equalTo(30)
+            make.height.equalTo(20)
+            make.width.equalTo(20)
         }
         return imageView
     }()
@@ -178,7 +178,7 @@ final class ProductDetailView: UIView{
     private let verticalInformationStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 8
+        stack.spacing = 12
         return stack
     }()
     
@@ -289,7 +289,7 @@ extension ProductDetailView{
     func createStepperButton(image: String) -> UIButton{
         let button = UIButton()
         button.setImage(UIImage(named: image), for: .normal)
-        button.backgroundColor = .systemGray.withAlphaComponent(0.5)
+        button.backgroundColor = UIColor(red: 144, green: 144, blue: 144).withAlphaComponent(0.5)
         button.layer.cornerRadius = 10
         button.snp.makeConstraints { make in
             make.width.equalTo(30)
