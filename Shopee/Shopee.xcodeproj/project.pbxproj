@@ -54,6 +54,7 @@
 		C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */; };
 		C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E599D290D81F50031E550 /* TabBarViewController.swift */; };
 		C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */; };
+		C9A0E0BE29116E9C00C35E33 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E0BD29116E9C00C35E33 /* ViewControllerPreview.swift */; };
 		C9B54ADC29104090004CDA3D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */; };
 		C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */; };
 		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
@@ -124,6 +125,7 @@
 		C98AB1CE2909C67900BD917A /* AuthenticaitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticaitionView.swift; sourceTree = "<group>"; };
 		C98E599D290D81F50031E550 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScreenViewController.swift; sourceTree = "<group>"; };
+		C9A0E0BD29116E9C00C35E33 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		C960C5C22908700100AD20E6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C9A0E0BC29116E8900C35E33 /* AddPreview */,
 				C98A5D75290E631C00CB8175 /* Fonts */,
 				C959EF9E290C135000D717C3 /* Helpers */,
 				C98AB1C82909C40A00BD917A /* Extensions */,
@@ -503,6 +506,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		C9A0E0BC29116E8900C35E33 /* AddPreview */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0E0BD29116E9C00C35E33 /* ViewControllerPreview.swift */,
+			);
+			path = AddPreview;
+			sourceTree = "<group>";
+		};
 		C9B54AD729104066004CDA3D /* ProfilePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,6 +722,7 @@
 				C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */,
 				C960C59529086DC200AD20E6 /* SceneDelegate.swift in Sources */,
 				C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */,
+				C9A0E0BE29116E9C00C35E33 /* ViewControllerPreview.swift in Sources */,
 				C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */,
 				C959EF97290B4DFF00D717C3 /* UIView+ButtonAnimation.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
@@ -899,7 +911,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -43,3 +43,18 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
 
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+@available(iOS 13, *)
+struct ViewControllerPreview_Previews: PreviewProvider {
+
+    static var previews: some View {
+        ViewControllerPreview {
+            ProfilePageViewController()
+        }
+    }
+}
+
+#endif
