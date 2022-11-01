@@ -41,6 +41,7 @@ final class ProductScreenView: UIView{
     init(){
         super.init(frame: .zero)
         backgroundColor = .white
+        
         productCollectionView.register(ProductViewCell.self , forCellWithReuseIdentifier: "cell")
     
         addSubview(scrollView)

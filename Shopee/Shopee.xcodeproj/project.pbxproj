@@ -55,6 +55,10 @@
 		C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E599D290D81F50031E550 /* TabBarViewController.swift */; };
 		C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */; };
 		C9A0E0BE29116E9C00C35E33 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E0BD29116E9C00C35E33 /* ViewControllerPreview.swift */; };
+		C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E0C42911737D00C35E33 /* ProductDetailsViewController.swift */; };
+		C9A0E0C72911744A00C35E33 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E0C62911744A00C35E33 /* ProductDetailsView.swift */; };
+		C9A0E0C92911AD8200C35E33 /* ScrollableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E0C82911AD8200C35E33 /* ScrollableLabel.swift */; };
+		C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E0CA2911C42400C35E33 /* ProductDetailsViewModel.swift */; };
 		C9B54ADC29104090004CDA3D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */; };
 		C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */; };
 		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
@@ -126,6 +130,10 @@
 		C98E599D290D81F50031E550 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C98E59A1290D851A0031E550 /* ProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScreenViewController.swift; sourceTree = "<group>"; };
 		C9A0E0BD29116E9C00C35E33 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
+		C9A0E0C42911737D00C35E33 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		C9A0E0C62911744A00C35E33 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		C9A0E0C82911AD8200C35E33 /* ScrollableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableLabel.swift; sourceTree = "<group>"; };
+		C9A0E0CA2911C42400C35E33 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		C9B54ADB29104090004CDA3D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		C9B54ADD291040E6004CDA3D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -257,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B54AD729104066004CDA3D /* ProfilePage */,
+				C9A0E0C02911735400C35E33 /* ProductDetails */,
 				C98A5D6E290E5C1B00CB8175 /* ProductsScreen */,
 				C98E5998290D81BF0031E550 /* TabBarView */,
 				C98AB1C02909C38200BD917A /* AuthenticationScreen */,
@@ -514,6 +523,41 @@
 			path = AddPreview;
 			sourceTree = "<group>";
 		};
+		C9A0E0C02911735400C35E33 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0E0C32911736800C35E33 /* ViewModel */,
+				C9A0E0C22911736200C35E33 /* ViewController */,
+				C9A0E0C12911735D00C35E33 /* View */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		C9A0E0C12911735D00C35E33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0E0C62911744A00C35E33 /* ProductDetailsView.swift */,
+				C9A0E0C82911AD8200C35E33 /* ScrollableLabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9A0E0C22911736200C35E33 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0E0C42911737D00C35E33 /* ProductDetailsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C9A0E0C32911736800C35E33 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0E0CA2911C42400C35E33 /* ProductDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C9B54AD729104066004CDA3D /* ProfilePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +747,7 @@
 			files = (
 				C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */,
 				C959EF99290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift in Sources */,
+				C9A0E0C72911744A00C35E33 /* ProductDetailsView.swift in Sources */,
 				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
 				C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */,
 				C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */,
@@ -713,9 +758,12 @@
 				C98A5D74290E5CA100CB8175 /* ViewController.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */,
+				C9A0E0C92911AD8200C35E33 /* ScrollableLabel.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
+				C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */,
+				C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
 				C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,
