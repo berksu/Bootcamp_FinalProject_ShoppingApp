@@ -41,6 +41,17 @@ final class ProductDetailView: UIView{
             productRatingCountLabel.text = "(\(commentCount) comments)"
         }
     }
+    
+    var productCount: Int?{
+        get{
+            guard let text = stepperLabel.text else{return nil}
+            return Int(text)
+        }
+        set{
+            guard let text = newValue else{return}
+            stepperLabel.text = "\(text)"
+        }
+    }
 
     var backButton: UIButton = {
        var button = UIButton()
@@ -184,8 +195,8 @@ final class ProductDetailView: UIView{
     
     private let productDescriptionLabel = ScrollableLabel()
     
-    var plusButton: UIButton?
-    var minusButton: UIButton?
+    var plusButton: UIButton = UIButton()
+    var minusButton: UIButton = UIButton()
 
     init(){
         super.init(frame: .zero)
@@ -241,11 +252,9 @@ final class ProductDetailView: UIView{
         horizontalRatingStack.addArrangedSubview(productRatingCountLabel)
         horizontalRatingStack.setCustomSpacing(4, after: starIcon)
         
-        guard let plusButton = plusButton else{return}
-        guard let minusButton = minusButton else{return}
-        horizontalButtonStack.addArrangedSubview(plusButton)
-        horizontalButtonStack.addArrangedSubview(stepperLabel)
         horizontalButtonStack.addArrangedSubview(minusButton)
+        horizontalButtonStack.addArrangedSubview(stepperLabel)
+        horizontalButtonStack.addArrangedSubview(plusButton)
         
         horizontalPriceAndButtonStack.addArrangedSubview(productPriceLabel)
         horizontalPriceAndButtonStack.addArrangedSubview(horizontalButtonStack)

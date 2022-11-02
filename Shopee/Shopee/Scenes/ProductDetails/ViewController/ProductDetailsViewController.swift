@@ -31,12 +31,28 @@ final class ProductDetailsViewController: UIViewController{
         navigationController?.navigationBar.tintColor = .systemGray
         
         productDetailView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        productDetailView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+        productDetailView.minusButton.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
         
     }
     
     @objc func backButtonTapped(sender: UIButton){
         //navigationController?.popViewController(animated: true)
         dismiss(animated: true)
+    }
+    
+    @objc func plusButtonTapped(sender: UIButton){
+        // TODO: - If api send maximum number of product and maximum number of product that user can buy, add condition
+        guard let productCount = productDetailView.productCount else{return}
+        productDetailView.productCount = productCount + 1
+    }
+    
+    @objc func minusButtonTapped(sender: UIButton){
+        guard let productCount = productDetailView.productCount else{return}
+        if productCount > 0{
+            productDetailView.productCount = productCount - 1
+        }
+
     }
 }
 
