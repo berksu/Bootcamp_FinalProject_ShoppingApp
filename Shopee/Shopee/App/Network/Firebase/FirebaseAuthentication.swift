@@ -15,7 +15,7 @@ struct FirebaseAuthentication {
         case didErrorOccurred(_ error: Error)
         case didSignInSuccessful
         case didSignUpSuccessful
-        case didSignOutSccessful
+        case didSignOutSuccessful
         case didForgetMessageSentSuccessful
     }
     
@@ -90,7 +90,7 @@ struct FirebaseAuthentication {
     func signOut(complition: @escaping (AuthenticationMessages) -> Void){
         do {
             try Auth.auth().signOut()
-            complition(.didSignOutSccessful)
+            complition(.didSignOutSuccessful)
         } catch {
             print("error signOut: \(error.localizedDescription)")
             complition(.didErrorOccurred(error))

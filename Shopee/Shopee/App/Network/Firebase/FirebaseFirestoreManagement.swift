@@ -15,6 +15,9 @@ struct FirebaseFirestoreManagement {
         case didErrorOccurred(_ error: Error)
         case didUserSavedInSuccessfully
         case didUserFetchedSuccessfully(_ user: UserProfile)
+        case didProductSavedInSuccessfully
+        case didChosenProductFetchedInSuccessfully(_ count: Int)
+        case didChosenProductRemovedSuccessfully
     }
     
     static var shared = FirebaseFirestoreManagement()
@@ -59,6 +62,45 @@ struct FirebaseFirestoreManagement {
                 completion(.didUserFetchedSuccessfully(user))
             case .failure(let error):
                 completion(.didErrorOccurred(error))
+            }
+        }
+    }
+    
+    func addProductToDatabase(cartProduct: CartProduct, completion: @escaping (FirestoreMessages) -> Void){
+        guard let userId = FirebaseAuthentication.shared.userID else{return}
+        guard let product = cartProduct.product else{return}
+
+        do {
+            try db.collection(userId).document("\(product.id)").setData(from: cartProduct)
+            completion(.didProductSavedInSuccessfully)
+        } catch let error {
+            completion(.didErrorOccurred(error))
+        }
+    }
+    
+    func fetchChosenProduct(chosenProductID: Int, completion: @escaping (FirestoreMessages) -> Void){
+        guard let userId = FirebaseAuthentication.shared.userID else{return}
+        let docRef = db.collection(userId).document("\(chosenProductID)")
+
+        docRef.getDocument(as: CartProduct.self) { result in
+            switch result {
+            case .success(let cartProduct):
+                guard let productCount = cartProduct.count else {break}
+                completion(.didChosenProductFetchedInSuccessfully(productCount))
+            case .failure( _):
+                break
+            }
+        }
+    }
+    
+    func removeChosenProduct(chosenProductID: Int, completion: @escaping (FirestoreMessages) -> Void){
+        guard let userId = FirebaseAuthentication.shared.userID else{return}
+        
+        db.collection(userId).document("\(chosenProductID)").delete() { err in
+            if let err = err {
+                completion(.didErrorOccurred(err))
+            } else {
+                completion(.didChosenProductRemovedSuccessfully)
             }
         }
     }

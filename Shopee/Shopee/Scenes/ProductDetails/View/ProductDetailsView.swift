@@ -9,6 +9,12 @@ import UIKit
 
 final class ProductDetailView: UIView{
     
+    enum AddToCartButtonStyle{
+        case addToCart
+        case removeFromCart
+        case updateCart
+    }
+    
     var title: String?{
         didSet{
             productNameLabel.text = title
@@ -50,6 +56,22 @@ final class ProductDetailView: UIView{
         set{
             guard let text = newValue else{return}
             stepperLabel.text = "\(text)"
+        }
+    }
+    
+    var isAddToCartButton: AddToCartButtonStyle = .addToCart{
+        didSet{
+            switch isAddToCartButton{
+            case .addToCart:
+                addToCartButton.setTitle("Add to cart", for: .normal)
+                addToCartButton.backgroundColor = .black
+            case .removeFromCart:
+                addToCartButton.setTitle("Remove from cart", for: .normal)
+                addToCartButton.backgroundColor = .red
+            case .updateCart:
+                addToCartButton.setTitle("Update cart", for: .normal)
+                addToCartButton.backgroundColor = .black
+            }
         }
     }
 

@@ -7,13 +7,21 @@
 
 import UIKit
 
-final class ProductDetailsViewController: UIViewController{
-    let productDetailView = ProductDetailView()
-    let productDetailsViewModel = ProductDetailsViewModel()
+final class ProductDetailsViewController: UIViewController, AlertPresentable{
+    private let productDetailView = ProductDetailView()
+    private let productDetailsViewModel = ProductDetailsViewModel()
+
+    private var isProductAlreadyAddedToCart: Bool = false
+    private var productThatAlreadyAddedCount: Int?{
+        didSet{
+            isProductAlreadyAddedToCart = true
+        }
+    }
 
     var product: Product?{
         didSet{
             guard let product = product else{return}
+            productDetailsViewModel.fetchChosenProductCount(productID: product.id)
             productDetailView.title = product.title
             productDetailView.descriptionText = product.description
             productDetailView.price = product.price
@@ -22,7 +30,7 @@ final class ProductDetailsViewController: UIViewController{
             productDetailsViewModel.getImageFrom(url: product.image ?? "", imageView: productDetailView.productImageView, imageSize: CGFloat.screenWidth * 0.6)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
@@ -33,7 +41,25 @@ final class ProductDetailsViewController: UIViewController{
         productDetailView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         productDetailView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         productDetailView.minusButton.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
+        productDetailView.addToCartButton.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
         
+        productDetailsViewModel.changeHandler = {[weak self] change in
+            switch change{
+            case .didProductAddedToCartSuccessfully:
+                self?.showAlert(title: "Success", message: "Product added to cart successfully"){[weak self] _ in
+                    self?.dismiss(animated: true)
+                }
+            case .didChosenProductFetchedSuccessfully(let count):
+                self?.productDetailView.productCount = count
+                self?.productThatAlreadyAddedCount = self?.productDetailView.productCount
+            case .didChosenProductRemovedSuccessfully:
+                self?.showAlert(title: "Removed", message: "You removed the product form cart successfully."){[weak self] _ in
+                    self?.dismiss(animated: true)
+                }
+            case .didErrorOccurred(let error):
+                self?.showError(error)
+            }
+        }
     }
     
     @objc func backButtonTapped(sender: UIButton){
@@ -45,6 +71,16 @@ final class ProductDetailsViewController: UIViewController{
         // TODO: - If api send maximum number of product and maximum number of product that user can buy, add condition
         guard let productCount = productDetailView.productCount else{return}
         productDetailView.productCount = productCount + 1
+        
+        if let count = productThatAlreadyAddedCount{
+            if productDetailView.productCount != count{
+                productDetailView.isAddToCartButton = .updateCart
+            }else{
+                productDetailView.isAddToCartButton = .addToCart
+            }
+        }else{
+            productDetailView.isAddToCartButton = .addToCart
+        }
     }
     
     @objc func minusButtonTapped(sender: UIButton){
@@ -52,9 +88,35 @@ final class ProductDetailsViewController: UIViewController{
         if productCount > 0{
             productDetailView.productCount = productCount - 1
         }
-
+        
+        if let count = productThatAlreadyAddedCount{
+            if productDetailView.productCount == 0{
+                productDetailView.isAddToCartButton = .removeFromCart
+            }else if productDetailView.productCount != count{
+                productDetailView.isAddToCartButton = .updateCart
+            }
+        }else{
+            productDetailView.isAddToCartButton = .addToCart
+        }
+    }
+    
+    @objc func addToCart(sender: UIButton){
+        guard let product = product else{return}
+        guard let productCount = productDetailView.productCount else{return}
+        if !isProductAlreadyAddedToCart && productCount == 0{
+            self.showAlert(title: "Error", message: "0 product cannot be added to your cart.")
+        }else if isProductAlreadyAddedToCart && productCount == 0{
+            self.showAlert(title: "Message", message: "Do you want to remove item form your cart ?", cancelButtonTitle: "Cancel"){[weak self]_ in
+                self?.productDetailsViewModel.removeChosenProductFromCart(productID: product.id)
+            }
+        }else{
+            productDetailsViewModel.addProductToCart(product: product, count: productCount)
+        }
     }
 }
+
+
+
 
 #if DEBUG
 import SwiftUI

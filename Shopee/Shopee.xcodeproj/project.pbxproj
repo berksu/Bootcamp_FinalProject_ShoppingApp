@@ -33,6 +33,7 @@
 		C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5DE29088C3300AD20E6 /* SnapKit */; };
 		C960C5E229088C6100AD20E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E129088C6100AD20E6 /* Kingfisher */; };
 		C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */; };
+		C9769DD1291308E900C46219 /* CartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9769DD0291308E900C46219 /* CartProduct.swift */; };
 		C98A5D74290E5CA100CB8175 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A5D73290E5CA100CB8175 /* ViewController.swift */; };
 		C98A5D83290E652600CB8175 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98A5D80290E652600CB8175 /* Inter-Bold.ttf */; };
 		C98A5D84290E652600CB8175 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98A5D81290E652600CB8175 /* Inter-Regular.ttf */; };
@@ -110,6 +111,7 @@
 		C960C5B329086DC300AD20E6 /* ShopeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeUITests.swift; sourceTree = "<group>"; };
 		C960C5B529086DC300AD20E6 /* ShopeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C960C5CB2908834400AD20E6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		C9769DD0291308E900C46219 /* CartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProduct.swift; sourceTree = "<group>"; };
 		C98A5D73290E5CA100CB8175 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C98A5D80290E652600CB8175 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		C98A5D81290E652600CB8175 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
@@ -334,6 +336,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C9769DCF291308D500C46219 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9769DD0291308E900C46219 /* CartProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C98A5D6E290E5C1B00CB8175 /* ProductsScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +536,7 @@
 		C9A0E0C02911735400C35E33 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
+				C9769DCF291308D500C46219 /* Model */,
 				C9A0E0C32911736800C35E33 /* ViewModel */,
 				C9A0E0C22911736200C35E33 /* ViewController */,
 				C9A0E0C12911735D00C35E33 /* View */,
@@ -760,6 +771,7 @@
 				C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */,
 				C9A0E0C92911AD8200C35E33 /* ScrollableLabel.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
+				C9769DD1291308E900C46219 /* CartProduct.swift in Sources */,
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
 				C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */,

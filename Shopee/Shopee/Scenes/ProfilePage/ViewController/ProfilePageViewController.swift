@@ -31,7 +31,7 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
         self.showAlert(title:"Sign Out", message: "Are you sure ?",cancelButtonTitle: "Cancel") { _ in
             FirebaseAuthentication.shared.signOut {[weak self] message in
                 switch message{
-                case .didSignOutSccessful:
+                case .didSignOutSuccessful:
                     self?.dismiss(animated: true)
                 case .didErrorOccurred(let error):
                     self?.showError(error)
