@@ -13,6 +13,13 @@ final class BasketScreenView: UIView{
         return backButton
     }
     
+    var totalPrice: Double?{
+        didSet{
+            guard let totalPrice = totalPrice else{return}
+            totalPriceTitleLabel.text = "$ \(totalPrice)"
+        }
+    }
+    
     private var backButton: UIButton = {
        var button = UIButton()
         button.setImage(UIImage(named: "backButton"), for: .normal)
@@ -54,7 +61,32 @@ final class BasketScreenView: UIView{
         }
         return button
     }()
-
+    
+    private let totalPriceTitleLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Total:"
+        label.font = UIFont(name: "Inter-Bold", size: 20)
+        label.textColor = UIColor(red: 128, green: 128, blue: 128)
+        label.sizeToFit()
+        label.snp.makeConstraints { make in
+            make.height.equalTo(28)
+        }
+        return label
+    }()
+    
+    private let totalPriceAmountLabel: UILabel = {
+       let label = UILabel()
+        label.textAlignment = .right
+        label.text = "$ 10"
+        label.textColor = UIColor(red: 48, green: 48, blue: 48)
+        label.font = UIFont(name: "Inter-Bold", size: 20)
+        label.sizeToFit()
+        label.snp.makeConstraints { make in
+            make.height.equalTo(28)
+        }
+        return label
+    }()
+    
     override init(frame: CGRect){
         super.init(frame: .zero)
         backgroundColor = .white
@@ -77,10 +109,22 @@ final class BasketScreenView: UIView{
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-20)
         }
+
+        addSubview(totalPriceTitleLabel)
+        totalPriceTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(productsInCartTableView.snp.bottom).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
+        }
+        
+        addSubview(totalPriceAmountLabel)
+        totalPriceAmountLabel.snp.makeConstraints { make in
+            make.top.equalTo(totalPriceTitleLabel.snp.top)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-20)
+        }
         
         addSubview(checkOutButton)
         checkOutButton.snp.makeConstraints { make in
-            make.top.equalTo(productsInCartTableView.snp.bottom).offset(20)
+            make.top.equalTo(totalPriceTitleLabel.snp.bottom).offset(16)
             make.centerX.equalTo(self.snp.centerX)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
@@ -90,6 +134,4 @@ final class BasketScreenView: UIView{
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
 

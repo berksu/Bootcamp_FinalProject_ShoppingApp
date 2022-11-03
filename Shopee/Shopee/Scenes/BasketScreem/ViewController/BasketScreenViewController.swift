@@ -13,12 +13,25 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
 
     var productsThatInCart: [CartProduct] = []
     
+    var totalPriceOfBasket: Double{
+        var total = 0.0
+        productsThatInCart.forEach { element in
+            guard let productPrice = element.product?.price else{return}
+            guard let productCount = element.count else{return}
+
+            total += productPrice * Double(productCount)
+        }
+        basketScreenView.totalPrice = total
+        return total
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         view = basketScreenView
         
         initTableView()
         basketScreenView.backButtonController.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        basketScreenView.checkOutButton.addTarget(self, action: #selector(checkOutButtonTapped), for: .touchUpInside)
         
         basketScreenViewModel.changeHandler = {[weak self] change in
             switch change{
@@ -40,6 +53,10 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
     @objc func backButtonTapped(sender: UIButton){
         basketScreenViewModel.updateProductsInBasket(productsThatInCart)
         dismiss(animated: true)
+    }
+    
+    @objc func checkOutButtonTapped(sender: UIButton){
+        
     }
     
     // MARK: -TableView init
