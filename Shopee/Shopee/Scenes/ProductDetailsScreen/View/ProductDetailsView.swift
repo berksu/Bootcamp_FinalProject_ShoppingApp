@@ -103,10 +103,10 @@ final class ProductDetailView: UIView{
     private let productNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
-        label.tintColor = .black
+        label.tintColor = UIColor(red: 144, green: 144, blue: 144, alpha: 1)
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: "Poppins-Regular", size: 20)
+        label.font = UIFont(name: "Poppins-Regular", size: 14)
         label.sizeToFit()
         return label
     }()
@@ -115,7 +115,7 @@ final class ProductDetailView: UIView{
         let label = UILabel()
         label.text = "$ 50"
         label.tintColor = .black
-        label.font = UIFont(name: "Poppins-Bold", size: 26)
+        label.font = UIFont(name: "Poppins-Bold", size: 16)
         label.sizeToFit()
         return label
     }()

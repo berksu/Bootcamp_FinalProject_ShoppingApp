@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C9123BC92913C415007E6EB3 /* BasketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BC82913C415007E6EB3 /* BasketScreenViewController.swift */; };
 		C9123BCB2913C5F5007E6EB3 /* BasketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */; };
+		C9123BCE2913D71A007E6EB3 /* BasketTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		C9123BC82913C415007E6EB3 /* BasketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewController.swift; sourceTree = "<group>"; };
 		C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
+		C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCustomCell.swift; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		C9123BC52913C3F2007E6EB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9123BCC2913D709007E6EB3 /* TableViewCell */,
 				C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */,
 			);
 			path = View;
@@ -209,6 +212,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C9123BCC2913D709007E6EB3 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		C959EF8D290B1A8B00D717C3 /* Subviews */ = {
@@ -825,6 +836,7 @@
 				C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */,
 				C959EF97290B4DFF00D717C3 /* UIView+ButtonAnimation.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
+				C9123BCE2913D71A007E6EB3 /* BasketTableViewCustomCell.swift in Sources */,
 				C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */,
 				C98A5D8F290E8A0300CB8175 /* ProductScreenViewModel.swift in Sources */,
 				C98A5D8D290E83E800CB8175 /* ProductViewCell.swift in Sources */,
