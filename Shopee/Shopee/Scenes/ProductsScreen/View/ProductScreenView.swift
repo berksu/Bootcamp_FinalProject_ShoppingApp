@@ -38,8 +38,8 @@ final class ProductScreenView: UIView{
         }
     }
     
-    init(){
-        super.init(frame: .zero)
+    override init(frame: CGRect){
+        super.init(frame: frame)
         backgroundColor = .white
         
         productCollectionView.register(ProductViewCell.self , forCellWithReuseIdentifier: "cell")

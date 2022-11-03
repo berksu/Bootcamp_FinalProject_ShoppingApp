@@ -9,7 +9,7 @@ import UIKit
 
 class SplashScreenViewController: UIViewController {
 
-    let splashView = SplashScreenView()
+    private let splashView = SplashScreenView()
 
     override func loadView() {
         super.loadView()

@@ -68,49 +68,56 @@ final class ProductDetailsViewController: UIViewController, AlertPresentable{
     }
     
     @objc func plusButtonTapped(sender: UIButton){
-        // TODO: - If api send maximum number of product and maximum number of product that user can buy, add condition
-        guard let productCount = productDetailView.productCount else{return}
-        productDetailView.productCount = productCount + 1
-        
-        if let count = productThatAlreadyAddedCount{
-            if productDetailView.productCount != count{
-                productDetailView.isAddToCartButton = .updateCart
+        sender.showAnimation {[weak self] in
+            // TODO: - If api send maximum number of product and maximum number of product that user can buy, add condition
+            guard let productCount = self?.productDetailView.productCount else{return}
+            self?.productDetailView.productCount = productCount + 1
+            
+            if let count = self?.productThatAlreadyAddedCount{
+                if self?.productDetailView.productCount != count{
+                    self?.productDetailView.isAddToCartButton = .updateCart
+                }else{
+                    self?.productDetailView.isAddToCartButton = .addToCart
+                }
             }else{
-                productDetailView.isAddToCartButton = .addToCart
+                self?.productDetailView.isAddToCartButton = .addToCart
             }
-        }else{
-            productDetailView.isAddToCartButton = .addToCart
         }
     }
     
     @objc func minusButtonTapped(sender: UIButton){
-        guard let productCount = productDetailView.productCount else{return}
-        if productCount > 0{
-            productDetailView.productCount = productCount - 1
-        }
-        
-        if let count = productThatAlreadyAddedCount{
-            if productDetailView.productCount == 0{
-                productDetailView.isAddToCartButton = .removeFromCart
-            }else if productDetailView.productCount != count{
-                productDetailView.isAddToCartButton = .updateCart
+        sender.showAnimation {[weak self] in
+            guard let productCount = self?.productDetailView.productCount else{return}
+            if productCount > 0{
+                self?.productDetailView.productCount = productCount - 1
             }
-        }else{
-            productDetailView.isAddToCartButton = .addToCart
+            
+            if let count = self?.productThatAlreadyAddedCount{
+                if self?.productDetailView.productCount == 0{
+                    self?.productDetailView.isAddToCartButton = .removeFromCart
+                }else if self?.productDetailView.productCount != count{
+                    self?.productDetailView.isAddToCartButton = .updateCart
+                }
+            }else{
+                self?.productDetailView.isAddToCartButton = .addToCart
+            }
         }
     }
     
     @objc func addToCart(sender: UIButton){
-        guard let product = product else{return}
-        guard let productCount = productDetailView.productCount else{return}
-        if !isProductAlreadyAddedToCart && productCount == 0{
-            self.showAlert(title: "Error", message: "0 product cannot be added to your cart.")
-        }else if isProductAlreadyAddedToCart && productCount == 0{
-            self.showAlert(title: "Message", message: "Do you want to remove item form your cart ?", cancelButtonTitle: "Cancel"){[weak self]_ in
-                self?.productDetailsViewModel.removeChosenProductFromCart(productID: product.id)
+        sender.showAnimation {[weak self] in
+            guard let product = self?.product else{return}
+            guard let productCount = self?.productDetailView.productCount else{return}
+            guard let isAlreadyAdded = self?.isProductAlreadyAddedToCart else{return}
+            if isAlreadyAdded && productCount == 0{
+                self?.showAlert(title: "Error", message: "0 product cannot be added to your cart.")
+            }else if isAlreadyAdded && productCount == 0{
+                self?.showAlert(title: "Message", message: "Do you want to remove item form your cart ?", cancelButtonTitle: "Cancel"){[weak self]_ in
+                    self?.productDetailsViewModel.removeChosenProductFromCart(productID: product.id)
+                }
+            }else{
+                self?.productDetailsViewModel.addProductToCart(product: product, count: productCount)
             }
-        }else{
-            productDetailsViewModel.addProductToCart(product: product, count: productCount)
         }
     }
 }

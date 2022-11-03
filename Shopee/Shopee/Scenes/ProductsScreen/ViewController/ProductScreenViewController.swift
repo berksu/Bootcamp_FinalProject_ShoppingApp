@@ -70,9 +70,10 @@ final class ProductScreenViewController: UIViewController{
     }()
     
     @objc func basketButton(_ sender: UIButton){
-        print("Basket opened")
-        let productDetailsViewController = ProductDetailsViewController()
-        self.navigationController?.pushViewController(productDetailsViewController, animated: true)
+        let basketScreenViewController = BasketScreenViewController()
+        basketScreenViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(basketScreenViewController, animated: true)
+        //self.navigationController?.pushViewController(basketScreenViewController, animated: true)
         //productDetailsViewController.modalPresentationStyle = .fullScreen
         //self.navigationController?.present(productDetailsViewController, animated: true)
     }
