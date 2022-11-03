@@ -11,18 +11,17 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
     private let basketScreenView = BasketScreenView()
     private let basketScreenViewModel = BasketScreenViewModel()
 
-    var productsThatInCart: [CartProduct] = []
-    
-    var totalPriceOfBasket: Double{
-        var total = 0.0
-        productsThatInCart.forEach { element in
-            guard let productPrice = element.product?.price else{return}
-            guard let productCount = element.count else{return}
+    var productsThatInCart: [CartProduct] = []{
+        didSet{
+            var total = 0.0
+            productsThatInCart.forEach { element in
+                guard let productPrice = element.product?.price else{return}
+                guard let productCount = element.count else{return}
 
-            total += productPrice * Double(productCount)
+                total += productPrice * Double(productCount)
+            }
+            basketScreenView.totalPrice = total
         }
-        basketScreenView.totalPrice = total
-        return total
     }
     
     override func viewDidLoad(){

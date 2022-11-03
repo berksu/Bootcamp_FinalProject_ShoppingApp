@@ -16,7 +16,7 @@ final class BasketScreenView: UIView{
     var totalPrice: Double?{
         didSet{
             guard let totalPrice = totalPrice else{return}
-            totalPriceTitleLabel.text = "$ \(totalPrice)"
+            totalPriceAmountLabel.text = "$ \(totalPrice)"
         }
     }
     
