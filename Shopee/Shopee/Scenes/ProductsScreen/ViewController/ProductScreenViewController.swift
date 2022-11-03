@@ -71,7 +71,7 @@ final class ProductScreenViewController: UIViewController{
     
     @objc func basketButton(_ sender: UIButton){
         let basketScreenViewController = BasketScreenViewController()
-        basketScreenViewController.modalPresentationStyle = .fullScreen
+        basketScreenViewController.modalPresentationStyle = .formSheet
         self.navigationController?.present(basketScreenViewController, animated: true)
         //self.navigationController?.pushViewController(basketScreenViewController, animated: true)
         //productDetailsViewController.modalPresentationStyle = .fullScreen

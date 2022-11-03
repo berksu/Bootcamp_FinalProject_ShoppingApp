@@ -91,21 +91,22 @@ final class BasketScreenView: UIView{
         super.init(frame: .zero)
         backgroundColor = .white
         
-        addSubview(backButton)
-        backButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
-        }
-        
+//        addSubview(backButton)
+//        backButton.snp.makeConstraints { make in
+//            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
+//            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
+//        }
+//
         addSubview(pageTitleLabel)
         pageTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(backButton.snp.top)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
+            //make.top.equalTo(backButton.snp.top)
             make.centerX.equalTo(self.snp.centerX)
         }
         
         addSubview(productsInCartTableView)
         productsInCartTableView.snp.makeConstraints { make in
-            make.top.equalTo(backButton.snp.bottom).offset(16)
+            make.top.equalTo(pageTitleLabel.snp.bottom).offset(16)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-20)
         }
@@ -113,13 +114,13 @@ final class BasketScreenView: UIView{
         addSubview(totalPriceTitleLabel)
         totalPriceTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(productsInCartTableView.snp.bottom).offset(20)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(CGFloat.screenWidth * 0.1)
         }
         
         addSubview(totalPriceAmountLabel)
         totalPriceAmountLabel.snp.makeConstraints { make in
             make.top.equalTo(totalPriceTitleLabel.snp.top)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-20)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-CGFloat.screenWidth * 0.1)
         }
         
         addSubview(checkOutButton)

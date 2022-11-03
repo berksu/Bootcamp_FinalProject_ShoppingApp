@@ -43,14 +43,28 @@ final class BasketScreenViewModel{
         }
     }
     
+    func removeAllProductsFromCart(productIDs: [Int]){
+        for productID in productIDs{
+            FirebaseFirestoreManagement.shared.removeChosenProduct(chosenProductID: productID) {[weak self] message in
+                switch message{
+                case .didErrorOccurred(let error):
+                    self?.changeHandler?(.didErrorOccurred(error))
+                case .didChosenProductRemovedSuccessfully:
+                    print("removed successfully")
+                    self?.changeHandler?(.didChosenProductRemovedSuccessfully)
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
     func updateProductsInBasket(_ cartProducts: [CartProduct]){
         for cartProduct in cartProducts{
             FirebaseFirestoreManagement.shared.addProductToDatabase(cartProduct: cartProduct) {[weak self] message in
                 switch message{
                 case .didErrorOccurred(let error):
                     self?.changeHandler?(.didErrorOccurred(error))
-                case .didProductSavedInSuccessfully:
-                    print("Successfully updated")
                 default:
                     break
                 }

@@ -49,13 +49,28 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
         basketScreenViewModel.fetchAllProductsThatInBasket()
     }
     
+    override func viewWillDisappear(_ animated: Bool){
+        basketScreenViewModel.updateProductsInBasket(productsThatInCart)
+        dismiss(animated: true)
+    }
+    
     @objc func backButtonTapped(sender: UIButton){
         basketScreenViewModel.updateProductsInBasket(productsThatInCart)
         dismiss(animated: true)
     }
     
     @objc func checkOutButtonTapped(sender: UIButton){
+        var ids:[Int] = []
+        for cartProduct in productsThatInCart{
+            guard let product = cartProduct.product else{return}
+            ids.append(product.id)
+        }
         
+        basketScreenViewModel.removeAllProductsFromCart(productIDs: ids)
+        showAlert(title: "Congratulations", message: "Transaction was successful. Enjoy your products"){[weak self]_ in
+            self?.productsThatInCart = []
+            self?.dismiss(animated: true)
+        }
     }
     
     // MARK: -TableView init

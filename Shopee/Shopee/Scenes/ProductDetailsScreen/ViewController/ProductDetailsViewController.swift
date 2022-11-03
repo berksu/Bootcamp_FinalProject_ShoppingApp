@@ -109,7 +109,7 @@ final class ProductDetailsViewController: UIViewController, AlertPresentable{
             guard let product = self?.product else{return}
             guard let productCount = self?.productDetailView.productCount else{return}
             guard let isAlreadyAdded = self?.isProductAlreadyAddedToCart else{return}
-            if isAlreadyAdded && productCount == 0{
+            if !isAlreadyAdded && productCount == 0{
                 self?.showAlert(title: "Error", message: "0 product cannot be added to your cart.")
             }else if isAlreadyAdded && productCount == 0{
                 self?.showAlert(title: "Message", message: "Do you want to remove item form your cart ?", cancelButtonTitle: "Cancel"){[weak self]_ in
