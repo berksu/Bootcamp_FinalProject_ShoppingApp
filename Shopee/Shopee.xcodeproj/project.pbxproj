@@ -10,6 +10,8 @@
 		C9123BC92913C415007E6EB3 /* BasketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BC82913C415007E6EB3 /* BasketScreenViewController.swift */; };
 		C9123BCB2913C5F5007E6EB3 /* BasketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */; };
 		C9123BCE2913D71A007E6EB3 /* BasketTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */; };
+		C9123BD029143CF1007E6EB3 /* BasketScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCF29143CF1007E6EB3 /* BasketScreenViewModel.swift */; };
+		C9123BD229145B0B007E6EB3 /* BasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BD129145B0B007E6EB3 /* BasketButton.swift */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -91,6 +93,8 @@
 		C9123BC82913C415007E6EB3 /* BasketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewController.swift; sourceTree = "<group>"; };
 		C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
 		C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCustomCell.swift; sourceTree = "<group>"; };
+		C9123BCF29143CF1007E6EB3 /* BasketScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewModel.swift; sourceTree = "<group>"; };
+		C9123BD129145B0B007E6EB3 /* BasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketButton.swift; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		C9123BC72913C400007E6EB3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C9123BCF29143CF1007E6EB3 /* BasketScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				C98A5D8A290E834400CB8175 /* CGFloat+Extensions.swift */,
 				C98A5D95290E956B00CB8175 /* UIImage+Extensions.swift */,
 				C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */,
+				C9123BD129145B0B007E6EB3 /* BasketButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -805,6 +811,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9123BD029143CF1007E6EB3 /* BasketScreenViewModel.swift in Sources */,
 				C98E599E290D81F50031E550 /* TabBarViewController.swift in Sources */,
 				C959EF99290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift in Sources */,
 				C9A0E0C72911744A00C35E33 /* ProductDetailsView.swift in Sources */,
@@ -818,6 +825,7 @@
 				C98A5D74290E5CA100CB8175 /* ViewController.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C9123BCB2913C5F5007E6EB3 /* BasketScreenView.swift in Sources */,
+				C9123BD229145B0B007E6EB3 /* BasketButton.swift in Sources */,
 				C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */,
 				C9A0E0C92911AD8200C35E33 /* ScrollableLabel.swift in Sources */,
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,

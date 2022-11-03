@@ -7,19 +7,38 @@
 
 import UIKit
 
-final class BasketScreenViewController: UIViewController{
+final class BasketScreenViewController: UIViewController, AlertPresentable{
     private let basketScreenView = BasketScreenView()
+    private let basketScreenViewModel = BasketScreenViewModel()
+
+    var productsThatInCart: [CartProduct] = []
     
     override func viewDidLoad(){
         super.viewDidLoad()
         view = basketScreenView
         
         initTableView()
-        
         basketScreenView.backButtonController.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
+        basketScreenViewModel.changeHandler = {[weak self] change in
+            switch change{
+            case .didProductThatInCartFetchedSuccessfully(let cartProducts):
+                self?.productsThatInCart = cartProducts
+                self?.basketScreenView.productsInCartTableView.reloadData()
+            case .didErrorOccurred(let error):
+                self?.showError(error)
+            default:
+                break
+            }
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool){
+        basketScreenViewModel.fetchAllProductsThatInBasket()
     }
     
     @objc func backButtonTapped(sender: UIButton){
+        basketScreenViewModel.updateProductsInBasket(productsThatInCart)
         dismiss(animated: true)
     }
     
@@ -40,7 +59,7 @@ extension BasketScreenViewController: UITableViewDelegate{
 // MARK: - TableView DataSource
 extension BasketScreenViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        productsThatInCart.count
     }
     
 
@@ -48,44 +67,71 @@ extension BasketScreenViewController: UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BasketTableViewCustomCell.identifier, for: indexPath) as? BasketTableViewCustomCell else{
             return UITableViewCell()
         }
-//
-//        guard let photoAtIndex = mainViewModel.photoForIndexPath(indexPath) else {fatalError("Photo is nil")}
-//
-//
-//        controlWhetherPhotoIsChosenOrNot(photoAtIndex: photoAtIndex, cell: cell)
-//
-//
-//        let url = photoAtIndex.url_n ?? ""
-//        if let farm = photoAtIndex.farm,
-//           let server = photoAtIndex.server,
-//           let owner = photoAtIndex.owner
-//        {
-//            let profileImageURL = "https://farm\(farm).staticflickr.com/\(server)/buddyicons/\(owner).jpg"
-//
-//            KingfisherOperations.shared.downloadProfileImage(url: profileImageURL, imageView: cell.profileImageView){success in
-//                if(success){
-//                    tableView.reloadRows(at: [indexPath], with: .automatic)
-//                }
-//            }
-//
-//        }
-//
-//
-//        KingfisherOperations.shared.downloadImage(url: url, imageView: cell.photoImageView){success in
-//            if success{
-//                tableView.reloadRows(at: [indexPath], with: .automatic)
-//            }
-//        }
-//        cell.title = photoAtIndex.ownername
-//        cell.addFavouriteButton.photo = photoAtIndex
-//        cell.addFavouriteButton.cell = cell
-//        cell.addFavouriteButton.addTarget(self, action: #selector(addToFavourite), for: .touchUpInside)
-//
-//        cell.saveButton.photo = photoAtIndex
-//        cell.saveButton.cell = cell
-//        cell.saveButton.addTarget(self, action: #selector(saveButton), for: .touchUpInside)
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
-        //cell.textLabel!.text = "ads"
+
+        let cartProduct = productsThatInCart[indexPath.row]
+        guard let product = cartProduct.product else{return cell}
+        guard let productCountInBasket = cartProduct.count else{return cell}
+
+        cell.productName = product.title
+        cell.productPrice = product.price
+        cell.productCountInCart = productCountInBasket
+        
+        basketScreenViewModel.downloadProductImage(url: product.image ?? "", imageView: cell.productImageView)
+        cell.minusButton.cell = cell
+        cell.minusButton.index = indexPath.row
+
+        cell.plusButton.cell = cell
+        cell.plusButton.index = indexPath.row
+
+        cell.removeFromCartButton.cell = cell
+        cell.removeFromCartButton.index = indexPath.row
+        
+        cell.minusButton.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
+        cell.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+        cell.removeFromCartButton.addTarget(self, action: #selector(removeFromCartButtonTapped), for: .touchUpInside)
+
         return cell
+    }
+    
+    @objc func minusButtonTapped(sender: BasketButton){
+        guard let productCount = sender.cell?.productCountInCart else{return}
+        guard let index = sender.index else{return}
+
+        sender.showAnimation {[weak self]  in
+            if productCount > 1 {
+                sender.cell?.productCountInCart = productCount - 1
+                self?.productsThatInCart[index].count = productCount - 1
+            }else if productCount == 1{
+                self?.removeProduct(index: index)
+            }
+        }
+    }
+    
+    @objc func plusButtonTapped(sender: BasketButton){
+        guard let index = sender.index else{return}
+
+        sender.showAnimation {[weak self] in
+            // TODO: If there will be an upper limit, controls should be written in here
+            guard let productCount = sender.cell?.productCountInCart else{return}
+            sender.cell?.productCountInCart = productCount + 1
+            self?.productsThatInCart[index].count = productCount + 1
+        }
+    }
+    
+    @objc func removeFromCartButtonTapped(sender: BasketButton){
+        guard let index = sender.index else{return}
+        sender.showAnimation {[weak self] in
+            self?.removeProduct(index: index)
+        }
+    }
+    
+    func removeProduct(index: Int){
+        showAlert(title: "Warning", message: "Do you really want to remove this product", cancelButtonTitle: "Cancel"){[weak self]_ in
+            guard let cartProduct = self?.productsThatInCart[index] else{return}
+            guard let product = cartProduct.product else{return}
+            self?.basketScreenViewModel.removeChosenProductFromCart(productID: product.id)
+            self?.productsThatInCart.remove(at: index)
+            self?.basketScreenView.productsInCartTableView.reloadData()
+        }
     }
 }

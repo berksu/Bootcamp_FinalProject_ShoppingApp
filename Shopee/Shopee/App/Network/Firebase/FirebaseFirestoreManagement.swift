@@ -15,6 +15,7 @@ struct FirebaseFirestoreManagement {
         case didErrorOccurred(_ error: Error)
         case didUserSavedInSuccessfully
         case didUserFetchedSuccessfully(_ user: UserProfile)
+        case didProductsThatInCartFetchedSuccessfully(_ productsInCart: [CartProduct])
         case didProductSavedInSuccessfully
         case didChosenProductFetchedInSuccessfully(_ count: Int)
         case didChosenProductRemovedSuccessfully
@@ -104,4 +105,38 @@ struct FirebaseFirestoreManagement {
             }
         }
     }
+    
+    func fetchAllProductThatInTheCart(completion: @escaping (FirestoreMessages) -> Void){
+        guard let userId = FirebaseAuthentication.shared.userID else{return}
+
+        db.collection(userId).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                completion(.didErrorOccurred(err))
+            } else {
+                var productThatInCart:[CartProduct] = []
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    
+                    guard let productDictionary = data["product"] as? Dictionary<String, Any> else {continue}
+                    guard let ratingDictionary = productDictionary["rating"] as? Dictionary<String, Any> else {continue}
+                    guard let productID = productDictionary["id"] as? Int else{continue}
+                    
+                    let rating = Rating(rate: ratingDictionary["rate"] as? Double,
+                                        count: ratingDictionary["count"] as? Int)
+                    let product = Product(id: productID,
+                                           title: productDictionary["title"] as? String,
+                                           price: productDictionary["price"] as? Double,
+                                           description: productDictionary["description"] as? String,
+                                           category: productDictionary["category"] as? String,
+                                           image: productDictionary["image"] as? String,
+                                           rating: rating)
+                    let cartProduct = CartProduct(product: product,
+                                                count: data["count"] as? Int)
+                    productThatInCart.append(cartProduct)
+                }
+                completion(.didProductsThatInCartFetchedSuccessfully(productThatInCart))
+            }
+        }
+    }
+
 }

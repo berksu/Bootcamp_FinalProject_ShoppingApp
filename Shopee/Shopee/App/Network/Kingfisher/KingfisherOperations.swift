@@ -65,6 +65,31 @@ struct KingfisherOperations{
             }
         }
     }
+    
+    func downloadBasketImage(url: String, imageView: UIImageView){
+        let url = URL(string: url)
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 100, height: 100))
+                     |> RoundCornerImageProcessor(cornerRadius: 10)
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "profileImagePlaceholder"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 

@@ -40,6 +40,20 @@ final class BasketScreenView: UIView{
         tableView.register(BasketTableViewCustomCell.self, forCellReuseIdentifier: BasketTableViewCustomCell.identifier)
         return tableView
     }()
+    
+    let checkOutButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.tintColor = .white
+        button.setTitle("Check Out", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 20)!
+        button.layer.cornerRadius = 10
+        button.snp.makeConstraints { make in
+            make.height.equalTo(40)
+            make.width.equalTo(CGFloat.screenWidth * 0.8)
+        }
+        return button
+    }()
 
     override init(frame: CGRect){
         super.init(frame: .zero)
@@ -60,8 +74,14 @@ final class BasketScreenView: UIView{
         addSubview(productsInCartTableView)
         productsInCartTableView.snp.makeConstraints { make in
             make.top.equalTo(backButton.snp.bottom).offset(16)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-20)
+        }
+        
+        addSubview(checkOutButton)
+        checkOutButton.snp.makeConstraints { make in
+            make.top.equalTo(productsInCartTableView.snp.bottom).offset(20)
+            make.centerX.equalTo(self.snp.centerX)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
     }
