@@ -12,26 +12,75 @@ final class SearchScreenViewController: UIViewController{
     private let searchScreeView = SearchScreenView()
     private let searchScreenViewModel = SearchScreenViewModel()
     
-    var products: [Product] = []{
-        didSet{
-            searchScreeView.productsInCartTableView.reloadData()
+    
+    var isOneAndOnlyTappedButton: Bool{
+        let filter = searchScreeView.stackCategoryView.arrangedSubviews.filter { view in
+            let button = view as! ScrollableStackButton
+            return button.isTapped
+        }
+        
+        return filter.count > 0 ? false:true
+    }
+    
+    func setAllButtonsNotTapped(){
+        searchScreeView.stackCategoryView.arrangedSubviews.forEach {view in
+            let button = view as! ScrollableStackButton
+            button.isTapped = false
+            button.backgroundColor = .systemGray
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view = searchScreeView
+        searchScreeView.categories = searchScreenViewModel.categories
         
         initTableView()
         
         createNavigationBarButtons()
         createSearchBar()
+        createStackCategoryViewButtons()
+        
+        searchScreenViewModel.changeHandler = {[weak self] change in
+            switch change{
+            case .didFetchProducts:
+                self?.searchScreeView.productsInCartTableView.reloadData()
+            case .didErrorOccurred(let error):
+                print(error)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.largeTitleDisplayMode = .never
     }
+    
+    @objc func categoryButtonTapped(sender: ScrollableStackButton){
+        guard let chosenCategory = sender.titleLabel?.text else {return}
+        if !sender.isTapped{
+            if isOneAndOnlyTappedButton{
+                sender.isTapped = true
+            }else{
+                setAllButtonsNotTapped()
+                sender.isTapped = true
+            }
+            sender.backgroundColor = .orange
+            searchScreenViewModel.searchCategory(category: chosenCategory.substring(with: 2..<chosenCategory.count-2))
+        }else{
+            searchScreenViewModel.fetchData()
+            searchScreenViewModel.removeCategoryFilter()
+            sender.isTapped = false
+            sender.backgroundColor = .systemGray
+        }
+    }
 
+    func createStackCategoryViewButtons(){
+        searchScreeView.stackCategoryView.arrangedSubviews.forEach { view in
+            let button = view as! ScrollableStackButton
+            button.addTarget(self, action: #selector(categoryButtonTapped), for: .touchUpInside)
+        }
+    }
+    
     // MARK: -TableView init
     func initTableView(){
         searchScreeView.productsInCartTableView.dataSource = self
@@ -61,9 +110,9 @@ extension SearchScreenViewController: UISearchResultsUpdating{
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text, text.count > 2 {
-            products = searchScreenViewModel.searchProuct(word: text)
+            searchScreenViewModel.searchProuct(word: text)
         }else{
-            products = []
+            searchScreenViewModel.showOnlyCategoryResultIfThereIsOne()
         }
     }
 }
@@ -74,7 +123,7 @@ extension SearchScreenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Index: \(indexPath.row)")
         // Create the view controller.
-        let productAtIndex = products[indexPath.row]
+        let productAtIndex = searchScreenViewModel.products[indexPath.row]
         
         let productDetailsViewController = ProductDetailsViewController()
         productDetailsViewController.product = productAtIndex
@@ -87,7 +136,7 @@ extension SearchScreenViewController: UITableViewDelegate{
 // MARK: - TableView DataSource
 extension SearchScreenViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        products.count
+        searchScreenViewModel.products.count
     }
     
 
@@ -96,7 +145,7 @@ extension SearchScreenViewController: UITableViewDataSource{
             return UITableViewCell()
         }
 
-        let product = products[indexPath.row]
+        let product = searchScreenViewModel.products[indexPath.row]
 
         cell.productName = product.title
         cell.productPrice = product.price

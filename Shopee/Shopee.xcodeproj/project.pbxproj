@@ -16,6 +16,8 @@
 		C91D098F2915106500ACFA46 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098E2915106500ACFA46 /* SearchScreenView.swift */; };
 		C91D099229151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */; };
 		C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09932915304500ACFA46 /* SearchScreenViewModel.swift */; };
+		C91D09962915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */; };
+		C91D09982915A40600ACFA46 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09972915A40600ACFA46 /* String+Substring.swift */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -102,6 +104,8 @@
 		C91D098E2915106500ACFA46 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
 		C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenTableViewCustomCell.swift; sourceTree = "<group>"; };
 		C91D09932915304500ACFA46 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
+		C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveArrangedSubviews.swift"; sourceTree = "<group>"; };
+		C91D09972915A40600ACFA46 /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -600,6 +604,8 @@
 				C98A5D95290E956B00CB8175 /* UIImage+Extensions.swift */,
 				C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */,
 				C9123BD129145B0B007E6EB3 /* CustomUIButton.swift */,
+				C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */,
+				C91D09972915A40600ACFA46 /* String+Substring.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -883,6 +889,7 @@
 				C9769DD1291308E900C46219 /* CartProduct.swift in Sources */,
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
+				C91D09962915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift in Sources */,
 				C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */,
 				C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */,
 				C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */,
@@ -897,6 +904,7 @@
 				C959EF97290B4DFF00D717C3 /* UIView+ButtonAnimation.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
 				C9123BCE2913D71A007E6EB3 /* BasketTableViewCustomCell.swift in Sources */,
+				C91D09982915A40600ACFA46 /* String+Substring.swift in Sources */,
 				C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */,
 				C98A5D8F290E8A0300CB8175 /* ProductScreenViewModel.swift in Sources */,
 				C98A5D8D290E83E800CB8175 /* ProductViewCell.swift in Sources */,
