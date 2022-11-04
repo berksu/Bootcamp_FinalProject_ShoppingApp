@@ -14,6 +14,7 @@
 		C9123BD229145B0B007E6EB3 /* BasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BD129145B0B007E6EB3 /* BasketButton.swift */; };
 		C91D098D2915103700ACFA46 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098C2915103700ACFA46 /* SearchScreenViewController.swift */; };
 		C91D098F2915106500ACFA46 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098E2915106500ACFA46 /* SearchScreenView.swift */; };
+		C91D099229151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -98,6 +99,7 @@
 		C9123BD129145B0B007E6EB3 /* BasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketButton.swift; sourceTree = "<group>"; };
 		C91D098C2915103700ACFA46 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		C91D098E2915106500ACFA46 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
+		C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenTableViewCustomCell.swift; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		C91D09892915100500ACFA46 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C91D099029151CA100ACFA46 /* SearchScreenTableViewCell */,
 				C91D098E2915106500ACFA46 /* SearchScreenView.swift */,
 			);
 			path = View;
@@ -260,6 +263,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C91D099029151CA100ACFA46 /* SearchScreenTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */,
+			);
+			path = SearchScreenTableViewCell;
 			sourceTree = "<group>";
 		};
 		C959EF8D290B1A8B00D717C3 /* Subviews */ = {
@@ -859,6 +870,7 @@
 				C9B54ADC29104090004CDA3D /* ProfilePageViewController.swift in Sources */,
 				C959EFBA290C7AFE00D717C3 /* FakeStoreApi.swift in Sources */,
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
+				C91D099229151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift in Sources */,
 				C9123BCB2913C5F5007E6EB3 /* BasketScreenView.swift in Sources */,
 				C9123BD229145B0B007E6EB3 /* BasketButton.swift in Sources */,
 				C91D098F2915106500ACFA46 /* SearchScreenView.swift in Sources */,
