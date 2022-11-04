@@ -11,3 +11,7 @@ class BasketButton: UIButton {
     var cell: BasketTableViewCustomCell?
     var index: Int?
 }
+
+class ScrollableStackButton: UIButton {
+    var isTapped: Bool = false
+}

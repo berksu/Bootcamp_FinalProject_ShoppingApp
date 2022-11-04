@@ -16,7 +16,13 @@ final class ProductScreenViewModel{
     
     var changeHandler: ((ProductFetchResults) -> Void)?
     
-    private var products:[Product] = []
+    private var products:[Product] = []{
+        didSet{
+            changeHandler?(.didFetchProducts)
+        }
+    }
+    
+    private var allProducts:[Product] = []
     
     var productCount: Int{
         products.count
@@ -39,6 +45,7 @@ final class ProductScreenViewModel{
             // the name data is misleading
             let data = try decoder.decode([Product].self, from: jsonData)
             changeHandler?(.didFetchProducts)
+            allProducts = data
             products = data
         } catch {
             changeHandler?(.didErrorOccurred("File cannot parsed"))
@@ -55,5 +62,12 @@ final class ProductScreenViewModel{
     
     func getProductAtIndex(_ index: Int) -> Product{
         return products[index]
+    }
+    
+    func searchProuct(category: String){
+        products = allProducts.filter { product in
+            guard let categories = product.category else{return false}
+            return categories == category
+        }.map{$0}
     }
 }

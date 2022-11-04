@@ -96,8 +96,8 @@ extension UIStackView {
 extension ProductScreenView{
 
     
-    func createCategoryButton(title: String) -> UIButton{
-        let button = UIButton()
+    func createCategoryButton(title: String) -> ScrollableStackButton{
+        let button = ScrollableStackButton()
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16)
         button.setTitleColor(.white, for: .normal)

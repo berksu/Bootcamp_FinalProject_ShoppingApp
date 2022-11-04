@@ -11,7 +11,7 @@
 		C9123BCB2913C5F5007E6EB3 /* BasketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */; };
 		C9123BCE2913D71A007E6EB3 /* BasketTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */; };
 		C9123BD029143CF1007E6EB3 /* BasketScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BCF29143CF1007E6EB3 /* BasketScreenViewModel.swift */; };
-		C9123BD229145B0B007E6EB3 /* BasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BD129145B0B007E6EB3 /* BasketButton.swift */; };
+		C9123BD229145B0B007E6EB3 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9123BD129145B0B007E6EB3 /* CustomUIButton.swift */; };
 		C91D098D2915103700ACFA46 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098C2915103700ACFA46 /* SearchScreenViewController.swift */; };
 		C91D098F2915106500ACFA46 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098E2915106500ACFA46 /* SearchScreenView.swift */; };
 		C91D099229151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */; };
@@ -97,7 +97,7 @@
 		C9123BCA2913C5F5007E6EB3 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
 		C9123BCD2913D71A007E6EB3 /* BasketTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCustomCell.swift; sourceTree = "<group>"; };
 		C9123BCF29143CF1007E6EB3 /* BasketScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewModel.swift; sourceTree = "<group>"; };
-		C9123BD129145B0B007E6EB3 /* BasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketButton.swift; sourceTree = "<group>"; };
+		C9123BD129145B0B007E6EB3 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		C91D098C2915103700ACFA46 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		C91D098E2915106500ACFA46 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
 		C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenTableViewCustomCell.swift; sourceTree = "<group>"; };
@@ -599,7 +599,7 @@
 				C98A5D8A290E834400CB8175 /* CGFloat+Extensions.swift */,
 				C98A5D95290E956B00CB8175 /* UIImage+Extensions.swift */,
 				C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */,
-				C9123BD129145B0B007E6EB3 /* BasketButton.swift */,
+				C9123BD129145B0B007E6EB3 /* CustomUIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -875,7 +875,7 @@
 				C959EF95290B451300D717C3 /* ResetPasswordViewController.swift in Sources */,
 				C91D099229151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift in Sources */,
 				C9123BCB2913C5F5007E6EB3 /* BasketScreenView.swift in Sources */,
-				C9123BD229145B0B007E6EB3 /* BasketButton.swift in Sources */,
+				C9123BD229145B0B007E6EB3 /* CustomUIButton.swift in Sources */,
 				C91D098F2915106500ACFA46 /* SearchScreenView.swift in Sources */,
 				C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */,
 				C9A0E0C92911AD8200C35E33 /* ScrollableLabel.swift in Sources */,

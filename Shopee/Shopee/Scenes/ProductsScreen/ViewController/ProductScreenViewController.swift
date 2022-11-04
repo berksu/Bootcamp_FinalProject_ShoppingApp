@@ -12,6 +12,22 @@ final class ProductScreenViewController: UIViewController{
     let productView = ProductScreenView()
     let productViewModel = ProductScreenViewModel()
 
+    var isOneAndOnlyTappedButton: Bool{
+        let filter = productView.stackCategoryView.arrangedSubviews.filter { view in
+            let button = view as! ScrollableStackButton
+            return button.isTapped
+        }
+        
+        return filter.count > 0 ? false:true
+    }
+    
+    func setAllButtonsNotTapped(){
+        productView.stackCategoryView.arrangedSubviews.forEach {view in
+            let button = view as! ScrollableStackButton
+            button.isTapped = false
+            button.backgroundColor = .systemGray
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +41,14 @@ final class ProductScreenViewController: UIViewController{
         
         createNavigationBarButtons()
         navigationItem.titleView = createNavigationTitleLabel
+        
+        createStackCategoryViewButtons()
 
-        productViewModel.changeHandler = {change in
+        productViewModel.changeHandler = {[weak self] change in
             switch change{
             case .didFetchProducts:
                 print("Success")
+                self?.productView.productCollectionView.reloadData()
             case .didErrorOccurred(let error):
                 print(error)
             }
@@ -39,6 +58,31 @@ final class ProductScreenViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         productViewModel.fetchData()
         navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func createStackCategoryViewButtons(){
+        productView.stackCategoryView.arrangedSubviews.forEach { view in
+            let button = view as! ScrollableStackButton
+            button.addTarget(self, action: #selector(categoryButtonTapped), for: .touchUpInside)
+        }
+    }
+    
+    @objc func categoryButtonTapped(sender: ScrollableStackButton){
+        guard let chosenCategory = sender.titleLabel?.text else {return}
+        if !sender.isTapped{
+            if isOneAndOnlyTappedButton{
+                sender.isTapped = true
+            }else{
+                setAllButtonsNotTapped()
+                sender.isTapped = true
+            }
+            sender.backgroundColor = .orange
+            productViewModel.searchProuct(category: chosenCategory.substring(with: 2..<chosenCategory.count-2))
+        }else{
+            productViewModel.fetchData()
+            sender.isTapped = false
+            sender.backgroundColor = .systemGray
+        }
     }
 
     func createNavigationBarButtons(){
@@ -152,5 +196,28 @@ extension ProductScreenViewController: UICollectionViewDelegateFlowLayout {
         let finalWidth = (width - totalSpacing) / LayoutConstraints.itemsInRow
 
         return finalWidth - (5.0 * (LayoutConstraints.itemsInRow - 1))
+    }
+}
+
+
+extension String {
+    func index(from: Int) -> Index {
+        return self.index(startIndex, offsetBy: from)
+    }
+
+    func substring(from: Int) -> String {
+        let fromIndex = index(from: from)
+        return String(self[fromIndex...])
+    }
+
+    func substring(to: Int) -> String {
+        let toIndex = index(from: to)
+        return String(self[..<toIndex])
+    }
+
+    func substring(with r: Range<Int>) -> String {
+        let startIndex = index(from: r.lowerBound)
+        let endIndex = index(from: r.upperBound)
+        return String(self[startIndex..<endIndex])
     }
 }
