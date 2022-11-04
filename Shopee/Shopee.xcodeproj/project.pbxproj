@@ -15,6 +15,7 @@
 		C91D098D2915103700ACFA46 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098C2915103700ACFA46 /* SearchScreenViewController.swift */; };
 		C91D098F2915106500ACFA46 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D098E2915106500ACFA46 /* SearchScreenView.swift */; };
 		C91D099229151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */; };
+		C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09932915304500ACFA46 /* SearchScreenViewModel.swift */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -100,6 +101,7 @@
 		C91D098C2915103700ACFA46 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		C91D098E2915106500ACFA46 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
 		C91D099129151CE900ACFA46 /* SearchScreenTableViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenTableViewCustomCell.swift; sourceTree = "<group>"; };
+		C91D09932915304500ACFA46 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		C91D098B2915101400ACFA46 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C91D09932915304500ACFA46 /* SearchScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
 				C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */,
+				C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */,
 				C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
 				C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */,

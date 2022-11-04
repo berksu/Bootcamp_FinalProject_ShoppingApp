@@ -11,7 +11,6 @@ final class SearchScreenView: UIView{
     
     let productsInCartTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .red
         tableView.register(SearchScreenTableViewCustomCell.self, forCellReuseIdentifier: SearchScreenTableViewCustomCell.identifier)
         return tableView
     }()

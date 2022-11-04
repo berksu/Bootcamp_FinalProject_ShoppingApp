@@ -8,7 +8,21 @@
 import UIKit
 
 final class SearchScreenTableViewCustomCell: UITableViewCell{
+    
     static let identifier = "SearchScreenTableViewCustomCell"
+    
+    var productName: String?{
+        didSet{
+            productNameLabel.text = productName
+        }
+    }
+    
+    var productPrice: Double?{
+        didSet{
+            guard let productPrice = productPrice else{return}
+            productPriceLabel.text = "$ \(productPrice)"
+        }
+    }
     
     private let shadowView: UIView = {
         let outerView = UIView()

@@ -10,6 +10,13 @@ import UIKit
 final class SearchScreenViewController: UIViewController{
     
     private let searchScreeView = SearchScreenView()
+    private let searchScreenViewModel = SearchScreenViewModel()
+    
+    var products: [Product] = []{
+        didSet{
+            searchScreeView.productsInCartTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +60,10 @@ final class SearchScreenViewController: UIViewController{
 extension SearchScreenViewController: UISearchResultsUpdating{
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
-        if let text = searchController.searchBar.text, text.count > 1 {
-            print(text)
+        if let text = searchController.searchBar.text, text.count > 2 {
+            products = searchScreenViewModel.searchProuct(word: text)
         }else{
-            print("add more button")
+            products = []
         }
     }
 }
@@ -72,7 +79,7 @@ extension SearchScreenViewController: UITableViewDelegate{
 // MARK: - TableView DataSource
 extension SearchScreenViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        products.count
     }
     
 
@@ -81,16 +88,12 @@ extension SearchScreenViewController: UITableViewDataSource{
             return UITableViewCell()
         }
 
-//        let cartProduct = productsThatInCart[indexPath.row]
-//        guard let product = cartProduct.product else{return cell}
-//        guard let productCountInBasket = cartProduct.count else{return cell}
+        let product = products[indexPath.row]
 
-//        cell.productName = product.title
-//        cell.productPrice = product.price
-//        cell.productCountInCart = productCountInBasket
+        cell.productName = product.title
+        cell.productPrice = product.price
         
-        //basketScreenViewModel.downloadProductImage(url: product.image ?? "", imageView: cell.productImageView)
-
+        searchScreenViewModel.downloadProductImage(url: product.image ?? "", imageView: cell.productImageView)
         return cell
     }
 }
