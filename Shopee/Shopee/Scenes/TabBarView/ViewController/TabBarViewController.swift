@@ -26,7 +26,7 @@ final class TabBarViewController: UITabBarController{
                                        title: NSLocalizedString("Products", comment: ""),
                                        unselectedImage: UIImage(named:"homeIcon")!,
                                        selectedImage: UIImage(named:"homeIconFilled")!),
-            createNavigationController(for: ViewController(),
+            createNavigationController(for: SearchScreenViewController(),
                                        title: NSLocalizedString("Search", comment: ""),
                                        unselectedImage: UIImage(named:"searchIcon")!,
                                        selectedImage: UIImage(named:"searchIcon")!),
