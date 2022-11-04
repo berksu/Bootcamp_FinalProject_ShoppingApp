@@ -73,6 +73,14 @@ extension SearchScreenViewController: UISearchResultsUpdating{
 extension SearchScreenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Index: \(indexPath.row)")
+        // Create the view controller.
+        let productAtIndex = products[indexPath.row]
+        
+        let productDetailsViewController = ProductDetailsViewController()
+        productDetailsViewController.product = productAtIndex
+        // Present it w/o any adjustments so it uses the default sheet presentation.
+        productDetailsViewController.modalPresentationStyle = .fullScreen
+        present(productDetailsViewController, animated: true, completion: nil)
     }
 }
 
