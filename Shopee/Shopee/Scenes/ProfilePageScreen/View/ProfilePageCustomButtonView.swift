@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewCustomButtonView: UIView{
+final class ProfileViewCustomButtonView: GradientUIView{
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Title"

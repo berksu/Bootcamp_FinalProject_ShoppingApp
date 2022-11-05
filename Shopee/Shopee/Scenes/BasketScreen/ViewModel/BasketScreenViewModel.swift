@@ -75,4 +75,19 @@ final class BasketScreenViewModel{
     func downloadProductImage(url: String, imageView: UIImageView){
         KingfisherOperations.shared.downloadBasketImage(url: url, imageView: imageView)
     }
+    
+    func calculateTotalPrice(productsThatInCart: [CartProduct]) throws -> Double{
+        var total = 0.0
+        try productsThatInCart.forEach { element in
+            guard let productPrice = element.product?.price else{throw ShopeeError.unknown}
+            guard let productCount = element.count else{throw ShopeeError.unknown}
+
+            total += productPrice * Double(productCount)
+        }
+        return total
+    }
+}
+
+enum ShopeeError: Error {
+    case unknown
 }

@@ -21,6 +21,10 @@
 		C91D099E2915B79400ACFA46 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D099D2915B79400ACFA46 /* OnBoardingViewController.swift */; };
 		C91D09A12915B7D400ACFA46 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09A02915B7D400ACFA46 /* OnBoardingView.swift */; };
 		C91D09A42915C38600ACFA46 /* ScrollableViewWithPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09A32915C38600ACFA46 /* ScrollableViewWithPageControl.swift */; };
+		C928878B2916F27800A5F94D /* UIView+GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928878A2916F27800A5F94D /* UIView+GradientView.swift */; };
+		C92887922916F85C00A5F94D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C92887912916F85C00A5F94D /* FirebaseFirestoreSwift */; };
+		C92887942916F88400A5F94D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C92887932916F88400A5F94D /* FirebaseAuth */; };
+		C92887962916F88D00A5F94D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C92887952916F88D00A5F94D /* Moya */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -112,6 +116,7 @@
 		C91D099D2915B79400ACFA46 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		C91D09A02915B7D400ACFA46 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C91D09A32915C38600ACFA46 /* ScrollableViewWithPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewWithPageControl.swift; sourceTree = "<group>"; };
+		C928878A2916F27800A5F94D /* UIView+GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GradientView.swift"; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -187,6 +192,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92887922916F85C00A5F94D /* FirebaseFirestoreSwift in Frameworks */,
+				C92887942916F88400A5F94D /* FirebaseAuth in Frameworks */,
+				C92887962916F88D00A5F94D /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +336,13 @@
 			path = ScrollableViewWithPageControl;
 			sourceTree = "<group>";
 		};
+		C92887902916F85C00A5F94D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C959EF8D290B1A8B00D717C3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +376,7 @@
 				C960C5A829086DC300AD20E6 /* ShopeeTests */,
 				C960C5B229086DC300AD20E6 /* ShopeeUITests */,
 				C960C59029086DC200AD20E6 /* Products */,
+				C92887902916F85C00A5F94D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -655,6 +671,7 @@
 				C9123BD129145B0B007E6EB3 /* CustomUIButton.swift */,
 				C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */,
 				C91D09972915A40600ACFA46 /* String+Substring.swift */,
+				C928878A2916F27800A5F94D /* UIView+GradientView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -805,6 +822,11 @@
 				C960C5A729086DC300AD20E6 /* PBXTargetDependency */,
 			);
 			name = ShopeeTests;
+			packageProductDependencies = (
+				C92887912916F85C00A5F94D /* FirebaseFirestoreSwift */,
+				C92887932916F88400A5F94D /* FirebaseAuth */,
+				C92887952916F88D00A5F94D /* Moya */,
+			);
 			productName = ShopeeTests;
 			productReference = C960C5A529086DC300AD20E6 /* ShopeeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -968,6 +990,7 @@
 				C959EFBE290C7B5900D717C3 /* Product.swift in Sources */,
 				C9123BC92913C415007E6EB3 /* BasketScreenViewController.swift in Sources */,
 				C98A5D96290E956B00CB8175 /* UIImage+Extensions.swift in Sources */,
+				C928878B2916F27800A5F94D /* UIView+GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1346,6 +1369,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C92887912916F85C00A5F94D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		C92887932916F88400A5F94D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C92887952916F88D00A5F94D /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C960C5D729088BF800AD20E6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		C960C5D829088BF800AD20E6 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C960C5D729088BF800AD20E6 /* XCRemoteSwiftPackageReference "Moya" */;

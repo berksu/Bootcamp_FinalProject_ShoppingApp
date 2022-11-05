@@ -13,14 +13,11 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
 
     var productsThatInCart: [CartProduct] = []{
         didSet{
-            var total = 0.0
-            productsThatInCart.forEach { element in
-                guard let productPrice = element.product?.price else{return}
-                guard let productCount = element.count else{return}
-
-                total += productPrice * Double(productCount)
+            do {
+                basketScreenView.totalPrice = try basketScreenViewModel.calculateTotalPrice(productsThatInCart: productsThatInCart)
+            } catch {
+                showAlert(title: "Error", message:"Something went wrong")
             }
-            basketScreenView.totalPrice = total
         }
     }
     

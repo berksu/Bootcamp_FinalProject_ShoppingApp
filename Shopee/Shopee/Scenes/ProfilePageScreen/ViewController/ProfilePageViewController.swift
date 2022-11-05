@@ -42,6 +42,22 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
         }
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //let colors = [UIColor.white.cgColor, UIColor.white.cgColor, UIColor.red.cgColor]
+        if !profilePageView.signOutView.isGradientAdded{
+            let colors = [UIColor.red.withAlphaComponent(0.1).cgColor, UIColor.red.withAlphaComponent(0.7).cgColor]
+            
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = colors
+            gradientLayer.cornerRadius = 10
+            gradientLayer.frame = self.profilePageView.signOutView.bounds // New line
+            profilePageView.signOutView.layer.insertSublayer(gradientLayer, at: 0)
+            profilePageView.signOutView.isGradientAdded = true
+        }
+    }
+
 }
 
 #if DEBUG

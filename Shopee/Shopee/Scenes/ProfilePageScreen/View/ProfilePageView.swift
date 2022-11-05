@@ -68,7 +68,7 @@ final class ProfilePageView: UIView{
         return stack
     }()
     
-    private let settingsView: UIView = {
+    private let settingsView: GradientUIView = {
         let view = ProfileViewCustomButtonView(title: "Settings", description: "Password, Contact")
         view.snp.makeConstraints { make in
             make.width.equalTo(ProfilePageView.LayoutConstraints.widthOfCustomButon)
@@ -77,7 +77,7 @@ final class ProfilePageView: UIView{
         return view
     }()
     
-    var signOutView: UIView = {
+    var signOutView: GradientUIView = {
         let view = ProfileViewCustomButtonView(title: "Sign Out", description: "Please don't go")
         view.snp.makeConstraints { make in
             make.width.equalTo(ProfilePageView.LayoutConstraints.widthOfCustomButon)
