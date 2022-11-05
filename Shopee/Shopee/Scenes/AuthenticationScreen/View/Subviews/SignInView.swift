@@ -23,6 +23,8 @@ final class SignInView: UIView{
     func createTextField(placeholder: String, isSecureTextField: Bool) -> UITextField{
         let textfield =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
+        textfield.backgroundColor = .white
+        textfield.textColor = .black
         textfield.leftViewMode = .always
         textfield.leftView = spacerView
         textfield.placeholder = placeholder

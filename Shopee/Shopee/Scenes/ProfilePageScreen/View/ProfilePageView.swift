@@ -25,6 +25,7 @@ final class ProfilePageView: UIView{
        let label = UILabel()
         label.text = "Username"
         label.font = UIFont(name: "Inter-Bold", size: 28)
+        label.textColor = .black
         return label
     }()
     
@@ -32,7 +33,7 @@ final class ProfilePageView: UIView{
        let label = UILabel()
         label.text = "Email"
         label.font = UIFont(name: "Inter-Regular", size: 14)
-        label.textColor =  UIColor(rgb: 0x808080, a: 1)
+        label.textColor = UIColor(rgb: 0x808080, a: 1)
         return label
     }()
     

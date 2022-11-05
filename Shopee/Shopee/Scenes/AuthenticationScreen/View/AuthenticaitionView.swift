@@ -47,20 +47,6 @@ final class AuthenticationView: UIView{
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
         segmentedControl.selectedSegmentIndex = 0
-//        if #available(iOS 13.0, *) {
-//            segmentedControl.backgroundColor = UIColor.black
-//            segmentedControl.layer.borderColor = UIColor.white.cgColor
-//            segmentedControl.selectedSegmentTintColor = UIColor.white
-//            segmentedControl.layer.borderWidth = 1
-//
-//             let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//            segmentedControl.setTitleTextAttributes(titleTextAttributes, for:.normal)
-//
-//             let titleTextAttributes1 = [NSAttributedString.Key.foregroundColor: UIColor.black]
-//            segmentedControl.setTitleTextAttributes(titleTextAttributes1, for:.selected)
-//         } else {
-//                     // Fallback on earlier versions
-//       }
         return segmentedControl
     }()
     
@@ -118,12 +104,7 @@ final class AuthenticationView: UIView{
         
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            backgroundColor = .white
-        }
+        backgroundColor = .white
 
         stackView = UIStackView(arrangedSubviews: [topMenuIconStack,
                                                    titleLabel,
@@ -193,7 +174,7 @@ extension AuthenticationView{
         }
         
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "splashScreenLogo")
+        imageView.image = UIImage(named: "splashScreenLogo")?.withColor(.black)
         imageView.contentMode = .scaleAspectFit
 
         let lineViewLeading = UIView()

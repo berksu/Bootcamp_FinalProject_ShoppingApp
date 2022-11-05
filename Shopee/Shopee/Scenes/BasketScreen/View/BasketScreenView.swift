@@ -44,6 +44,7 @@ final class BasketScreenView: UIView{
     
     let productsInCartTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.backgroundColor = .white
         tableView.register(BasketTableViewCustomCell.self, forCellReuseIdentifier: BasketTableViewCustomCell.identifier)
         return tableView
     }()

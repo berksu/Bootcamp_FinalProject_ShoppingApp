@@ -103,6 +103,7 @@ final class ProductDetailView: UIView{
     private let productNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
+        label.textColor = .black
         label.tintColor = UIColor(red: 144, green: 144, blue: 144, alpha: 1)
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
@@ -114,6 +115,7 @@ final class ProductDetailView: UIView{
     private let productPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "$ 50"
+        label.textColor = .black
         label.tintColor = .black
         label.font = UIFont(name: "Poppins-Bold", size: 16)
         label.sizeToFit()
@@ -123,6 +125,7 @@ final class ProductDetailView: UIView{
     private let stepperLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
+        label.textColor = .black
         label.tintColor = .black
         label.font = UIFont(name: "Inter-Regular", size: 18)
         label.sizeToFit()
@@ -164,6 +167,7 @@ final class ProductDetailView: UIView{
     private let productRatingLabel: UILabel = {
         let label = UILabel()
         label.text = "4.5"
+        label.textColor = .black
         label.tintColor = .black
         label.font = UIFont(name: "Poppins-Bold", size: 18)
         label.snp.makeConstraints { make in

@@ -32,7 +32,7 @@ final class ProductScreenViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view = productView
-        
+        productViewModel.fetchData()
         productView.categories = productViewModel.categories
         
         LayoutConstraints.itemsInRow = (traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular) ? 3:2
@@ -69,7 +69,6 @@ final class ProductScreenViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        productViewModel.fetchData()
         productViewModel.fetchBasket()
         navigationItem.largeTitleDisplayMode = .never
     }

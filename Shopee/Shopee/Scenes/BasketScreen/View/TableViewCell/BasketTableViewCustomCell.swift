@@ -48,7 +48,7 @@ final class BasketTableViewCustomCell: UITableViewCell{
     private let productNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
-        label.tintColor = .black
+        label.textColor = .black
         label.numberOfLines = 1
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
@@ -63,6 +63,7 @@ final class BasketTableViewCustomCell: UITableViewCell{
     private let productPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "$ 50"
+        label.textColor = .black
         label.snp.makeConstraints { make in
             make.width.equalTo(150)
         }

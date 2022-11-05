@@ -9,7 +9,11 @@ import UIKit
 
 final class ProductScreenView: UIView{
     
-    lazy var productCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    lazy var productCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.backgroundColor = .white
+        return collectionView
+    }()
 
     
     lazy var stackCategoryView: UIStackView = {
@@ -22,6 +26,7 @@ final class ProductScreenView: UIView{
     // 2.
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.backgroundColor = .white
         scrollView.addSubview(stackCategoryView)
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView

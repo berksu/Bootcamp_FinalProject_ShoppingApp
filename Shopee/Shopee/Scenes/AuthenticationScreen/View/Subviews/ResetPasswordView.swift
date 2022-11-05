@@ -20,9 +20,20 @@ final class ResetPasswordView: UIView{
         }
     }
     
+    let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "forgotPassword")?.withColor(.black)
+        imageView.snp.makeConstraints { make in
+            make.width.equalTo(CGFloat.screenWidth * 0.5)
+            make.height.equalTo(CGFloat.screenWidth * 0.5)
+        }
+        return imageView
+    }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Forgot Password"
+        label.textColor = .black
         label.font = .systemFont(ofSize: 24, weight: .bold)
         return label
     }()
@@ -40,10 +51,6 @@ final class ResetPasswordView: UIView{
         textfield.autocapitalizationType = .none
         textfield.autocorrectionType = .no
         textfield.isSecureTextEntry = isSecureTextField
-        //sampleTextField.keyboardType = UIKeyboardType.default
-        //sampleTextField.returnKeyType = UIReturnKeyType.done
-        //sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        //sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return textfield
     }
     
@@ -71,26 +78,26 @@ final class ResetPasswordView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            backgroundColor = .white
-        }
+        backgroundColor = .white
         
         emailTextView = createTextFiald(placeholder: "Enter email", isSecureTextField: false)
-        stackView = UIStackView(arrangedSubviews: [titleLabel,
-                                                       emailTextView,
-                                                       sendMailButton])
         
-
+        stackView = UIStackView(arrangedSubviews: [titleLabel,
+                                                   emailTextView,
+                                                   sendMailButton])
         stackView.axis = .vertical
         stackView.spacing = 32.0
+        
+        addSubview(iconImageView)
+        iconImageView.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.top.equalTo(self.snp.top).offset(128)
+        }
+        
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(self.snp.top).offset(128)
+            make.top.equalTo(iconImageView.snp.bottom).offset(32)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
             make.leading.equalTo(self.snp.leading).offset(16)
         }

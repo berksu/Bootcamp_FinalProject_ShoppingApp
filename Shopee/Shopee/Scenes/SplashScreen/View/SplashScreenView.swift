@@ -25,12 +25,9 @@ final class SplashScreenView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            backgroundColor = .white
-        }
+
+        backgroundColor = .white
+        
         
         addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false

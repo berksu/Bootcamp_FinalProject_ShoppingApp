@@ -40,7 +40,7 @@ final class SearchScreenTableViewCustomCell: UITableViewCell{
     private let productNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Label"
-        label.tintColor = .black
+        label.textColor = .black
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
@@ -52,7 +52,7 @@ final class SearchScreenTableViewCustomCell: UITableViewCell{
     private let productPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "$ 50"
-        label.tintColor = .black
+        label.textColor = .black
         label.font = UIFont(name: "Poppins-Bold", size: 20)
         //label.sizeToFit()
         return label
