@@ -40,7 +40,8 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = authenticationView
+        navigationItem.hidesBackButton = true
+        view.backgroundColor = .white
         
         authenticationView.signInView.forgetPasswordButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
         authenticationView.signInSingUpButton.addTarget(self, action: #selector(sigInSignUpButton), for: .touchUpInside)
@@ -65,20 +66,22 @@ final class AuthenticationViewController: UIViewController, AlertPresentable{
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationItem.hidesBackButton = true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+
         if authenticationViewModel.isSignedIn{
             navigateToTabBar()
+        }else{
+            view = authenticationView
         }
     }
-    
+
     func navigateToTabBar(){
         DispatchQueue.main.async {
             self.authenticationViewModel.fetchCurrentUser()
             let tabBarViewController = TabBarViewController()
             tabBarViewController.modalPresentationStyle = .fullScreen
-            self.navigationController?.present(tabBarViewController, animated: true)
-            //self.navigationController?.pushViewController(tabBarViewController, animated: false)
+            self.navigationController?.present(tabBarViewController, animated: false)
         }
     }
     

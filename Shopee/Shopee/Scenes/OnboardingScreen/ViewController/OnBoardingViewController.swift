@@ -57,6 +57,8 @@ final class OnBoardingViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func presentNextPage(){
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: "isOboardingAlreadyShown")
         let authenticationViewController = AuthenticationViewController()
 //        authenticationViewController.modalPresentationStyle = .fullScreen
 //        self.navigationController?.present(authenticationViewController, animated: true)

@@ -37,12 +37,20 @@ class SplashScreenViewController: UIViewController {
     }
     
     func animate(){
+        let defaults = UserDefaults.standard
+        let isOboardingAlreadyShown = defaults.bool(forKey: "isOboardingAlreadyShown")
+
         splashView.logoAnimation()
        
         UIView.animate(withDuration: 1.2, animations: {self.splashView.isLogoVisible = false }) { done in
             if done{
-                let authenticationViewController = OnBoardingViewController()
-                self.navigationController?.pushViewController(authenticationViewController, animated: false)
+                if isOboardingAlreadyShown{
+                    let authenticationViewController = AuthenticationViewController()
+                    self.navigationController?.pushViewController(authenticationViewController, animated: false)
+                }else{
+                    let onBoardingViewController = OnBoardingViewController()
+                    self.navigationController?.pushViewController(onBoardingViewController, animated: false)
+                }
             }
         }
    }
