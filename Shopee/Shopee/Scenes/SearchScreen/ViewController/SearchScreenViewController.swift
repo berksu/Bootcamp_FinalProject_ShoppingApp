@@ -92,8 +92,10 @@ final class SearchScreenViewController: UIViewController{
         navigationItem.rightBarButtonItem?.tintColor = .systemGray
     }
     
-    @objc func basketButtonTapped(sender: UIButton){
-        
+    @objc func basketButtonTapped(_ sender: UIButton){
+        let basketScreenViewController = BasketScreenViewController()
+        basketScreenViewController.modalPresentationStyle = .formSheet
+        self.navigationController?.present(basketScreenViewController, animated: true)
     }
     
     private func createSearchBar(){
