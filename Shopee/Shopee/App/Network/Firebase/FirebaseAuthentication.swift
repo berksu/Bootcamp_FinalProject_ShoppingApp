@@ -109,7 +109,4 @@ struct FirebaseAuthentication {
 //          // ...
 //        }
     }
-    
-
-
 }

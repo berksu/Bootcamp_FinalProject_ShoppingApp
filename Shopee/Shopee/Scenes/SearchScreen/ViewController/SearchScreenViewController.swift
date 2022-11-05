@@ -45,6 +45,19 @@ final class SearchScreenViewController: UIViewController{
             switch change{
             case .didFetchProducts:
                 self?.searchScreeView.productsInCartTableView.reloadData()
+            case .didFetchCategories:
+                self?.searchScreeView.categories = self?.searchScreenViewModel.categories
+                self?.createStackCategoryViewButtons()
+            case .didErrorOccurred(let error):
+                print(error)
+            }
+        }
+        
+        searchScreenViewModel.basketChangeHandler = {[weak self] change in
+            switch change{
+            case .didBasketEmpty(let isEmpty):
+                self?.navigationItem.rightBarButtonItem?.tintColor = isEmpty ? .systemGray: .green
+                print(isEmpty)
             case .didErrorOccurred(let error):
                 print(error)
             }
@@ -53,6 +66,7 @@ final class SearchScreenViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.largeTitleDisplayMode = .never
+        searchScreenViewModel.fetchBasket()
     }
     
     @objc func categoryButtonTapped(sender: ScrollableStackButton){
@@ -123,7 +137,6 @@ extension SearchScreenViewController: UISearchResultsUpdating{
 // MARK: - TableView Delegate
 extension SearchScreenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Index: \(indexPath.row)")
         // Create the view controller.
         let productAtIndex = searchScreenViewModel.products[indexPath.row]
         

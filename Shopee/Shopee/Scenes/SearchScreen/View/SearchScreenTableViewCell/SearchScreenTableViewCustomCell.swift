@@ -39,7 +39,7 @@ final class SearchScreenTableViewCustomCell: UITableViewCell{
     
     private let productNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "SearchScreenTableViewCustomCellSearchScreenTableViewCustomCellSearchScreenTableViewCustomCellSearchScreenTableViewCustomCellSearchScreenTableViewCustomCellSearchScreenTableViewCustomCellSearchScreenTableViewCustomCell"
+        label.text = "Label"
         label.tintColor = .black
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true

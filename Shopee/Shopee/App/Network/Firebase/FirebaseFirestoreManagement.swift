@@ -21,27 +21,16 @@ struct FirebaseFirestoreManagement {
         case didChosenProductRemovedSuccessfully
     }
     
+    enum BasketMessages{
+        case didErrorOccurred(_ error: Error)
+        case basketMessage(_ isEmpty: Bool)
+    }
+    
     static var shared = FirebaseFirestoreManagement()
     private let db: Firestore
     private init(){
         db = Firestore.firestore()
     }
-    
-//    func saveUser(user: UserProfile, completion: @escaping (FirestoreMessages) -> Void){
-//
-//        let userDictionary: [String:Any] = ["id": user.id,
-//                                       "email": user.email,
-//                                       "username": user.username,
-//                                       "profilePicture": user.profilePicture]
-//
-//        self.db.collection("users").document(user.id).setData(userDictionary) { error in
-//            if let error = error {
-//                completion(.didErrorOccurred(error))
-//            } else {
-//                completion(.didUserSavedInSuccessful)
-//            }
-//        }
-//    }
     
     func saveUser(user: UserProfile, completion: @escaping (FirestoreMessages) -> Void){
         do {
@@ -51,7 +40,6 @@ struct FirebaseFirestoreManagement {
             completion(.didErrorOccurred(error))
         }
     }
-    
     
     func fetchCurrentUserInfo(completion: @escaping (FirestoreMessages) -> Void){
         guard let id = FirebaseAuthentication.shared.userID else{return}
@@ -135,6 +123,22 @@ struct FirebaseFirestoreManagement {
                     productThatInCart.append(cartProduct)
                 }
                 completion(.didProductsThatInCartFetchedSuccessfully(productThatInCart))
+            }
+        }
+    }
+    
+    func controlBasketIsEmpty(completion: @escaping (BasketMessages) -> Void){
+        guard let userId = FirebaseAuthentication.shared.userID else{return}
+
+        db.collection(userId).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                completion(.didErrorOccurred(err))
+            } else {
+                if(querySnapshot!.documents.count == 0){
+                    completion(.basketMessage(true))
+                }else{
+                    completion(.basketMessage(false))
+                }
             }
         }
     }

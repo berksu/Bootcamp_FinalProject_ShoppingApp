@@ -25,6 +25,7 @@
 		C92887922916F85C00A5F94D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C92887912916F85C00A5F94D /* FirebaseFirestoreSwift */; };
 		C92887942916F88400A5F94D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C92887932916F88400A5F94D /* FirebaseAuth */; };
 		C92887962916F88D00A5F94D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C92887952916F88D00A5F94D /* Moya */; };
+		C92887982917088500A5F94D /* FakeStoreApiManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92887972917088500A5F94D /* FakeStoreApiManagement.swift */; };
 		C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF8E290B1A9C00D717C3 /* SignInView.swift */; };
 		C959EF91290B1BC100D717C3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF90290B1BC100D717C3 /* SignUpView.swift */; };
 		C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EF92290B434900D717C3 /* ResetPasswordView.swift */; };
@@ -117,6 +118,7 @@
 		C91D09A02915B7D400ACFA46 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C91D09A32915C38600ACFA46 /* ScrollableViewWithPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewWithPageControl.swift; sourceTree = "<group>"; };
 		C928878A2916F27800A5F94D /* UIView+GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GradientView.swift"; sourceTree = "<group>"; };
+		C92887972917088500A5F94D /* FakeStoreApiManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApiManagement.swift; sourceTree = "<group>"; };
 		C959EF8E290B1A9C00D717C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C959EF90290B1BC100D717C3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C959EF92290B434900D717C3 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				C959EFB9290C7AFE00D717C3 /* FakeStoreApi.swift */,
+				C92887972917088500A5F94D /* FakeStoreApiManagement.swift */,
 			);
 			path = FakeStoreApi;
 			sourceTree = "<group>";
@@ -980,6 +983,7 @@
 				C9123BCE2913D71A007E6EB3 /* BasketTableViewCustomCell.swift in Sources */,
 				C91D09982915A40600ACFA46 /* String+Substring.swift in Sources */,
 				C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */,
+				C92887982917088500A5F94D /* FakeStoreApiManagement.swift in Sources */,
 				C98A5D8F290E8A0300CB8175 /* ProductScreenViewModel.swift in Sources */,
 				C98A5D8D290E83E800CB8175 /* ProductViewCell.swift in Sources */,
 				C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */,

@@ -12,10 +12,17 @@ final class SearchScreenViewModel{
     enum ProductFetchResults {
         case didErrorOccurred(_ error: String)
         case didFetchProducts
+        case didFetchCategories
+    }
+    
+    enum BasketFetchResults {
+        case didErrorOccurred(_ error: Error)
+        case didBasketEmpty(_ isEmpty: Bool)
     }
     
     var changeHandler: ((ProductFetchResults) -> Void)?
-    
+    var basketChangeHandler: ((BasketFetchResults) -> Void)?
+
     var products:[Product] = []{
         didSet{
             changeHandler?(.didFetchProducts)
@@ -27,31 +34,51 @@ final class SearchScreenViewModel{
 
     init(){
         fetchData()
+        fetchCategories()
     }
     
-    var categories: [String]{
-        [
-            "electronics",
-            "jewelery",
-            "men's clothing",
-            "women's clothing"
-        ]
-    }
+    var categories: [String] = []
     
     func fetchData(){
-        let url = Bundle.main.url(forResource: "products", withExtension: "json")!
-        do {
-            let jsonData = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            // the name data is misleading
-            let data = try decoder.decode([Product].self, from: jsonData)
-            products = data
-            allProducts = data
-        } catch {
-            changeHandler?(.didErrorOccurred("File cannot parsed"))
+        FakeStoreApiManagement.shared.fetchData {[weak self] message in
+            switch message{
+            case .didErrorOccurred(let error):
+                self?.changeHandler?(.didErrorOccurred(error))
+            case .didFetchProducts(let productList):
+                self?.changeHandler?(.didFetchProducts)
+                self?.allProducts = productList
+                self?.products = productList
+                self?.filteredProducts = productList
+            default:
+                break
+            }
         }
     }
     
+    func fetchCategories(){
+        FakeStoreApiManagement.shared.fetchCategories {[weak self] message in
+            switch message{
+            case .didErrorOccurred(let error):
+                self?.changeHandler?(.didErrorOccurred(error))
+            case .didFetchCategories(let categoryList):
+                self?.categories = categoryList
+                self?.changeHandler?(.didFetchCategories)
+            default:
+                break
+            }
+        }
+    }
+    
+    func fetchBasket(){
+        FirebaseFirestoreManagement.shared.controlBasketIsEmpty {[weak self] message in
+            switch message{
+            case .didErrorOccurred(let error):
+                self?.basketChangeHandler?(.didErrorOccurred(error))
+            case .basketMessage(let isEmpty):
+                self?.basketChangeHandler?(.didBasketEmpty(isEmpty))
+            }
+        }
+    }
     
     func searchProuct(word: String){
         products = filteredProducts.filter { product in

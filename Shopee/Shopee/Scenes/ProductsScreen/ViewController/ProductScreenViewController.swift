@@ -47,8 +47,20 @@ final class ProductScreenViewController: UIViewController{
         productViewModel.changeHandler = {[weak self] change in
             switch change{
             case .didFetchProducts:
-                print("Success")
                 self?.productView.productCollectionView.reloadData()
+            case.didFetchCategories:
+                self?.productView.categories = self?.productViewModel.categories
+                self?.createStackCategoryViewButtons()
+            case .didErrorOccurred(let error):
+                print(error)
+            }
+        }
+        
+        productViewModel.basketChangeHandler = {[weak self] change in
+            switch change{
+            case .didBasketEmpty(let isEmpty):
+                self?.navigationItem.rightBarButtonItem?.tintColor = isEmpty ? .systemGray: .green
+                print(isEmpty)
             case .didErrorOccurred(let error):
                 print(error)
             }
@@ -56,9 +68,12 @@ final class ProductScreenViewController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         productViewModel.fetchData()
+        productViewModel.fetchBasket()
         navigationItem.largeTitleDisplayMode = .never
     }
+    
     
     func createStackCategoryViewButtons(){
         productView.stackCategoryView.arrangedSubviews.forEach { view in

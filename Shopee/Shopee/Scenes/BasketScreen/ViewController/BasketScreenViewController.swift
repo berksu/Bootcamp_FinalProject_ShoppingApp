@@ -42,14 +42,22 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
         }
     }
 
-    override func viewWillAppear(_ animated: Bool){
-        basketScreenViewModel.fetchAllProductsThatInBasket()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool){
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presentingViewController?.viewWillAppear(true)
         basketScreenViewModel.updateProductsInBasket(productsThatInCart)
         dismiss(animated: true)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        basketScreenViewModel.fetchAllProductsThatInBasket()
+        super.viewWillAppear(animated)
+        presentingViewController?.viewWillDisappear(true)
+    }
+
+//    override func viewWillDisappear(_ animated: Bool){
+//        basketScreenViewModel.updateProductsInBasket(productsThatInCart)
+//        dismiss(animated: true)
+//    }
     
     @objc func backButtonTapped(sender: UIButton){
         basketScreenViewModel.updateProductsInBasket(productsThatInCart)
@@ -57,16 +65,20 @@ final class BasketScreenViewController: UIViewController, AlertPresentable{
     }
     
     @objc func checkOutButtonTapped(sender: UIButton){
-        var ids:[Int] = []
-        for cartProduct in productsThatInCart{
-            guard let product = cartProduct.product else{return}
-            ids.append(product.id)
-        }
-        
-        basketScreenViewModel.removeAllProductsFromCart(productIDs: ids)
-        showAlert(title: "Congratulations", message: "Transaction was successful. Enjoy your products"){[weak self]_ in
-            self?.productsThatInCart = []
-            self?.dismiss(animated: true)
+        if productsThatInCart.count != 0{
+            var ids:[Int] = []
+            for cartProduct in productsThatInCart{
+                guard let product = cartProduct.product else{return}
+                ids.append(product.id)
+            }
+            
+            basketScreenViewModel.removeAllProductsFromCart(productIDs: ids)
+            showAlert(title: "Congratulations", message: "Transaction was successful. Enjoy your products"){[weak self]_ in
+                self?.productsThatInCart = []
+                self?.dismiss(animated: true)
+            }
+        }else{
+            showAlert(title: "Warning", message: "Your cart is empty.")
         }
     }
     

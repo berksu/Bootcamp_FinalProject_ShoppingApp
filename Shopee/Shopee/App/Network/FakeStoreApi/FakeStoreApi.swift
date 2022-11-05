@@ -44,30 +44,6 @@ extension FakeStoreApi: TargetType{
     var task: Moya.Task {
         let parameters:[String : Any] = [:]
         return .requestPlain
-        //return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
-//        switch self{
-//        case .getRecentImages(let page):
-//            let parameters:[String : Any] = ["method": "flickr.photos.getRecent",
-//                              "api_key": "b4e2d5855cd63ed362d1e1dd3d981dc7",
-//                              "page": page,
-//                              "format": "json",
-//                              "nojsoncallback": "1",
-//                              "extras" : "date_taken,owner_name,url_n"
-//                              ]
-//
-//            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
-//        case .search(let text, let page):
-//            let parameters:[String : Any] = ["method": "flickr.photos.search",
-//                              "api_key": "b4e2d5855cd63ed362d1e1dd3d981dc7",
-//                              "page": page,
-//                              "text": text,
-//                              "format": "json",
-//                              "nojsoncallback": "1",
-//                              "extras" : "date_taken,owner_name,url_n"
-//                              ]
-//
-//            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
-//        }
     }
     
     var headers: [String : String]? {
