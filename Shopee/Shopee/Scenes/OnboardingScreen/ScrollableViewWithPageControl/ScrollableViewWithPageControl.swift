@@ -51,6 +51,12 @@ final class ScrollableViewWithPageControl: UIView{
         return button
     }()
     
+    
+    private let imagesArray = ["chooseProduct","chooseCategory", "basket", "cart", "search"]
+    var totalPageNumber: Int{
+        imagesArray.count
+    }
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         backgroundColor = .white
@@ -70,12 +76,14 @@ final class ScrollableViewWithPageControl: UIView{
 
         configurePageControl()
 
-        for index in 0..<colors.count {
+        for index in 0..<totalPageNumber {
             viewFrame.origin.x = scrollView.frame.size.width * CGFloat(index)
             viewFrame.size = scrollView.frame.size
 
             let subView = UIView(frame: viewFrame)
-            subView.backgroundColor = colors[index]
+            subView.backgroundColor = .white
+            
+            setProductImageView(subView: subView, image: imagesArray[index])
             scrollView.addSubview(subView)
         }
         
@@ -108,11 +116,11 @@ final class ScrollableViewWithPageControl: UIView{
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(colors.count), height: scrollView.frame.size.height)
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(totalPageNumber), height: scrollView.frame.size.height)
     }
 
     func configurePageControl() {
-        pageControl.numberOfPages = colors.count
+        pageControl.numberOfPages = totalPageNumber
         pageControl.currentPage = 0
         pageControl.tintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.black
@@ -123,6 +131,22 @@ final class ScrollableViewWithPageControl: UIView{
             make.centerX.equalTo(backgroundView.snp.centerX)
             make.width.equalTo(200)
             make.height.equalTo(50)
+        }
+    }
+    
+    func setProductImageView(subView: UIView, image: String){
+        let productImageView = UIImageView()
+        
+        productImageView.image = UIImage(named: image)
+        productImageView.clipsToBounds = true
+        productImageView.layer.cornerRadius = 10
+      
+        subView.addSubview(productImageView)
+        productImageView.snp.makeConstraints { make in
+            make.centerY.equalTo(subView.snp.centerY)
+            make.centerX.equalTo(subView.snp.centerX)
+            make.width.equalTo(subView.snp.width)
+            make.height.equalTo(subView.snp.height)
         }
     }
 

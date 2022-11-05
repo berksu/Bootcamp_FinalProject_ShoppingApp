@@ -89,7 +89,6 @@ final class OnBoardingViewController: UIViewController, UIScrollViewDelegate{
     
     // MARK: -UISCROLLVIEW Delegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("asdasdasdasd")
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         scrollableViewWithPageControl.pageControl.currentPage = Int(pageNumber)
         updateButtons()
