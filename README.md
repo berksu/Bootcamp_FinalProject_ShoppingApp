@@ -62,6 +62,7 @@ In settings page, user can see the profile picture at the top of the screen. By 
 In that project:
 - UIKit user interface builded programmatically
 - MVVM is used.
+- SPM is used for loading packages.
 - FirebaseFirestore, Firebase Authentication, Firebase Storage are used for database operations. In firestore, user information(username) and user cart's information is held. In Firebase Storage, user profile picture is held.
 - Kingfisher is used for downloading images.
 - For autolayout, snapkit is used. It improves the cleanliness of the code.
