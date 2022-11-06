@@ -83,6 +83,8 @@
 		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
 		C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */; };
 		C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */; };
+		C9EC01A52917D815004E28DA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */; };
+		C9EC01A72917E137004E28DA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01A62917E137004E28DA /* ImagePicker.swift */; };
 		C9FFEF282917290000DCBE0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF272917290000DCBE0E /* SettingsViewController.swift */; };
 		C9FFEF2F291729D700DCBE0E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */; };
 		C9FFEF31291729EE00DCBE0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF30291729EE00DCBE0E /* SettingsView.swift */; };
@@ -177,6 +179,8 @@
 		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageCustomButtonView.swift; sourceTree = "<group>"; };
+		C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		C9EC01A62917E137004E28DA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C9FFEF272917290000DCBE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C9FFEF30291729EE00DCBE0E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -455,6 +459,7 @@
 				C98E5998290D81BF0031E550 /* TabBarView */,
 				C98AB1C02909C38200BD917A /* AuthenticationScreen */,
 				C960C5C82908752600AD20E6 /* SplashScreen */,
+				C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 				C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */,
 				C91D09972915A40600ACFA46 /* String+Substring.swift */,
 				C928878A2916F27800A5F94D /* UIView+GradientView.swift */,
+				C9EC01A62917E137004E28DA /* ImagePicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1013,6 +1019,7 @@
 				C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */,
 				C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
+				C9EC01A52917D815004E28DA /* ImagePickerViewController.swift in Sources */,
 				C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,
 				C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */,
@@ -1037,6 +1044,7 @@
 				C98A5D87290E7FBA00CB8175 /* ProductScreenView.swift in Sources */,
 				C959EFBE290C7B5900D717C3 /* Product.swift in Sources */,
 				C9123BC92913C415007E6EB3 /* BasketScreenViewController.swift in Sources */,
+				C9EC01A72917E137004E28DA /* ImagePicker.swift in Sources */,
 				C98A5D96290E956B00CB8175 /* UIImage+Extensions.swift in Sources */,
 				C928878B2916F27800A5F94D /* UIView+GradientView.swift in Sources */,
 			);

@@ -49,6 +49,17 @@ final class SettingsView: UIView{
         }
     }
     
+    var image: UIImage?{
+        didSet{
+            profileImageView.image = image
+            profileImageView.layer.borderWidth = 1
+            profileImageView.layer.masksToBounds = false
+            profileImageView.layer.borderColor = UIColor.black.cgColor
+            profileImageView.layer.cornerRadius = 75
+            profileImageView.clipsToBounds = true
+        }
+    }
+    
     let profileImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "profileImagePlaceholder")
@@ -117,7 +128,7 @@ final class SettingsView: UIView{
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        profileImageView.addSubview(changeProfileImageButton)
+        addSubview(changeProfileImageButton)
         changeProfileImageButton.snp.makeConstraints { make in
             make.bottom.equalTo(profileImageView.snp.bottom)
             make.trailing.equalTo(profileImageView.snp.trailing)
@@ -137,6 +148,12 @@ final class SettingsView: UIView{
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16)
             make.height.equalTo(40)
         }
+        
+//        addSubview(changeProfileImageButton)
+//        changeProfileImageButton.snp.makeConstraints { make in
+//            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
+//            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+//        }
 
     }
     
