@@ -21,6 +21,17 @@ final class ProfilePageView: UIView{
         }
     }
     
+    var image: UIImage?{
+        didSet{
+            profileImageView.image = image
+            profileImageView.layer.borderWidth = 1
+            profileImageView.layer.masksToBounds = false
+            profileImageView.layer.borderColor = UIColor.black.cgColor
+            profileImageView.layer.cornerRadius = 40
+            profileImageView.clipsToBounds = true
+        }
+    }
+    
     private let userNameLabel = {
        let label = UILabel()
         label.text = "Username"

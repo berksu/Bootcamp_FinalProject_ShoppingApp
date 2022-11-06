@@ -18,6 +18,11 @@ final class SettingsViewController: UIViewController, AlertPresentable{
         super.viewDidLoad()
         view = settingsView
         
+        guard let currentUser = settingsViewModel.user else {return}
+        settingsView.username = currentUser.username
+        settingsView.email = currentUser.email
+        settingsView.image = UIImage(named: "profileImagePlaceholder")
+        
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         settingsView.signInSingUpButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
         settingsView.changeProfileImageButton.addTarget(self, action: #selector(showImagePicker), for: .touchUpInside)
@@ -25,10 +30,6 @@ final class SettingsViewController: UIViewController, AlertPresentable{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        guard let currentUser = settingsViewModel.user else {return}
-        settingsView.username = currentUser.username
-        settingsView.email = currentUser.email
-        KingfisherOperations.shared.downloadProfileImage(url: "https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png", imageView: settingsView.profileImageView )
     }
     
     @objc func showImagePicker(_ sender: UIButton) {
@@ -78,7 +79,6 @@ final class SettingsViewController: UIViewController, AlertPresentable{
                     case .didUserFetchedSuccessfully(let user):
                         FirebaseAuthentication.shared.userInfo = user
                         self?.showAlert(title: "Saved", message: "Your informations are updated."){_ in
-                            //self?.viewWillDisappear(true)
                             self?.presentingViewController?.viewWillAppear(true)
                             self?.dismiss(animated: true)
                         }
@@ -100,10 +100,6 @@ final class SettingsViewController: UIViewController, AlertPresentable{
         }
     }
     
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
 }
 
 extension SettingsViewController: ImagePickerDelegate {

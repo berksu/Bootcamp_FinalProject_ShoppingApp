@@ -17,6 +17,7 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
         navigationItem.largeTitleDisplayMode = .never
 
         view = profilePageView
+        
         profilePageView.signOutView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:))))
         profilePageView.settingsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.settingsTapped(_:))))
     }
@@ -26,7 +27,7 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
         guard let currentUser = profilePageViewModel.user else {return}
         profilePageView.username = currentUser.username
         profilePageView.email = currentUser.email
-        KingfisherOperations.shared.downloadProfileImage(url: "https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png", imageView: profilePageView.profileImageView )
+        profilePageView.image = UIImage(named: "profileImagePlaceholder")
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
