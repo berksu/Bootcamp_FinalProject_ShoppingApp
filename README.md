@@ -51,13 +51,13 @@ In main screen, user can choose any of the product on UICollectionView. User can
 
 In basket screen, user have chance to change the quantity of the product, remove product from cart or check out the products price. At the bottom of the page user can see the total price of products.
 
-In details screen, user can see the product page bigger, also user can see the product name, product price, product description, ratings and total comment number. User can added product to cart and change the quantity by pressing the "+" and "-" buttons.
+In details screen, user can see the product image bigger, also user can see the product name, product price, product description, ratings and total comment number. User can added product to cart and change the quantity by pressing the "+" and "-" buttons.
 
-In search screen, user can filter the products via using product name and product category. And see the results in UITableView. In custom table view cell, user can see the product image, product name and product price.
+In search screen, user can filter the products via using product name and product category and see the results in UITableView. In custom table view cell, user can see the product image, product name and product price.
 
 In profile page, user can see one's user name, e-mail address and profile picture. There is 2 buttons in that page which are Settings and Sign Out. By pressing the settings button user can chance the username, password and profile picture. By pressing the sign out button user can sign out securely.
 
-In settings page, user can see the profile picture at the top of the screen. By pressing the "+" button, user can change one's image. User can take a photo or can choose a photo form photo library. In this part UIImage picker used. If user already signed in and want to change the password, one can do it by filling the new password and retype password fields in that page. If these fields are blank, this means that user do not want to change passward. After pressing save changes button, all the user information updated. If user press the back button on the top left, no information will be updated.
+In settings page, user can see the profile picture at the top of the screen. By pressing the "+" button, user can change one's profile picture. User can take a photo or can choose a photo from photo library. In this part UIImage picker used. If user already signed in and want to change the password, one can do it by filling the new password and retype password fields in that page. If these fields are blank, this means that user do not want to change passward. After pressing save changes button, all the user information updated. If user press the back button on the top left, no information will be updated.
 
 In that project:
 - UIKit user interface builded programmatically
@@ -82,14 +82,14 @@ Note: *Logo was taken from real company and it was used only for educational pur
 
 <!-- GIF -->
 ## GIF
-In this project, FakeStore Api used and fake shopping application developed.
+
 
 
 
 <!-- Project ScreenShots -->
 ## Project ScreenShots
 
-This projects can work different sizes of devies. Some example screenshots from iPhone 14 pro Max, iPad Pro 12.9 inch and iPhone SE were added in below.
+This projects can work different sizes of devices. Some example screenshots from iPhone 14 pro Max, iPad Pro 12.9 inch and iPhone SE were added in below.
 
 You can try app with:
 ```
