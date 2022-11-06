@@ -66,12 +66,39 @@ final class SignInView: UIView{
     }
     
 
+    private var showPasswordButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "showPassword"), for: .normal)
+        button.imageView?.tintColor = .black
+        button.snp.makeConstraints { make in
+            make.width.equalTo(20)
+            make.height.equalTo(20)
+        }
+        button.addTarget(self, action: #selector(touchDownEvent), for: .touchDown)
+        button.addTarget(self, action: #selector(touchUpEvent), for: [.touchUpInside, .touchUpOutside])
+
+        return button
+    }()
+
+    @objc func touchDownEvent(_ sender: AnyObject) {
+        passwordTextField.isSecureTextEntry = false
+    }
+
+    @objc func touchUpEvent(_ sender: AnyObject) {
+        passwordTextField.isSecureTextEntry = true
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         emailTextView = createTextField(placeholder: "Enter email", isSecureTextField: false)
         passwordTextField = createTextField(placeholder: "Enter password", isSecureTextField: true)
+        
+        passwordTextField.addSubview(showPasswordButton)
+        showPasswordButton.snp.makeConstraints { make in
+            make.trailing.equalTo(passwordTextField.snp.trailing).offset(-16)
+            make.centerY.equalTo(passwordTextField.snp.centerY)
+        }
         let stackView = UIStackView(arrangedSubviews: [emailTextView,
                                                        passwordTextField,
                                                        forgetPasswordButtonView])
@@ -90,7 +117,7 @@ final class SignInView: UIView{
         
         
         emailTextView.text = "berksukismet@gmail.com"
-        passwordTextField.text = "ultrAslan93."
+        passwordTextField.text = "Test1234."
     }
     
     required init?(coder: NSCoder) {

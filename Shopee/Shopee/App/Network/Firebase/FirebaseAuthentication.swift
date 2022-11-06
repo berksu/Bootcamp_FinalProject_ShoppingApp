@@ -17,6 +17,8 @@ struct FirebaseAuthentication {
         case didSignUpSuccessful
         case didSignOutSuccessful
         case didForgetMessageSentSuccessful
+        case didUpdatePasswordSuccessful
+        case didUpdateEmailSuccessful
     }
     
     static var shared = FirebaseAuthentication()
@@ -105,8 +107,25 @@ struct FirebaseAuthentication {
             }
             complition(.didForgetMessageSentSuccessful)
         }
-//        user.updatePassword(to: password) { error in
-//          // ...
-//        }
+    }
+    
+    func updateEmail(email: String, complition: @escaping (AuthenticationMessages) -> Void){
+        user?.updateEmail(to: email) { error in
+            if let error = error {
+                complition(.didErrorOccurred(error))
+                return
+            }
+            complition(.didUpdateEmailSuccessful)
+        }
+    }
+    
+    func updatePassword(password: String, complition: @escaping (AuthenticationMessages) -> Void){
+        user?.updatePassword(to: password) { error in
+            if let error = error {
+                complition(.didErrorOccurred(error))
+                return
+            }
+            complition(.didUpdatePasswordSuccessful)
+        }
     }
 }

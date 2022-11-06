@@ -18,12 +18,15 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
 
         view = profilePageView
         profilePageView.signOutView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:))))
-
+        profilePageView.settingsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.settingsTapped(_:))))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         guard let currentUser = profilePageViewModel.user else {return}
         profilePageView.username = currentUser.username
         profilePageView.email = currentUser.email
         KingfisherOperations.shared.downloadProfileImage(url: "https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png", imageView: profilePageView.profileImageView )
-        
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
@@ -40,12 +43,16 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
                 }
             }
         }
-
+    }
+    
+    @objc func settingsTapped(_ sender: UITapGestureRecognizer? = nil) {
+        // handling code
+        let settingsViewController = SettingsViewController()
+        navigationController?.present(settingsViewController, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //let colors = [UIColor.white.cgColor, UIColor.white.cgColor, UIColor.red.cgColor]
         if !profilePageView.signOutView.isGradientAdded{
             let colors = [UIColor.red.withAlphaComponent(0.1).cgColor, UIColor.red.withAlphaComponent(0.7).cgColor]
             

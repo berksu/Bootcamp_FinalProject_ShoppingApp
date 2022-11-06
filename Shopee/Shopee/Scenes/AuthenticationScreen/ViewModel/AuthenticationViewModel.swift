@@ -55,7 +55,7 @@ final class AuthenticationViewModel{
             return
         }
         guard let password = password else {
-            changeHandler?(.didErrorOccurredAboutUserInputs("Password Error", "Password is not valid"))
+            changeHandler?(.didErrorOccurredAboutUserInputs("Password Error", "Password is not valid. Password should have 8 characters(At least one number and 1 special character)"))
             return
         }
         

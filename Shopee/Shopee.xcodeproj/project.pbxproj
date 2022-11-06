@@ -83,6 +83,9 @@
 		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
 		C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */; };
 		C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */; };
+		C9FFEF282917290000DCBE0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF272917290000DCBE0E /* SettingsViewController.swift */; };
+		C9FFEF2F291729D700DCBE0E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */; };
+		C9FFEF31291729EE00DCBE0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF30291729EE00DCBE0E /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +177,9 @@
 		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageCustomButtonView.swift; sourceTree = "<group>"; };
+		C9FFEF272917290000DCBE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C9FFEF30291729EE00DCBE0E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +445,7 @@
 		C960C5C32908700B00AD20E6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C9FFEF292917290700DCBE0E /* SettingsScreen */,
 				C91D09992915B76000ACFA46 /* OnboardingScreen */,
 				C91D098829150FF900ACFA46 /* SearchScreen */,
 				C9123BC42913C3D0007E6EB3 /* BasketScreen */,
@@ -783,6 +790,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C9FFEF292917290700DCBE0E /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFEF2C291729BE00DCBE0E /* ViewModel */,
+				C9FFEF2B291729B800DCBE0E /* View */,
+				C9FFEF2A291729AF00DCBE0E /* ViewController */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		C9FFEF2A291729AF00DCBE0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFEF272917290000DCBE0E /* SettingsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C9FFEF2B291729B800DCBE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFEF30291729EE00DCBE0E /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9FFEF2C291729BE00DCBE0E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -945,6 +986,7 @@
 				C959EF99290BE1B100D717C3 /* UIButton+UnderlinedTitle.swift in Sources */,
 				C9A0E0C72911744A00C35E33 /* ProductDetailsView.swift in Sources */,
 				C98AB1CF2909C67900BD917A /* AuthenticaitionView.swift in Sources */,
+				C9FFEF2F291729D700DCBE0E /* SettingsViewModel.swift in Sources */,
 				C959EF8F290B1A9C00D717C3 /* SignInView.swift in Sources */,
 				C98E59A2290D851A0031E550 /* ProductScreenViewController.swift in Sources */,
 				C91D09A42915C38600ACFA46 /* ScrollableViewWithPageControl.swift in Sources */,
@@ -963,6 +1005,7 @@
 				C960C59329086DC200AD20E6 /* AppDelegate.swift in Sources */,
 				C9769DD1291308E900C46219 /* CartProduct.swift in Sources */,
 				C98A5D94290E915900CB8175 /* KingfisherOperations.swift in Sources */,
+				C9FFEF282917290000DCBE0E /* SettingsViewController.swift in Sources */,
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
 				C91D09962915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift in Sources */,
 				C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */,
@@ -985,6 +1028,7 @@
 				C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */,
 				C92887982917088500A5F94D /* FakeStoreApiManagement.swift in Sources */,
 				C98A5D8F290E8A0300CB8175 /* ProductScreenViewModel.swift in Sources */,
+				C9FFEF31291729EE00DCBE0E /* SettingsView.swift in Sources */,
 				C98A5D8D290E83E800CB8175 /* ProductViewCell.swift in Sources */,
 				C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */,
 				C959EFA0290C135C00D717C3 /* AlertPresentable.swift in Sources */,
