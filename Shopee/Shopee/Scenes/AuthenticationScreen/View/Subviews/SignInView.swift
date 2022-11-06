@@ -109,10 +109,7 @@ final class SignInView: UIView{
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
             make.bottom.equalTo(self.snp.bottom)
         }
-        
-        
-        emailTextView.text = "berksukismet@gmail.com"
-        passwordTextField.text = "Test1234."
+
     }
     
     required init?(coder: NSCoder) {
