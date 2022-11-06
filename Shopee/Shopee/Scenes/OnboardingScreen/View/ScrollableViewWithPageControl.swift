@@ -35,8 +35,8 @@ final class ScrollableViewWithPageControl: UIView{
         button.setImage(UIImage(named: "backButton"), for: .normal)
         button.isHidden = true
         button.snp.makeConstraints { make in
-            make.width.equalTo(20)
-            make.height.equalTo(20)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
         return button
     }()
@@ -45,8 +45,8 @@ final class ScrollableViewWithPageControl: UIView{
        var button = UIButton()
         button.setImage(UIImage(named: "rightArrow"), for: .normal)
         button.snp.makeConstraints { make in
-            make.width.equalTo(20)
-            make.height.equalTo(20)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
         return button
     }()

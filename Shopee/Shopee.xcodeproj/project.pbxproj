@@ -19,7 +19,6 @@
 		C91D09962915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */; };
 		C91D09982915A40600ACFA46 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09972915A40600ACFA46 /* String+Substring.swift */; };
 		C91D099E2915B79400ACFA46 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D099D2915B79400ACFA46 /* OnBoardingViewController.swift */; };
-		C91D09A12915B7D400ACFA46 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09A02915B7D400ACFA46 /* OnBoardingView.swift */; };
 		C91D09A42915C38600ACFA46 /* ScrollableViewWithPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D09A32915C38600ACFA46 /* ScrollableViewWithPageControl.swift */; };
 		C928878B2916F27800A5F94D /* UIView+GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928878A2916F27800A5F94D /* UIView+GradientView.swift */; };
 		C92887922916F85C00A5F94D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C92887912916F85C00A5F94D /* FirebaseFirestoreSwift */; };
@@ -121,7 +120,6 @@
 		C91D09952915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveArrangedSubviews.swift"; sourceTree = "<group>"; };
 		C91D09972915A40600ACFA46 /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		C91D099D2915B79400ACFA46 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
-		C91D09A02915B7D400ACFA46 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C91D09A32915C38600ACFA46 /* ScrollableViewWithPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewWithPageControl.swift; sourceTree = "<group>"; };
 		C928878A2916F27800A5F94D /* UIView+GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GradientView.swift"; sourceTree = "<group>"; };
 		C92887972917088500A5F94D /* FakeStoreApiManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApiManagement.swift; sourceTree = "<group>"; };
@@ -311,19 +309,10 @@
 		C91D09992915B76000ACFA46 /* OnboardingScreen */ = {
 			isa = PBXGroup;
 			children = (
-				C91D09A22915C37100ACFA46 /* ScrollableViewWithPageControl */,
+				C91D09A22915C37100ACFA46 /* View */,
 				C91D099B2915B77B00ACFA46 /* ViewController */,
-				C91D099A2915B77600ACFA46 /* View */,
 			);
 			path = OnboardingScreen;
-			sourceTree = "<group>";
-		};
-		C91D099A2915B77600ACFA46 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C91D09A02915B7D400ACFA46 /* OnBoardingView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C91D099B2915B77B00ACFA46 /* ViewController */ = {
@@ -334,12 +323,12 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		C91D09A22915C37100ACFA46 /* ScrollableViewWithPageControl */ = {
+		C91D09A22915C37100ACFA46 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C91D09A32915C38600ACFA46 /* ScrollableViewWithPageControl.swift */,
 			);
-			path = ScrollableViewWithPageControl;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C92887902916F85C00A5F94D /* Frameworks */ = {
@@ -1010,7 +999,6 @@
 				C9B54ADE291040E6004CDA3D /* ProfilePageView.swift in Sources */,
 				C91D09962915A2AB00ACFA46 /* UIStackView+RemoveArrangedSubviews.swift in Sources */,
 				C9A0E0CB2911C42400C35E33 /* ProductDetailsViewModel.swift in Sources */,
-				C91D09A12915B7D400ACFA46 /* OnBoardingView.swift in Sources */,
 				C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */,
 				C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
