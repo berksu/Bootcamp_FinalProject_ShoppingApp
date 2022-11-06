@@ -29,33 +29,3 @@ struct Rating: Codable{
     let count: Int?
 }
 
-
-//provider.request(.getAllProducts) { result in
-//    switch result{
-//    case .failure(let error):
-//        print(error.localizedDescription)
-//    case .success(let response):
-//        do{
-//            let productList = try JSONDecoder().decode([Product].self, from: response.data)
-//            print(productList)
-//        }catch{
-//            print(error)
-//        }
-//    }
-//}
-
-
-
-//provider.request(.getAllCategories) { result in
-//    switch result{
-//    case .failure(let error):
-//        print(error.localizedDescription)
-//    case .success(let response):
-//        do{
-//            let productList = try JSONDecoder().decode([String].self, from: response.data)
-//            print(productList)
-//        }catch{
-//            print(error)
-//        }
-//    }
-//}

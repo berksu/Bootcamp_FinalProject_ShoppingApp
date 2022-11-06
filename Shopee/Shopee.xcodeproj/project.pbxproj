@@ -83,7 +83,6 @@
 		C9B54AE02910466B004CDA3D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */; };
 		C9B54AE2291046FF004CDA3D /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */; };
 		C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */; };
-		C9EC01A52917D815004E28DA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */; };
 		C9EC01A72917E137004E28DA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01A62917E137004E28DA /* ImagePicker.swift */; };
 		C9EC01B429180C84004E28DA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C9EC01B329180C84004E28DA /* FirebaseStorage */; };
 		C9EC01B629180D9F004E28DA /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01B529180D9F004E28DA /* FirebaseStorage.swift */; };
@@ -181,7 +180,6 @@
 		C9B54ADF2910466B004CDA3D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		C9B54AE1291046FF004CDA3D /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageCustomButtonView.swift; sourceTree = "<group>"; };
-		C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		C9EC01A62917E137004E28DA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C9EC01B529180D9F004E28DA /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		C9FFEF272917290000DCBE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				C91D09A22915C37100ACFA46 /* ScrollableViewWithPageControl */,
-				C91D099C2915B78500ACFA46 /* ViewModel */,
 				C91D099B2915B77B00ACFA46 /* ViewController */,
 				C91D099A2915B77600ACFA46 /* View */,
 			);
@@ -335,13 +332,6 @@
 				C91D099D2915B79400ACFA46 /* OnBoardingViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		C91D099C2915B78500ACFA46 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C91D09A22915C37100ACFA46 /* ScrollableViewWithPageControl */ = {
@@ -463,7 +453,6 @@
 				C98E5998290D81BF0031E550 /* TabBarView */,
 				C98AB1C02909C38200BD917A /* AuthenticationScreen */,
 				C960C5C82908752600AD20E6 /* SplashScreen */,
-				C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1025,7 +1014,6 @@
 				C91D09942915304500ACFA46 /* SearchScreenViewModel.swift in Sources */,
 				C9A0E0C52911737D00C35E33 /* ProductDetailsViewController.swift in Sources */,
 				C959EF9D290BFEE900D717C3 /* AuthenticationViewModel.swift in Sources */,
-				C9EC01A52917D815004E28DA /* ImagePickerViewController.swift in Sources */,
 				C959EFB2290C51E300D717C3 /* UserProfile.swift in Sources */,
 				C98AB1C62909C3BB00BD917A /* AuthenticationViewController.swift in Sources */,
 				C959EF93290B434900D717C3 /* ResetPasswordView.swift in Sources */,

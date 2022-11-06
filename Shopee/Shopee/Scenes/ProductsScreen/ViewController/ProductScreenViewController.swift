@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProductScreenViewController: UIViewController{
+final class ProductScreenViewController: UIViewController, AlertPresentable{
     
     let productView = ProductScreenView()
     let productViewModel = ProductScreenViewModel()
@@ -52,7 +52,7 @@ final class ProductScreenViewController: UIViewController{
                 self?.productView.categories = self?.productViewModel.categories
                 self?.createStackCategoryViewButtons()
             case .didErrorOccurred(let error):
-                print(error)
+                self?.showAlert(title: "Error", message: error)
             }
         }
         
@@ -102,9 +102,6 @@ final class ProductScreenViewController: UIViewController{
     func createNavigationBarButtons(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "basketIcon"), style: .plain, target: self, action: #selector(basketButton))
         navigationItem.rightBarButtonItem?.tintColor = .systemGray
-        
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchIcon"), style: .plain, target: self, action: #selector(searchButton))
-//        navigationItem.leftBarButtonItem?.tintColor = .systemGray
     }
     
     private var createNavigationTitleLabel: UIStackView = {
@@ -131,9 +128,6 @@ final class ProductScreenViewController: UIViewController{
         let basketScreenViewController = BasketScreenViewController()
         basketScreenViewController.modalPresentationStyle = .formSheet
         self.navigationController?.present(basketScreenViewController, animated: true)
-        //self.navigationController?.pushViewController(basketScreenViewController, animated: true)
-        //productDetailsViewController.modalPresentationStyle = .fullScreen
-        //self.navigationController?.present(productDetailsViewController, animated: true)
     }
 }
 
@@ -148,7 +142,6 @@ extension ProductScreenViewController{
 //MARK: -UICollectionViewController Delegate
 extension ProductScreenViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("index: \(indexPath.row)")
         // Create the view controller.
         let productAtIndex = productViewModel.getProductAtIndex(indexPath.row)
         
@@ -158,7 +151,6 @@ extension ProductScreenViewController: UICollectionViewDelegate{
         // Present it w/o any adjustments so it uses the default sheet presentation.
         productDetailsViewController.modalPresentationStyle = .fullScreen
         present(productDetailsViewController, animated: true, completion: nil)
-        //self.navigationController?.pushViewController(productDetailsViewController, animated: true)
     }
 }
 

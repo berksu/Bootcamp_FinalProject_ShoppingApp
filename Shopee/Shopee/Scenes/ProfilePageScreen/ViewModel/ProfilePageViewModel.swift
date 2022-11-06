@@ -18,8 +18,4 @@ final class ProfilePageViewModel{
     var user: UserProfile?{
         FirebaseAuthentication.shared.userInfo
     }
-    
-    func fetchPhoto(imageView: UIImageView){
-        
-    }
 }

@@ -51,7 +51,7 @@ final class ScrollableViewWithPageControl: UIView{
         return button
     }()
     
-    private let imagesArray = ["chooseProduct","chooseCategory", "basket", "cart", "search"]
+    private let imagesArray = ["chooseProduct","chooseCategory", "cart", "search"]
     var totalPageNumber: Int{
         imagesArray.count
     }

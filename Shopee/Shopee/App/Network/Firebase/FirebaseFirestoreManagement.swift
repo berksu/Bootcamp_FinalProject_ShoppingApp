@@ -142,9 +142,4 @@ struct FirebaseFirestoreManagement {
             }
         }
     }
-    
-    func saveImageToDatabase(){
-        
-    }
-
 }

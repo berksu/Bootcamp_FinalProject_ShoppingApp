@@ -42,34 +42,19 @@ final class ProductScreenViewModel{
     }
     
     func fetchData(){
-        let url = Bundle.main.url(forResource: "products", withExtension: "json")!
-        do {
-            let jsonData = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            // the name data is misleading
-            let data = try decoder.decode([Product].self, from: jsonData)
-            changeHandler?(.didFetchProducts)
-            allProducts = data
-            products = data
-        } catch {
-            changeHandler?(.didErrorOccurred("File cannot parsed"))
+        FakeStoreApiManagement.shared.fetchData {[weak self] message in
+            switch message{
+            case .didErrorOccurred(let error):
+                self?.changeHandler?(.didErrorOccurred(error))
+            case .didFetchProducts(let productList):
+                self?.changeHandler?(.didFetchProducts)
+                self?.allProducts = productList
+                self?.products = productList
+            default:
+                break
+            }
         }
     }
-    
-//    func fetchData(){
-//        FakeStoreApiManagement.shared.fetchData {[weak self] message in
-//            switch message{
-//            case .didErrorOccurred(let error):
-//                self?.changeHandler?(.didErrorOccurred(error))
-//            case .didFetchProducts(let productList):
-//                self?.changeHandler?(.didFetchProducts)
-//                self?.allProducts = productList
-//                self?.products = productList
-//            default:
-//                break
-//            }
-//        }
-//    }
     
     func fetchCategories(){
         FakeStoreApiManagement.shared.fetchCategories {[weak self] message in

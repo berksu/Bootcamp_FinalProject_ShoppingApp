@@ -44,7 +44,6 @@ final class ProductViewCell: UICollectionViewCell{
         outerView.layer.shadowOpacity = 1
         outerView.layer.shadowOffset = CGSize.zero
         outerView.layer.shadowRadius = 10
-        //outerView.layer.shadowPath = UIBezierPath(roundedRect: outerView.bounds, cornerRadius: 10).cgPath
         return outerView
     }
     

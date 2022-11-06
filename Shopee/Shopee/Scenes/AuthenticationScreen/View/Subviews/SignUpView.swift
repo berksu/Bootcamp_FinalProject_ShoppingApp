@@ -44,10 +44,6 @@ final class SignUpView: UIView{
         textfield.autocapitalizationType = .none
         textfield.autocorrectionType = .no
         textfield.isSecureTextEntry = isSecureTextField
-        //sampleTextField.keyboardType = UIKeyboardType.default
-        //sampleTextField.returnKeyType = UIReturnKeyType.done
-        //sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        //sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return textfield
     }
     

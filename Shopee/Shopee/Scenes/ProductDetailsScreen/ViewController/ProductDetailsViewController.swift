@@ -63,7 +63,6 @@ final class ProductDetailsViewController: UIViewController, AlertPresentable{
     }
     
     @objc func backButtonTapped(sender: UIButton){
-        //navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }
     

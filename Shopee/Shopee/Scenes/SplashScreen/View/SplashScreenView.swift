@@ -24,10 +24,7 @@ final class SplashScreenView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-
         backgroundColor = .white
-        
         
         addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false

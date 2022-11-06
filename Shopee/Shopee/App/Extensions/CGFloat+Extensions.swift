@@ -12,9 +12,8 @@ extension CGFloat{
     static var screenHeight: CGFloat{
         UIScreen.main.bounds.height
     }
-    
+    //get screen width
     static var screenWidth: CGFloat{
         UIScreen.main.bounds.width
     }
 }
-import Foundation

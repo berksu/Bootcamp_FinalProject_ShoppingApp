@@ -45,7 +45,6 @@ final class SearchScreenTableViewCustomCell: UITableViewCell{
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
         label.font = UIFont(name: "Poppins-Regular", size: 18)
-        //label.sizeToFit()
         return label
     }()
     
@@ -54,7 +53,6 @@ final class SearchScreenTableViewCustomCell: UITableViewCell{
         label.text = "$ 50"
         label.textColor = .black
         label.font = UIFont(name: "Poppins-Bold", size: 20)
-        //label.sizeToFit()
         return label
     }()
     
@@ -84,7 +82,6 @@ extension SearchScreenTableViewCustomCell{
 
         shadowView.snp.makeConstraints { make in
             make.leading.equalTo(self.snp.leading).offset(16)
-            //make.centerY.equalTo(self.snp.centerY)
             make.width.equalTo(100)
             make.height.equalTo(100)
             make.top.equalTo(self.snp.top).offset(20)

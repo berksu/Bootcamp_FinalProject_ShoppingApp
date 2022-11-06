@@ -56,7 +56,6 @@ final class BasketTableViewCustomCell: UITableViewCell{
             make.width.equalTo(150)
         }
         label.font = UIFont(name: "Poppins-Regular", size: 14)
-        //label.sizeToFit()
         return label
     }()
     
@@ -69,7 +68,6 @@ final class BasketTableViewCustomCell: UITableViewCell{
         }
         label.tintColor = .black
         label.font = UIFont(name: "Poppins-Bold", size: 16)
-        //label.sizeToFit()
         return label
     }()
     

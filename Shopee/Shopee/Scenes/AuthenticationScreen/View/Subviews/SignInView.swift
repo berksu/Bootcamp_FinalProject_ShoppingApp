@@ -35,10 +35,6 @@ final class SignInView: UIView{
         textfield.autocapitalizationType = .none
         textfield.autocorrectionType = .no
         textfield.isSecureTextEntry = isSecureTextField
-        //sampleTextField.keyboardType = UIKeyboardType.default
-        //sampleTextField.returnKeyType = UIReturnKeyType.done
-        //sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        //sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return textfield
     }
     
@@ -53,7 +49,6 @@ final class SignInView: UIView{
     
     private var forgetPasswordButtonView: UIView{
         let view = UIView()
-        //button.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
         let labelSize = forgetPasswordButton.titleLabel?.sizeThatFits(CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
         view.addSubview(forgetPasswordButton)
         forgetPasswordButton.snp.makeConstraints { make in

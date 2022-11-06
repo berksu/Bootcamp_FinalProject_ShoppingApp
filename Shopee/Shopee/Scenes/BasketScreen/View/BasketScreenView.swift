@@ -92,12 +92,6 @@ final class BasketScreenView: UIView{
         super.init(frame: .zero)
         backgroundColor = .white
         
-//        addSubview(backButton)
-//        backButton.snp.makeConstraints { make in
-//            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
-//            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
-//        }
-//
         addSubview(pageTitleLabel)
         pageTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)

@@ -109,8 +109,6 @@ final class ResetPasswordView: UIView{
             make.width.equalTo(30)
             make.height.equalTo(30)
         }
-        
-        
     }
     
     required init?(coder: NSCoder) {

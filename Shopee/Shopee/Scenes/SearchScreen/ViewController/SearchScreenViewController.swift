@@ -57,7 +57,6 @@ final class SearchScreenViewController: UIViewController{
             switch change{
             case .didBasketEmpty(let isEmpty):
                 self?.navigationItem.rightBarButtonItem?.tintColor = isEmpty ? .systemGray: .green
-                print(isEmpty)
             case .didErrorOccurred(let error):
                 print(error)
             }
@@ -113,9 +112,8 @@ final class SearchScreenViewController: UIViewController{
     }
     
     private func createSearchBar(){
-        // Add search controller on navigation item
         let searchController = UISearchController()
-        searchController.searchBar.placeholder = "Search For Fun ..."
+        searchController.searchBar.placeholder = "Search Product ..."
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
@@ -142,7 +140,6 @@ extension SearchScreenViewController: UITableViewDelegate{
         
         let productDetailsViewController = ProductDetailsViewController()
         productDetailsViewController.product = productAtIndex
-        // Present it w/o any adjustments so it uses the default sheet presentation.
         productDetailsViewController.modalPresentationStyle = .fullScreen
         present(productDetailsViewController, animated: true, completion: nil)
     }

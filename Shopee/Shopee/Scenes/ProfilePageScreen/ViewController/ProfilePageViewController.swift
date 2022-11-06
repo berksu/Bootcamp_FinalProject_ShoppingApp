@@ -22,6 +22,7 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
         profilePageView.settingsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.settingsTapped(_:))))
     }
     
+    // TODO: -Refactoring needed
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         guard let currentUser = profilePageViewModel.user else {return}
@@ -53,7 +54,6 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
     }
     
     @objc func settingsTapped(_ sender: UITapGestureRecognizer? = nil) {
-        // handling code
         let settingsViewController = SettingsViewController()
         settingsViewController.modalPresentationStyle = .fullScreen
         navigationController?.present(settingsViewController, animated: true)
@@ -67,7 +67,7 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
             let gradientLayer = CAGradientLayer()
             gradientLayer.colors = colors
             gradientLayer.cornerRadius = 10
-            gradientLayer.frame = self.profilePageView.signOutView.bounds // New line
+            gradientLayer.frame = self.profilePageView.signOutView.bounds
             profilePageView.signOutView.layer.insertSublayer(gradientLayer, at: 0)
             profilePageView.signOutView.isGradientAdded = true
         }

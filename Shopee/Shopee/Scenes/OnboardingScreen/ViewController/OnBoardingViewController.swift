@@ -60,8 +60,6 @@ final class OnBoardingViewController: UIViewController, UIScrollViewDelegate{
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: "isOboardingAlreadyShown")
         let authenticationViewController = AuthenticationViewController()
-//        authenticationViewController.modalPresentationStyle = .fullScreen
-//        self.navigationController?.present(authenticationViewController, animated: true)
         self.navigationController?.pushViewController(authenticationViewController, animated: false)
     }
     

@@ -22,7 +22,6 @@ final class SearchScreenView: UIView{
         return stackView
     }()
     
-    // 2.
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.addSubview(stackCategoryView)
@@ -46,7 +45,6 @@ final class SearchScreenView: UIView{
         
         addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
-            //make.edges.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
@@ -55,7 +53,6 @@ final class SearchScreenView: UIView{
         
         scrollView.addSubview(stackCategoryView)
         stackCategoryView.snp.makeConstraints { (make) in
-            //make.edges.equalToSuperview()
             make.top.equalTo(scrollView.snp.top)
             make.leading.equalTo(scrollView.snp.leading).offset(16)
             make.trailing.equalTo(scrollView.snp.trailing)

@@ -28,7 +28,6 @@ final class AuthenticationView: UIView{
     
     private var stackView = UIStackView()
 
-    // TODO: - Refactor needed, chance it to is hidden
     var signInView = SignInView()
     var signUpView = SignUpView()
 
@@ -151,10 +150,7 @@ final class AuthenticationView: UIView{
         textfield.autocorrectionType = .no
         textfield.isSecureTextEntry = isSecureTextField
         textfield.backgroundColor = .red
-        //sampleTextField.keyboardType = UIKeyboardType.default
-        //sampleTextField.returnKeyType = UIReturnKeyType.done
-        //sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        //sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+
         return textfield
     }
     

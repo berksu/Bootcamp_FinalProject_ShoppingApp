@@ -15,7 +15,6 @@ final class ProductScreenView: UIView{
         return collectionView
     }()
 
-    
     lazy var stackCategoryView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -23,7 +22,6 @@ final class ProductScreenView: UIView{
         return stackView
     }()
     
-    // 2.
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .white
@@ -51,7 +49,6 @@ final class ProductScreenView: UIView{
     
         addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
-            //make.edges.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
@@ -60,7 +57,6 @@ final class ProductScreenView: UIView{
         
         scrollView.addSubview(stackCategoryView)
         stackCategoryView.snp.makeConstraints { (make) in
-            //make.edges.equalToSuperview()
             make.top.equalTo(scrollView.snp.top)
             make.leading.equalTo(scrollView.snp.leading).offset(16)
             make.trailing.equalTo(scrollView.snp.trailing)
@@ -84,7 +80,6 @@ final class ProductScreenView: UIView{
 }
 
 extension ProductScreenView{
-
     func createCategoryButton(title: String) -> ScrollableStackButton{
         let button = ScrollableStackButton()
         button.setTitle(title, for: .normal)
