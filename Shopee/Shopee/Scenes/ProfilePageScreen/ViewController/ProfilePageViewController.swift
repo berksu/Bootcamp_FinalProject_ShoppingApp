@@ -27,7 +27,13 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
         guard let currentUser = profilePageViewModel.user else {return}
         profilePageView.username = currentUser.username
         profilePageView.email = currentUser.email
-        profilePageView.image = UIImage(named: "profileImagePlaceholder")
+        if let profileImage = currentUser.profilePicture{
+            if (profileImage == "") {
+                profilePageView.image = nil
+            }else{
+                KingfisherOperations.shared.downloadProfileImage(url: profileImage, imageView: profilePageView.profileImageView, size: 80)
+            }
+        }
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {

@@ -85,6 +85,8 @@
 		C9B54AE4291066D5004CDA3D /* ProfilePageCustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */; };
 		C9EC01A52917D815004E28DA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */; };
 		C9EC01A72917E137004E28DA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01A62917E137004E28DA /* ImagePicker.swift */; };
+		C9EC01B429180C84004E28DA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C9EC01B329180C84004E28DA /* FirebaseStorage */; };
+		C9EC01B629180D9F004E28DA /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC01B529180D9F004E28DA /* FirebaseStorage.swift */; };
 		C9FFEF282917290000DCBE0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF272917290000DCBE0E /* SettingsViewController.swift */; };
 		C9FFEF2F291729D700DCBE0E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */; };
 		C9FFEF31291729EE00DCBE0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFEF30291729EE00DCBE0E /* SettingsView.swift */; };
@@ -181,6 +183,7 @@
 		C9B54AE3291066D5004CDA3D /* ProfilePageCustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageCustomButtonView.swift; sourceTree = "<group>"; };
 		C9EC01A42917D815004E28DA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		C9EC01A62917E137004E28DA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C9EC01B529180D9F004E28DA /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		C9FFEF272917290000DCBE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C9FFEF2E291729D700DCBE0E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C9FFEF30291729EE00DCBE0E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 				C98AB1B92909BF4900BD917A /* FirebaseAuth in Frameworks */,
 				C960C5E529088C7F00AD20E6 /* IQKeyboardManagerSwift in Frameworks */,
 				C960C5DF29088C3300AD20E6 /* SnapKit in Frameworks */,
+				C9EC01B429180C84004E28DA /* FirebaseStorage in Frameworks */,
 				C960C5D929088BF800AD20E6 /* Moya in Frameworks */,
 				C98AB1BB2909BF4900BD917A /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -697,6 +701,7 @@
 			children = (
 				C98AB1CC2909C5D300BD917A /* FirebaseAuthentication.swift */,
 				C959EFB3290C722700D717C3 /* FirebaseFirestoreManagement.swift */,
+				C9EC01B529180D9F004E28DA /* FirebaseStorage.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -853,6 +858,7 @@
 				C960C5E429088C7F00AD20E6 /* IQKeyboardManagerSwift */,
 				C98AB1B82909BF4900BD917A /* FirebaseAuth */,
 				C98AB1BA2909BF4900BD917A /* FirebaseFirestoreSwift */,
+				C9EC01B329180C84004E28DA /* FirebaseStorage */,
 			);
 			productName = Shopee;
 			productReference = C960C58F29086DC200AD20E6 /* Shopee.app */;
@@ -1027,6 +1033,7 @@
 				C98AB1CA2909C41A00BD917A /* String+PasswordMailControlExtension.swift in Sources */,
 				C91D099E2915B79400ACFA46 /* OnBoardingViewController.swift in Sources */,
 				C9A0E0BE29116E9C00C35E33 /* ViewControllerPreview.swift in Sources */,
+				C9EC01B629180D9F004E28DA /* FirebaseStorage.swift in Sources */,
 				C98AB1CD2909C5D300BD917A /* FirebaseAuthentication.swift in Sources */,
 				C959EF97290B4DFF00D717C3 /* UIView+ButtonAnimation.swift in Sources */,
 				C960C5CC2908834400AD20E6 /* SplashScreenView.swift in Sources */,
@@ -1469,6 +1476,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		C9EC01B329180C84004E28DA /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98AB1B72909BF4900BD917A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

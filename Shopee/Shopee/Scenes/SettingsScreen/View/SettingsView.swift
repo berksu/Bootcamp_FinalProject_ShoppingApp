@@ -51,14 +51,42 @@ final class SettingsView: UIView{
     
     var image: UIImage?{
         didSet{
-            profileImageView.image = image
-            profileImageView.layer.borderWidth = 1
-            profileImageView.layer.masksToBounds = false
-            profileImageView.layer.borderColor = UIColor.black.cgColor
-            profileImageView.layer.cornerRadius = 75
-            profileImageView.clipsToBounds = true
+            if let image = image {
+                profileImageView.image = image
+                profileImageView.layer.borderWidth = 1
+                profileImageView.layer.masksToBounds = false
+                profileImageView.layer.borderColor = UIColor.black.cgColor
+                profileImageView.layer.cornerRadius = 75
+                profileImageView.clipsToBounds = true
+            }else{
+                profileImageView.image = UIImage(named: "profileImagePlaceholder")
+            }
         }
     }
+    
+    var showIndicator: Bool = false{
+        didSet{
+            if showIndicator{
+                alpha = 0.2
+                indicator.isHidden = false
+                indicator.startAnimating()
+            }else{
+                alpha = 1
+                indicator.isHidden = true
+                indicator.stopAnimating()
+            }
+        }
+    }
+    
+    var backButton: UIButton = {
+       var button = UIButton()
+        button.setImage(UIImage(named: "backButton"), for: .normal)
+        button.snp.makeConstraints { make in
+            make.width.equalTo(20)
+            make.height.equalTo(20)
+        }
+        return button
+    }()
     
     let profileImageView = {
         let imageView = UIImageView()
@@ -67,6 +95,11 @@ final class SettingsView: UIView{
             make.height.equalTo(150)
             make.width.equalTo(150)
         }
+        imageView.layer.borderWidth = 1
+        imageView.layer.masksToBounds = false
+        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.layer.cornerRadius = 75
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -109,6 +142,12 @@ final class SettingsView: UIView{
         return button
     }()
     
+    private let indicator: UIActivityIndicatorView = {
+       let indicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+       indicatorView.startAnimating()
+       return indicatorView
+   }()
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         backgroundColor = .white
@@ -121,6 +160,8 @@ final class SettingsView: UIView{
         verticalStackView.addArrangedSubview(passwordTextField)
         verticalStackView.addArrangedSubview(reTypedPasswordLabel)
         verticalStackView.addArrangedSubview(reTypedpasswordTextField)
+        
+        setBackButton()
         
         addSubview(profileImageView)
         profileImageView.snp.makeConstraints { make in
@@ -149,12 +190,11 @@ final class SettingsView: UIView{
             make.height.equalTo(40)
         }
         
-//        addSubview(changeProfileImageButton)
-//        changeProfileImageButton.snp.makeConstraints { make in
-//            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
-//            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-//        }
-
+        addSubview(indicator)
+        indicator.isHidden = true
+        indicator.snp.makeConstraints { make in
+            make.center.equalTo(safeAreaLayoutGuide.snp.center)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -192,5 +232,15 @@ extension SettingsView{
         label.text = text
         label.font = UIFont(name: "Inter-Bold", size: 15)
         return label
+    }
+}
+
+extension SettingsView{
+    func setBackButton(){
+        addSubview(backButton)
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16)
+            make.leading.equalTo(self.snp.leading).offset(16)
+        }
     }
 }

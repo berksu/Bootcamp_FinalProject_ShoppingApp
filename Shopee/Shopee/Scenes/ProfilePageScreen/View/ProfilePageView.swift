@@ -23,12 +23,16 @@ final class ProfilePageView: UIView{
     
     var image: UIImage?{
         didSet{
-            profileImageView.image = image
-            profileImageView.layer.borderWidth = 1
-            profileImageView.layer.masksToBounds = false
-            profileImageView.layer.borderColor = UIColor.black.cgColor
-            profileImageView.layer.cornerRadius = 40
-            profileImageView.clipsToBounds = true
+            if let image = image {
+                profileImageView.image = image
+                profileImageView.layer.borderWidth = 1
+                profileImageView.layer.masksToBounds = false
+                profileImageView.layer.borderColor = UIColor.black.cgColor
+                profileImageView.layer.cornerRadius = 40
+                profileImageView.clipsToBounds = true
+            }else{
+                profileImageView.image = UIImage(named: "profileImagePlaceholder")
+            }
         }
     }
     

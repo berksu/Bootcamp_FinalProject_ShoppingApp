@@ -41,10 +41,10 @@ struct KingfisherOperations{
         }
     }
     
-    func downloadProfileImage(url: String, imageView: UIImageView){
+    func downloadProfileImage(url: String, imageView: UIImageView, size: CGFloat){
         let url = URL(string: url)
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 256, height: 256))
-                     |> RoundCornerImageProcessor(cornerRadius: 128)
+        let processor = ResizingImageProcessor(referenceSize: CGSize(width: size, height: size))
+                     |> RoundCornerImageProcessor(cornerRadius: size/2)
         imageView.kf.indicatorType = .activity
         imageView.kf.setImage(
             with: url,
