@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="ReadMEImages/logo.png" alt="Logo" width="150" height="150">
+    <img src="readMeFiles/logo.png" alt="Logo" width="150" height="150">
   </a>
 
 <h3 align="center">Shopee App</h3>
@@ -43,7 +43,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-In this project, FakeStore Api used and fake shopping application developed. Final project assignment is in [link]("https://github.com/berksu/Bootcamp_FinalProject_ShoppingApp/blob/develop/readMeFiles/Pazarama%20iOS%20Bootcamp%20Final%20Project.pdf")
+In this project, FakeStore Api used and fake shopping application developed. Final project assignment is in ![link]("https://github.com/berksu/Bootcamp_FinalProject_ShoppingApp/blob/develop/readMeFiles/Pazarama%20iOS%20Bootcamp%20Final%20Project.pdf")
 
 
 
