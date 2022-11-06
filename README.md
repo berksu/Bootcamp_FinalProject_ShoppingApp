@@ -83,7 +83,9 @@ Note: *Logo was taken from real company and it was used only for educational pur
 
 <!-- GIF -->
 ## GIF
-
+<p align="center">
+<img src="readMeFiles/project_gif.gif" alt="drawing" width="200"/>
+</p>
 
 
 
