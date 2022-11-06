@@ -45,6 +45,12 @@
 ## About The Project
 In this project, FakeStore Api used and fake shopping application developed. Final project assignment is in  <a href="readMeFiles/Pazarama iOS Bootcamp Final Project.pdf" class="image fit">link </a>
 
+You can try app with:
+```
+Username: test@test.com
+Password: Test1234.
+````
+
 In authentication screen, user can sign up or if one has an account, can sign in directly. User's password must be min 8 characters that has minimum 1 capital and 1 special character. If user forget the password, one can use the forgot password page and change one's password vie e-mail.
 
 In main screen, user can choose any of the product on UICollectionView. User can see the product image, product price and product name on custom view cell. When a cell clicked user can see the details of the product. On the top of the page, user can see the categories in scrollable stack view buttons. User can filter product accoring to category by pressing that buttons. On the top right on the screen, there is a basket button. By pressing the basket button, user can see the products that have benn added cart in UITableView.
@@ -94,11 +100,6 @@ Note: *Logo was taken from real company and it was used only for educational pur
 
 This projects can work different sizes of devices. Some example screenshots from iPhone 14 pro Max, iPad Pro 12.9 inch and iPhone SE were added in below.
 
-You can try app with:
-```
-Username: test@test.com
-Password: Test1234.
-````
 
 ### iPhone 14 Pro Max - iOS 16
 <p align="center">
