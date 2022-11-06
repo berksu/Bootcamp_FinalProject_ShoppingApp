@@ -48,6 +48,7 @@ final class ProfilePageViewController: UIViewController,AlertPresentable{
     @objc func settingsTapped(_ sender: UITapGestureRecognizer? = nil) {
         // handling code
         let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = .fullScreen
         navigationController?.present(settingsViewController, animated: true)
     }
     

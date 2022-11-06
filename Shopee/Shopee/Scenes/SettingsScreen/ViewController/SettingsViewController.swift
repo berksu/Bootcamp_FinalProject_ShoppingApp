@@ -78,7 +78,9 @@ final class SettingsViewController: UIViewController, AlertPresentable{
                     case .didUserFetchedSuccessfully(let user):
                         FirebaseAuthentication.shared.userInfo = user
                         self?.showAlert(title: "Saved", message: "Your informations are updated."){_ in
-                            self?.viewWillDisappear(true)
+                            //self?.viewWillDisappear(true)
+                            self?.presentingViewController?.viewWillAppear(true)
+                            self?.dismiss(animated: true)
                         }
                     default:
                         break
@@ -101,8 +103,6 @@ final class SettingsViewController: UIViewController, AlertPresentable{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        presentingViewController?.viewWillAppear(true)
-        dismiss(animated: true)
     }
 }
 

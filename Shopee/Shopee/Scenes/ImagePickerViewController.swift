@@ -33,7 +33,6 @@ class ImagePickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         view.addSubview(imageView)
         imageView.snp.makeConstraints { make in
