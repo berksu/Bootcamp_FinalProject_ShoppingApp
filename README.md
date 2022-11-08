@@ -31,7 +31,7 @@
       <ul>
         <li><a href="#iphone-14-pro-max---ios-16">iPhone 14 Pro Max</a></li>
         <li><a href="#ipad-pro-129-inch---ios-16">iPad Pro 12.9 inch</a></li>
-        <li><a href="#iphone-se3rd-generation---ios-12">iPhone SE(3rd Generation)</a></li>
+        <li><a href="#iphone-se3rd-generation---ios-16">iPhone SE(3rd Generation)</a></li>
       </ul>
     </li>
     <li><a href="#license">License</a></li>
@@ -129,7 +129,7 @@ This projects can work different sizes of devices. Some example screenshots from
   <img src="readMeFiles/ipad/ipad_settings.png" width="200" />
 </p>
 
-### iPhone SE(3rd Generation) - iOS 12
+### iPhone SE(3rd Generation) - iOS 16
 <p align="center">
   <img src="readMeFiles/iphoneSE/se_signIn.png" width="150" />
   <img src="readMeFiles/iphoneSE/se_signUp.png" width="150" />
